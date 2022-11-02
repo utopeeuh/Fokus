@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,7 +50,6 @@
 				FC7A91B5E09AE943709014E3 /* Pods-Fokus.debug.xcconfig */,
 				CCF6B459E7323D60CB578BF2 /* Pods-Fokus.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -133,7 +132,7 @@
 				};
 			};
 			buildConfigurationList = 955A2FA82912A7F300513D8E /* Build configuration list for PBXProject "Fokus" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
