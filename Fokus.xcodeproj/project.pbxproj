@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3EEAD704CF702BD45A4B8D16 /* Pods_Fokus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF241316042AB47065B50CF /* Pods_Fokus.framework */; };
+		952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13B292521EE00767FDD /* ViewPreview.swift */; };
+		952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13C292521EE00767FDD /* ViewControllerPreview.swift */; };
+		952BA1432925224B00767FDD /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA1422925224B00767FDD /* DummyVC.swift */; };
+		952BA1462925227800767FDD /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA1452925227800767FDD /* TabBarVC.swift */; };
 		955A2FB12912A7F300513D8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB02912A7F300513D8E /* AppDelegate.swift */; };
 		955A2FB32912A7F300513D8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB22912A7F300513D8E /* SceneDelegate.swift */; };
-		955A2FB52912A7F300513D8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB42912A7F300513D8E /* ViewController.swift */; };
 		955A2FB82912A7F300513D8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A2FB62912A7F300513D8E /* Main.storyboard */; };
 		955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB92912A7F300513D8E /* Fokus.xcdatamodeld */; };
 		955A2FBD2912A7F400513D8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955A2FBC2912A7F400513D8E /* Assets.xcassets */; };
@@ -18,10 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		952BA13B292521EE00767FDD /* ViewPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPreview.swift; sourceTree = "<group>"; };
+		952BA13C292521EE00767FDD /* ViewControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
+		952BA1422925224B00767FDD /* DummyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyVC.swift; sourceTree = "<group>"; };
+		952BA1452925227800767FDD /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		955A2FAD2912A7F300513D8E /* Fokus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fokus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955A2FB02912A7F300513D8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		955A2FB22912A7F300513D8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		955A2FB42912A7F300513D8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		955A2FB72912A7F300513D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		955A2FBA2912A7F300513D8E /* Fokus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fokus.xcdatamodel; sourceTree = "<group>"; };
 		955A2FBC2912A7F400513D8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +67,158 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		952BA1322925213800767FDD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				955A2FB92912A7F300513D8E /* Fokus.xcdatamodeld */,
+				952BA1342925216000767FDD /* Models */,
+				952BA1332925214C00767FDD /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		952BA1332925214C00767FDD /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		952BA1342925216000767FDD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		952BA1352925216700767FDD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				952BA139292521AA00767FDD /* Constants */,
+				952BA13A292521EE00767FDD /* Preview SwiftUI */,
+				952BA1382925219800767FDD /* Others */,
+				952BA1372925218F00767FDD /* Extensions */,
+				952BA1362925218200767FDD /* Fonts */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		952BA1362925218200767FDD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		952BA1372925218F00767FDD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		952BA1382925219800767FDD /* Others */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		952BA139292521AA00767FDD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		952BA13A292521EE00767FDD /* Preview SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				952BA13B292521EE00767FDD /* ViewPreview.swift */,
+				952BA13C292521EE00767FDD /* ViewControllerPreview.swift */,
+			);
+			name = "Preview SwiftUI";
+			path = "Fokus/Helpers/Preview SwiftUI";
+			sourceTree = SOURCE_ROOT;
+		};
+		952BA13F2925220800767FDD /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				952BA1402925221500767FDD /* General */,
+				952BA1442925225A00767FDD /* EPIC_NAME */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		952BA1402925221500767FDD /* General */ = {
+			isa = PBXGroup;
+			children = (
+				952BA1452925227800767FDD /* TabBarVC.swift */,
+				952BA1422925224B00767FDD /* DummyVC.swift */,
+				952BA1412925222300767FDD /* Components */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		952BA1412925222300767FDD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		952BA1442925225A00767FDD /* EPIC_NAME */ = {
+			isa = PBXGroup;
+			children = (
+				952BA1482925229C00767FDD /* Protocols */,
+				952BA1472925228F00767FDD /* Controllers */,
+				952BA14B2925230900767FDD /* ViewModels */,
+				952BA149292522A500767FDD /* Components */,
+			);
+			path = EPIC_NAME;
+			sourceTree = "<group>";
+		};
+		952BA1472925228F00767FDD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		952BA1482925229C00767FDD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		952BA149292522A500767FDD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		952BA14A292522CB00767FDD /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				955A2FB02912A7F300513D8E /* AppDelegate.swift */,
+				955A2FB22912A7F300513D8E /* SceneDelegate.swift */,
+				955A2FBC2912A7F400513D8E /* Assets.xcassets */,
+				955A2FB62912A7F300513D8E /* Main.storyboard */,
+				955A2FBE2912A7F400513D8E /* LaunchScreen.storyboard */,
+				955A2FC12912A7F400513D8E /* Info.plist */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		952BA14B2925230900767FDD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		955A2FA42912A7F300513D8E = {
 			isa = PBXGroup;
 			children = (
@@ -82,14 +240,10 @@
 		955A2FAF2912A7F300513D8E /* Fokus */ = {
 			isa = PBXGroup;
 			children = (
-				955A2FB02912A7F300513D8E /* AppDelegate.swift */,
-				955A2FB22912A7F300513D8E /* SceneDelegate.swift */,
-				955A2FB42912A7F300513D8E /* ViewController.swift */,
-				955A2FB62912A7F300513D8E /* Main.storyboard */,
-				955A2FBC2912A7F400513D8E /* Assets.xcassets */,
-				955A2FBE2912A7F400513D8E /* LaunchScreen.storyboard */,
-				955A2FC12912A7F400513D8E /* Info.plist */,
-				955A2FB92912A7F300513D8E /* Fokus.xcdatamodeld */,
+				952BA14A292522CB00767FDD /* Misc */,
+				952BA1322925213800767FDD /* Data */,
+				952BA13F2925220800767FDD /* Presentation */,
+				952BA1352925216700767FDD /* Helpers */,
 			);
 			path = Fokus;
 			sourceTree = "<group>";
@@ -209,8 +363,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				955A2FB52912A7F300513D8E /* ViewController.swift in Sources */,
+				952BA1462925227800767FDD /* TabBarVC.swift in Sources */,
 				955A2FB12912A7F300513D8E /* AppDelegate.swift in Sources */,
+				952BA1432925224B00767FDD /* DummyVC.swift in Sources */,
+				952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */,
+				952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */,
 				955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */,
 				955A2FB32912A7F300513D8E /* SceneDelegate.swift in Sources */,
 			);
