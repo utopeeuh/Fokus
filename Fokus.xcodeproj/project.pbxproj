@@ -202,12 +202,6 @@
 		952BA14A292522CB00767FDD /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				955A2FB02912A7F300513D8E /* AppDelegate.swift */,
-				955A2FB22912A7F300513D8E /* SceneDelegate.swift */,
-				955A2FBC2912A7F400513D8E /* Assets.xcassets */,
-				955A2FB62912A7F300513D8E /* Main.storyboard */,
-				955A2FBE2912A7F400513D8E /* LaunchScreen.storyboard */,
-				955A2FC12912A7F400513D8E /* Info.plist */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -240,6 +234,12 @@
 		955A2FAF2912A7F300513D8E /* Fokus */ = {
 			isa = PBXGroup;
 			children = (
+				955A2FB02912A7F300513D8E /* AppDelegate.swift */,
+				955A2FB22912A7F300513D8E /* SceneDelegate.swift */,
+				955A2FBC2912A7F400513D8E /* Assets.xcassets */,
+				955A2FB62912A7F300513D8E /* Main.storyboard */,
+				955A2FBE2912A7F400513D8E /* LaunchScreen.storyboard */,
+				955A2FC12912A7F400513D8E /* Info.plist */,
 				952BA14A292522CB00767FDD /* Misc */,
 				952BA1322925213800767FDD /* Data */,
 				952BA13F2925220800767FDD /* Presentation */,
