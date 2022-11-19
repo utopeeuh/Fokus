@@ -10,6 +10,8 @@
 		3EEAD704CF702BD45A4B8D16 /* Pods_Fokus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF241316042AB47065B50CF /* Pods_Fokus.framework */; };
 		95059FA02928D689002D97D1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059F9F2928D689002D97D1 /* Colors.swift */; };
 		95059FA22928D83B002D97D1 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059FA12928D83B002D97D1 /* Font.swift */; };
+		95059FA52928E6D0002D97D1 /* AtkinsonHyperlegible-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95059FA42928D8AF002D97D1 /* AtkinsonHyperlegible-Regular.ttf */; };
+		95059FA62928E6D3002D97D1 /* AtkinsonHyperlegible-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95059FA32928D8AF002D97D1 /* AtkinsonHyperlegible-Bold.ttf */; };
 		952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13B292521EE00767FDD /* ViewPreview.swift */; };
 		952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13C292521EE00767FDD /* ViewControllerPreview.swift */; };
 		952BA1432925224B00767FDD /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA1422925224B00767FDD /* DummyVC.swift */; };
@@ -318,9 +320,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95059FA52928E6D0002D97D1 /* AtkinsonHyperlegible-Regular.ttf in Resources */,
 				955A2FC02912A7F400513D8E /* LaunchScreen.storyboard in Resources */,
 				955A2FBD2912A7F400513D8E /* Assets.xcassets in Resources */,
 				955A2FB82912A7F300513D8E /* Main.storyboard in Resources */,
+				95059FA62928E6D3002D97D1 /* AtkinsonHyperlegible-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
