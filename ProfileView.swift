@@ -24,7 +24,7 @@ class ProfileView: UIView {
         let name = UILabel()
         name.text = "Hi, Fachry ☺️"
         name.textColor = .white
-        name.font = UIFont.systemFont(ofSize: 17)
+        name.font = .atkinsonBold(size: 17)
         
         return name
         
@@ -35,7 +35,7 @@ class ProfileView: UIView {
         
         label.text = "Level 3"
         label.textColor = .darkTurq
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.font = .atkinsonBold(size: 17)
         
         return label
     }()
@@ -63,7 +63,7 @@ class ProfileView: UIView {
         text.append(NSAttributedString(string: " / 1000 xp", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkTurq]))
         
         label.attributedText = text
-        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        label.font = .atkinsonRegular(size: 12)
         
         return label
     }()
