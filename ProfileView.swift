@@ -24,7 +24,7 @@ class ProfileView: UIView {
         let name = UILabel()
         name.text = "Hi, Fachry ☺️"
         name.textColor = .white
-        name.font = .atkinsonBold(size: 17)
+        name.font = .atkinsonBold(size: 24)
         
         return name
         
@@ -35,7 +35,7 @@ class ProfileView: UIView {
         
         label.text = "Level 3"
         label.textColor = .darkTurq
-        label.font = .atkinsonBold(size: 17)
+        label.font = .atkinsonBold(size: 18)
         
         return label
     }()
@@ -63,7 +63,7 @@ class ProfileView: UIView {
         text.append(NSAttributedString(string: " / 1000 xp", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkTurq]))
         
         label.attributedText = text
-        label.font = .atkinsonRegular(size: 12)
+        label.font = .atkinsonRegular(size: 16)
         
         return label
     }()
@@ -124,7 +124,7 @@ class ProfileView: UIView {
         progressBar.snp.makeConstraints { make in
             make.left.equalToSuperview()
             make.top.equalTo(levelLabel.snp.bottom).offset(8)
-            make.height.equalTo(8)
+            make.height.equalTo(4)
             make.right.equalToSuperview().offset(-16)
         }
         
