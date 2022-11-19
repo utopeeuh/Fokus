@@ -1,20 +1,24 @@
 PODS:
   - SnapKit (5.6.0)
   - SwiftyJSON (4.3.0)
+  - TTGTagCollectionView (2.3.0)
 
 DEPENDENCIES:
   - SnapKit (~> 5.6)
   - SwiftyJSON (~> 4.0)
+  - TTGTagCollectionView
 
 SPEC REPOS:
   trunk:
     - SnapKit
     - SwiftyJSON
+    - TTGTagCollectionView
 
 SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  TTGTagCollectionView: 4104f93281097eae5adbf4444811e32f5e52dc95
 
-PODFILE CHECKSUM: 340d338eddbd8f48554a0e7bc3d0de4864d16a4d
+PODFILE CHECKSUM: 0ffa9767fa5a2f8c9f39c0cd7b8b09dfbf6b60e1
 
 COCOAPODS: 1.11.3
