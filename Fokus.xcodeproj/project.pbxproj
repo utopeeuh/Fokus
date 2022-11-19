@@ -22,6 +22,7 @@
 		955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB92912A7F300513D8E /* Fokus.xcdatamodeld */; };
 		955A2FBD2912A7F400513D8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955A2FBC2912A7F400513D8E /* Assets.xcassets */; };
 		955A2FC02912A7F400513D8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A2FBE2912A7F400513D8E /* LaunchScreen.storyboard */; };
+		B6CEE0942928DC9A00C04532 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CEE0932928DC9A00C04532 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		955A2FBF2912A7F400513D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955A2FC12912A7F400513D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACF241316042AB47065B50CF /* Pods_Fokus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fokus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6CEE0932928DC9A00C04532 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		CCF6B459E7323D60CB578BF2 /* Pods-Fokus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fokus.release.xcconfig"; path = "Target Support Files/Pods-Fokus/Pods-Fokus.release.xcconfig"; sourceTree = "<group>"; };
 		FC7A91B5E09AE943709014E3 /* Pods-Fokus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fokus.debug.xcconfig"; path = "Target Support Files/Pods-Fokus/Pods-Fokus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				952BA1402925221500767FDD /* General */,
-				952BA1442925225A00767FDD /* EPIC_NAME */,
+				952BA1442925225A00767FDD /* Home */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -179,7 +181,7 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		952BA1442925225A00767FDD /* EPIC_NAME */ = {
+		952BA1442925225A00767FDD /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				952BA1482925229C00767FDD /* Protocols */,
@@ -187,7 +189,7 @@
 				952BA14B2925230900767FDD /* ViewModels */,
 				952BA149292522A500767FDD /* Components */,
 			);
-			path = EPIC_NAME;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		952BA1472925228F00767FDD /* Controllers */ = {
@@ -207,6 +209,7 @@
 		952BA149292522A500767FDD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B6CEE0932928DC9A00C04532 /* ProfileView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 			files = (
 				952BA1462925227800767FDD /* TabBarVC.swift in Sources */,
 				95059FA02928D689002D97D1 /* Colors.swift in Sources */,
+				B6CEE0942928DC9A00C04532 /* ProfileView.swift in Sources */,
 				955A2FB12912A7F300513D8E /* AppDelegate.swift in Sources */,
 				952BA1432925224B00767FDD /* DummyVC.swift in Sources */,
 				952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */,
