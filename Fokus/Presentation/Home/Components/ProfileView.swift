@@ -13,7 +13,6 @@ class ProfileView: UIView {
     let badgePlaceholder: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(hexString: "#1b1b1b")
-        view.layer.borderWidth = 1
         view.layer.cornerRadius = 50
         view.clipsToBounds = true
         return view
@@ -59,8 +58,8 @@ class ProfileView: UIView {
 //        label.textColor = .darkTurq
         
         let text = NSMutableAttributedString()
-        text.append(NSAttributedString(string: "123 ", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]));
-        text.append(NSAttributedString(string: " / 1000 xp", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkTurq]))
+        text.append(NSAttributedString(string: "123", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]));
+        text.append(NSAttributedString(string: "/1000 xp", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkTurq]))
         
         label.attributedText = text
         label.font = .atkinsonRegular(size: 16)
@@ -69,21 +68,12 @@ class ProfileView: UIView {
     }()
 
     
-    let profileSectionView: UIView = {
-        let view = UIView()
-        
-        view.backgroundColor = .red
-                
-        return view
-    }()
+    let profileSectionView = UIView()
     
-    public let width = 100
-    public let height = 300
+    public let height = 128
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.layer.borderWidth = 1
-//        self.layer.borderColor = UIColor.white.cgColor
         
         addSubview(badgePlaceholder)
         profileSectionView.addSubview(userName)
@@ -108,8 +98,9 @@ class ProfileView: UIView {
         
         profileSectionView.snp.makeConstraints { make in
             make.left.equalTo(badgePlaceholder.snp.right).offset(20)
-            make.right.equalToSuperview()
-            make.top.equalTo(30)
+            make.centerY.equalToSuperview()
+            make.height.equalTo(100)
+            make.width.equalTo(191)
         }
         
         userName.snp.makeConstraints { make in
