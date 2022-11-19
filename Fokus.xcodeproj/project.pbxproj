@@ -12,6 +12,7 @@
 		95059FA22928D83B002D97D1 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059FA12928D83B002D97D1 /* Font.swift */; };
 		95059FA52928E6D0002D97D1 /* AtkinsonHyperlegible-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95059FA42928D8AF002D97D1 /* AtkinsonHyperlegible-Regular.ttf */; };
 		95059FA62928E6D3002D97D1 /* AtkinsonHyperlegible-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95059FA32928D8AF002D97D1 /* AtkinsonHyperlegible-Bold.ttf */; };
+		9513AFBC29295ECE00415C8B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9513AFBB29295ECE00415C8B /* HomeVC.swift */; };
 		952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13B292521EE00767FDD /* ViewPreview.swift */; };
 		952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13C292521EE00767FDD /* ViewControllerPreview.swift */; };
 		952BA1432925224B00767FDD /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA1422925224B00767FDD /* DummyVC.swift */; };
@@ -24,10 +25,6 @@
 		955A2FC02912A7F400513D8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A2FBE2912A7F400513D8E /* LaunchScreen.storyboard */; };
 		B6CEE0942928DC9A00C04532 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CEE0932928DC9A00C04532 /* ProfileView.swift */; };
 		F9CB5DA82928EB52003C6371 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CB5DA72928EB52003C6371 /* TaskListCell.swift */; };
-		F9CB5DAB2928EBB9003C6371 /* TesTableHomeDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CB5DAA2928EBB9003C6371 /* TesTableHomeDummy.swift */; };
-		B6CEE0942928DC9A00C04532 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CEE0932928DC9A00C04532 /* ProfileView.swift */; };
-		F9CB5DA82928EB52003C6371 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CB5DA72928EB52003C6371 /* TaskListCell.swift */; };
-		F9CB5DAB2928EBB9003C6371 /* TesTableHomeDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CB5DAA2928EBB9003C6371 /* TesTableHomeDummy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +32,7 @@
 		95059FA12928D83B002D97D1 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		95059FA32928D8AF002D97D1 /* AtkinsonHyperlegible-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AtkinsonHyperlegible-Bold.ttf"; sourceTree = "<group>"; };
 		95059FA42928D8AF002D97D1 /* AtkinsonHyperlegible-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AtkinsonHyperlegible-Regular.ttf"; sourceTree = "<group>"; };
+		9513AFBB29295ECE00415C8B /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		952BA13B292521EE00767FDD /* ViewPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPreview.swift; sourceTree = "<group>"; };
 		952BA13C292521EE00767FDD /* ViewControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
 		952BA1422925224B00767FDD /* DummyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyVC.swift; sourceTree = "<group>"; };
@@ -48,10 +46,9 @@
 		955A2FBF2912A7F400513D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955A2FC12912A7F400513D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACF241316042AB47065B50CF /* Pods_Fokus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fokus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6CEE0932928DC9A00C04532 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = SOURCE_ROOT; };
+		B6CEE0932928DC9A00C04532 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Fokus/Presentation/Home/Components/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		CCF6B459E7323D60CB578BF2 /* Pods-Fokus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fokus.release.xcconfig"; path = "Target Support Files/Pods-Fokus/Pods-Fokus.release.xcconfig"; sourceTree = "<group>"; };
 		F9CB5DA72928EB52003C6371 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
-		F9CB5DAA2928EBB9003C6371 /* TesTableHomeDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesTableHomeDummy.swift; sourceTree = "<group>"; };
 		FC7A91B5E09AE943709014E3 /* Pods-Fokus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fokus.debug.xcconfig"; path = "Target Support Files/Pods-Fokus/Pods-Fokus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +79,32 @@
 				ACF241316042AB47065B50CF /* Pods_Fokus.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9513AFB829295E8500415C8B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9513AFBA29295EA700415C8B /* Components */,
+				9513AFB929295E9A00415C8B /* Controllers */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9513AFB929295E9A00415C8B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9513AFBB29295ECE00415C8B /* HomeVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9513AFBA29295EA700415C8B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F9CB5DA72928EB52003C6371 /* TaskListCell.swift */,
+				B6CEE0932928DC9A00C04532 /* ProfileView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		952BA1322925213800767FDD /* Data */ = {
@@ -166,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				952BA1402925221500767FDD /* General */,
-				952BA1442925225A00767FDD /* Home */,
+				9513AFB829295E8500415C8B /* Home */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -177,8 +200,6 @@
 				952BA1452925227800767FDD /* TabBarVC.swift */,
 				952BA1422925224B00767FDD /* DummyVC.swift */,
 				952BA1412925222300767FDD /* Components */,
-				F9CB5DA72928EB52003C6371 /* TaskListCell.swift */,
-				F9CB5DAA2928EBB9003C6371 /* TesTableHomeDummy.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -190,51 +211,11 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		952BA1442925225A00767FDD /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				952BA1482925229C00767FDD /* Protocols */,
-				952BA1472925228F00767FDD /* Controllers */,
-				952BA14B2925230900767FDD /* ViewModels */,
-				952BA149292522A500767FDD /* Components */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		952BA1472925228F00767FDD /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		952BA1482925229C00767FDD /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		952BA149292522A500767FDD /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				B6CEE0932928DC9A00C04532 /* ProfileView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		952BA14A292522CB00767FDD /* Misc */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Misc;
-			sourceTree = "<group>";
-		};
-		952BA14B2925230900767FDD /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		955A2FA42912A7F300513D8E = {
@@ -396,9 +377,9 @@
 				952BA1432925224B00767FDD /* DummyVC.swift in Sources */,
 				952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */,
 				F9CB5DA82928EB52003C6371 /* TaskListCell.swift in Sources */,
-				F9CB5DAB2928EBB9003C6371 /* TesTableHomeDummy.swift in Sources */,
 				95059FA22928D83B002D97D1 /* Font.swift in Sources */,
 				952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */,
+				9513AFBC29295ECE00415C8B /* HomeVC.swift in Sources */,
 				955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */,
 				955A2FB32912A7F300513D8E /* SceneDelegate.swift in Sources */,
 			);

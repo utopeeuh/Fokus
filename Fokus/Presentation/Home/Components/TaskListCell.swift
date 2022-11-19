@@ -30,7 +30,7 @@ class TaskListCell: UITableViewCell {
         super.init(style: .value1, reuseIdentifier: "TaskListCell")
         backgroundColor = .clear
         
-        containerList.backgroundColor = .blackFokus
+        containerList.backgroundColor = .darkGrey
         containerList.layer.cornerRadius = 8
         
         titleTask.text = "Lorem ipsum dolor sit jamet"
