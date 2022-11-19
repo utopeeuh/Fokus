@@ -49,7 +49,6 @@ class DummyVC: UIViewController {
         view.addSubview(button)
         
         view.backgroundColor = .systemBackground
-        view.addSubview(profileTest)
         
 //        view.addSubview(homeFeedTable)
 //
