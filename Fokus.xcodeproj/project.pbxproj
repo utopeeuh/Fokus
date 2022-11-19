@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3EEAD704CF702BD45A4B8D16 /* Pods_Fokus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF241316042AB47065B50CF /* Pods_Fokus.framework */; };
+		95059FA02928D689002D97D1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059F9F2928D689002D97D1 /* Colors.swift */; };
+		95059FA22928D83B002D97D1 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059FA12928D83B002D97D1 /* Font.swift */; };
 		952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13B292521EE00767FDD /* ViewPreview.swift */; };
 		952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13C292521EE00767FDD /* ViewControllerPreview.swift */; };
 		952BA1432925224B00767FDD /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA1422925224B00767FDD /* DummyVC.swift */; };
@@ -21,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95059F9F2928D689002D97D1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		95059FA12928D83B002D97D1 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		95059FA32928D8AF002D97D1 /* AtkinsonHyperlegible-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AtkinsonHyperlegible-Bold.ttf"; sourceTree = "<group>"; };
+		95059FA42928D8AF002D97D1 /* AtkinsonHyperlegible-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AtkinsonHyperlegible-Regular.ttf"; sourceTree = "<group>"; };
 		952BA13B292521EE00767FDD /* ViewPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPreview.swift; sourceTree = "<group>"; };
 		952BA13C292521EE00767FDD /* ViewControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
 		952BA1422925224B00767FDD /* DummyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyVC.swift; sourceTree = "<group>"; };
@@ -96,7 +102,7 @@
 			children = (
 				952BA139292521AA00767FDD /* Constants */,
 				952BA13A292521EE00767FDD /* Preview SwiftUI */,
-				952BA1382925219800767FDD /* Others */,
+				952BA1382925219800767FDD /* Assets */,
 				952BA1372925218F00767FDD /* Extensions */,
 				952BA1362925218200767FDD /* Fonts */,
 			);
@@ -117,16 +123,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		952BA1382925219800767FDD /* Others */ = {
+		952BA1382925219800767FDD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				95059FA32928D8AF002D97D1 /* AtkinsonHyperlegible-Bold.ttf */,
+				95059FA42928D8AF002D97D1 /* AtkinsonHyperlegible-Regular.ttf */,
 			);
-			path = Others;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		952BA139292521AA00767FDD /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				95059F9F2928D689002D97D1 /* Colors.swift */,
+				95059FA12928D83B002D97D1 /* Font.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -364,9 +374,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				952BA1462925227800767FDD /* TabBarVC.swift in Sources */,
+				95059FA02928D689002D97D1 /* Colors.swift in Sources */,
 				955A2FB12912A7F300513D8E /* AppDelegate.swift in Sources */,
 				952BA1432925224B00767FDD /* DummyVC.swift in Sources */,
 				952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */,
+				95059FA22928D83B002D97D1 /* Font.swift in Sources */,
 				952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */,
 				955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */,
 				955A2FB32912A7F300513D8E /* SceneDelegate.swift in Sources */,
