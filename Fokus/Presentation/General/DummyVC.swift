@@ -11,6 +11,10 @@ import SnapKit
 class DummyVC: UIViewController {
         
     let profileTest = ProfileView()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
