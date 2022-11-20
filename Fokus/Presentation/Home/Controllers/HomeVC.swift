@@ -23,6 +23,23 @@ class HomeVC: UIViewController {
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         return tableView
     }()
+    
+    private let titleListContainer: UILabel = {
+        let title = UILabel()
+        title.text = "Your tasks ✏️"
+        title.font = .atkinsonRegular(size: 24)
+        return title
+    }()
+    
+    private let btnAddNewTask: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Add new task 📝", for: .normal)
+        btn.layer.borderWidth = 1
+        btn.layer.borderColor = UIColor.turq.cgColor
+        btn.layer.cornerRadius = 8
+        btn.setTitleColor(.turq, for: .normal)
+        return btn
+    }()
 
     override func viewWillAppear(_ animated: Bool){
         navigationController?.navigationBar.isHidden = true
@@ -39,6 +56,8 @@ class HomeVC: UIViewController {
         
         view.addSubview(homeFeedTable)
         view.addSubview(profileView)
+        view.addSubview(titleListContainer)
+        view.addSubview(btnAddNewTask)
         
         configureConstraints()
     }
@@ -59,11 +78,24 @@ class HomeVC: UIViewController {
             make.width.equalToSuperview().offset(-40)
         }
         
+        titleListContainer.snp.makeConstraints { make in
+            make.top.equalTo(profileView.snp.bottom).offset(20)
+            make.width.equalToSuperview().offset(-40)
+            make.centerX.equalToSuperview()
+        }
+        
         homeFeedTable.snp.makeConstraints { make in
             make.height.equalTo(data.count*100)
-            make.top.equalTo(profileView.snp.bottom).offset(20)
+            make.top.equalTo(titleListContainer.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().offset(-40)
+        }
+        
+        btnAddNewTask.snp.makeConstraints { make in
+            make.top.equalTo(homeFeedTable.snp.bottom).offset(20)
+            make.width.equalToSuperview().offset(-40)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(60)
         }
     }
     
