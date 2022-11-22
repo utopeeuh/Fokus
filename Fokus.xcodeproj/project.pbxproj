@@ -17,6 +17,9 @@
 		952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13C292521EE00767FDD /* ViewControllerPreview.swift */; };
 		952BA1432925224B00767FDD /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA1422925224B00767FDD /* DummyVC.swift */; };
 		952BA1462925227800767FDD /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA1452925227800767FDD /* TabBarVC.swift */; };
+		952BF7EE292CF2BF00D924A8 /* OptionsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BF7ED292CF2BE00D924A8 /* OptionsCollectionView.swift */; };
+		952BF7F0292D00A500D924A8 /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BF7EF292D00A500D924A8 /* OptionButton.swift */; };
+		952BF7F2292D060A00D924A8 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BF7F1292D060A00D924A8 /* CounterView.swift */; };
 		955A2FB12912A7F300513D8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB02912A7F300513D8E /* AppDelegate.swift */; };
 		955A2FB32912A7F300513D8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB22912A7F300513D8E /* SceneDelegate.swift */; };
 		955A2FB82912A7F300513D8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A2FB62912A7F300513D8E /* Main.storyboard */; };
@@ -37,6 +40,9 @@
 		952BA13C292521EE00767FDD /* ViewControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
 		952BA1422925224B00767FDD /* DummyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyVC.swift; sourceTree = "<group>"; };
 		952BA1452925227800767FDD /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		952BF7ED292CF2BE00D924A8 /* OptionsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsCollectionView.swift; sourceTree = "<group>"; };
+		952BF7EF292D00A500D924A8 /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
+		952BF7F1292D060A00D924A8 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		955A2FAD2912A7F300513D8E /* Fokus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fokus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955A2FB02912A7F300513D8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		955A2FB22912A7F300513D8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				952BA1402925221500767FDD /* General */,
+				952BF7EB292CF2BE00D924A8 /* Create Task */,
 				9513AFB829295E8500415C8B /* Home */,
 			);
 			path = Presentation;
@@ -216,6 +223,24 @@
 			children = (
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		952BF7EB292CF2BE00D924A8 /* Create Task */ = {
+			isa = PBXGroup;
+			children = (
+				952BF7EC292CF2BE00D924A8 /* Components */,
+			);
+			path = "Create Task";
+			sourceTree = "<group>";
+		};
+		952BF7EC292CF2BE00D924A8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				952BF7ED292CF2BE00D924A8 /* OptionsCollectionView.swift */,
+				952BF7EF292D00A500D924A8 /* OptionButton.swift */,
+				952BF7F1292D060A00D924A8 /* CounterView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		955A2FA42912A7F300513D8E = {
@@ -378,10 +403,13 @@
 				952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */,
 				F9CB5DA82928EB52003C6371 /* TaskListCell.swift in Sources */,
 				95059FA22928D83B002D97D1 /* Font.swift in Sources */,
+				952BF7F0292D00A500D924A8 /* OptionButton.swift in Sources */,
 				952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */,
+				952BF7EE292CF2BF00D924A8 /* OptionsCollectionView.swift in Sources */,
 				9513AFBC29295ECE00415C8B /* HomeVC.swift in Sources */,
 				955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */,
 				955A2FB32912A7F300513D8E /* SceneDelegate.swift in Sources */,
+				952BF7F2292D060A00D924A8 /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
