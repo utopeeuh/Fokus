@@ -1,24 +1,24 @@
 PODS:
+  - DateTimePicker (2.5.3)
   - SnapKit (5.6.0)
   - SwiftyJSON (4.3.0)
-  - TTGTagCollectionView (2.3.0)
 
 DEPENDENCIES:
+  - DateTimePicker
   - SnapKit (~> 5.6)
   - SwiftyJSON (~> 4.0)
-  - TTGTagCollectionView
 
 SPEC REPOS:
   trunk:
+    - DateTimePicker
     - SnapKit
     - SwiftyJSON
-    - TTGTagCollectionView
 
 SPEC CHECKSUMS:
+  DateTimePicker: 52701ddf656a50856d3510955933f767cd2c947c
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
-  TTGTagCollectionView: 4104f93281097eae5adbf4444811e32f5e52dc95
 
-PODFILE CHECKSUM: 6d7a22caef67a71105f598df31aff12ef8e551bc
+PODFILE CHECKSUM: 9ced77fccec88d5cecfda613fdb65e3b2a4cbb7e
 
 COCOAPODS: 1.11.3

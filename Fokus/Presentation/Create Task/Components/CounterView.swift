@@ -75,7 +75,7 @@ class CounterView: UIView {
     private var minGesture : UITapGestureRecognizer!
     
     override init(frame: CGRect) {
-        super.init(frame: .zero)
+        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: height))
         
         self.isUserInteractionEnabled = true
         backgroundColor = .darkGrey
@@ -104,6 +104,9 @@ class CounterView: UIView {
     }
     
     func configureConstraints(){
+        self.snp.makeConstraints { make in
+            make.height.equalTo(height)
+        }
         
         minButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
