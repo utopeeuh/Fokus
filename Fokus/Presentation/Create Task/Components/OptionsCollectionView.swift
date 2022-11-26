@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import SnapKit
-import TTGTags
 
 class OptionsCollectionView: UIView {
     
@@ -19,12 +18,7 @@ class OptionsCollectionView: UIView {
     
     public let height = 76
     
-    private var titleLabel : UILabel = {
-        let label = UILabel()
-        label.font = .atkinsonRegular(size: 18)
-        label.textColor = .turq
-        return label
-    }()
+    private var titleLabel = SubHeadLabel(size: .large)
     
     let buttonStack : UIStackView = {
         let stack = UIStackView()
@@ -33,6 +27,19 @@ class OptionsCollectionView: UIView {
         return stack
     }()
     
+    
+    /**
+        Selects option with corresponding index
+    */
+    public var selectedIndex : Int? {
+        didSet {
+            didTapButton(buttonStack.arrangedSubviews[selectedIndex ?? 0] as! OptionButton)
+        }
+    }
+    
+    /**
+        Initialize collection view without any options.
+    */
     required init(title: String){
         super.init(frame: .zero)
     
@@ -44,6 +51,9 @@ class OptionsCollectionView: UIView {
         configureConstraints()
     }
     
+    /**
+        Initialize collection view with pre-defined options.
+    */
     required init(title: String, options: [String]){
         super.init(frame: .zero)
         
@@ -72,6 +82,13 @@ class OptionsCollectionView: UIView {
     }
     
     func configureConstraints(){
+        
+        frame = CGRect(x: 0, y: 0, width: 0, height: height)
+        
+        self.snp.makeConstraints { make in
+            make.height.equalTo(height)
+        }
+        
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.width.equalToSuperview()

@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import TTGTags
 
 class DummyVC: UIViewController {
 
@@ -18,6 +17,7 @@ class DummyVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blackFokus
+        
         durationTags = OptionsCollectionView(title: "Estimated Pomodoros", options: ["15:00","20:00","25:00","30:00"])
         
         whiteNoiseSection = OptionsCollectionView(title: "White Noise")

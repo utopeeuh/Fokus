@@ -24,7 +24,7 @@ class OptionButton: UIButton {
         layer.borderWidth = 1
         layer.cornerRadius = 8
         setTitleColor(.turq, for: .normal)
-        titleLabel!.font = .atkinsonRegular(size: 16)!
+        titleLabel!.font = .atkinsonRegular(size: .medium)!
         contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     }
     
@@ -34,7 +34,7 @@ class OptionButton: UIButton {
     
     func select(){
         backgroundColor = .turq
-        setTitleColor(.blackFokus, for: .normal)
+        setTitleColor(.whiteFokus, for: .normal)
     }
     
     func deselect(){

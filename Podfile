@@ -6,6 +6,6 @@ target 'Fokus' do
   # Pods for Fokus
   pod 'SnapKit', '~> 5.6'
   pod 'SwiftyJSON', '~> 4.0'
-  pod "TTGTagCollectionView"
+  pod 'DateTimePicker'
 #  pod 'CoreDataHelper'
 end
