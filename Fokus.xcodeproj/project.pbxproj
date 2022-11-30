@@ -30,6 +30,7 @@
 		95ECFECC2931F09200F5F334 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECB2931F09200F5F334 /* TitleTextField.swift */; };
 		95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */; };
 		95ECFED02931F20700F5F334 /* Font Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECF2931F20700F5F334 /* Font Size.swift */; };
+		B61D066929371D8400014475 /* PomodoroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61D066829371D8400014475 /* PomodoroViewController.swift */; };
 		B6CEE0942928DC9A00C04532 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CEE0932928DC9A00C04532 /* ProfileView.swift */; };
 		F9CB5DA82928EB52003C6371 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CB5DA72928EB52003C6371 /* TaskListCell.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeadLabel.swift; sourceTree = "<group>"; };
 		95ECFECF2931F20700F5F334 /* Font Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font Size.swift"; sourceTree = "<group>"; };
 		ACF241316042AB47065B50CF /* Pods_Fokus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fokus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61D066829371D8400014475 /* PomodoroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroViewController.swift; sourceTree = "<group>"; };
 		B6CEE0932928DC9A00C04532 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Fokus/Presentation/Home/Components/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		CCF6B459E7323D60CB578BF2 /* Pods-Fokus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fokus.release.xcconfig"; path = "Target Support Files/Pods-Fokus/Pods-Fokus.release.xcconfig"; sourceTree = "<group>"; };
 		F9CB5DA72928EB52003C6371 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		952BA13F2925220800767FDD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B61D066529371D3C00014475 /* Pomodoro */,
 				952BA1402925221500767FDD /* General */,
 				952BF7EB292CF2BE00D924A8 /* Create Task */,
 				9513AFB829295E8500415C8B /* Home */,
@@ -296,6 +299,30 @@
 				95ECFEC82931F02900F5F334 /* CreateTaskVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B61D066529371D3C00014475 /* Pomodoro */ = {
+			isa = PBXGroup;
+			children = (
+				B61D066729371D6E00014475 /* Components */,
+				B61D066629371D6700014475 /* Controller */,
+			);
+			path = Pomodoro;
+			sourceTree = "<group>";
+		};
+		B61D066629371D6700014475 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B61D066829371D8400014475 /* PomodoroViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B61D066729371D6E00014475 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +459,7 @@
 				9513AFBC29295ECE00415C8B /* HomeVC.swift in Sources */,
 				955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */,
 				95ECFEC92931F02900F5F334 /* CreateTaskVC.swift in Sources */,
+				B61D066929371D8400014475 /* PomodoroViewController.swift in Sources */,
 				955A2FB32912A7F300513D8E /* SceneDelegate.swift in Sources */,
 				952BF7F2292D060A00D924A8 /* CounterView.swift in Sources */,
 			);

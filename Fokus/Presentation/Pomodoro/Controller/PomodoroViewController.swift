@@ -1,14 +1,14 @@
 //
-//  DummyVC.swift
+//  PomodoroViewController.swift
 //  Fokus
 //
-//  Created by Tb. Daffa Amadeo Zhafrana on 16/11/22.
+//  Created by fachry adhitya on 30/11/22.
 //
 
 import UIKit
 import SnapKit
 
-class DummyVC: UIViewController {
+class PomodoroViewController: UIViewController {
     
     var muteOrUnmuteSymbol = String("unmuteVolumeLogo")
     
@@ -24,8 +24,8 @@ class DummyVC: UIViewController {
     
     let pomodoroContainer: UIView = {
         let ctx = UIView()
-//        ctx.layer.borderColor = UIColor.red.cgColor
-//        ctx.layer.borderWidth = 1
+        //        ctx.layer.borderColor = UIColor.red.cgColor
+        //        ctx.layer.borderWidth = 1
         return ctx;
     }()
     
@@ -133,8 +133,9 @@ class DummyVC: UIViewController {
         
         muteSymbol.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-//            make.width.equalToSuperview()
+            //            make.width.equalToSuperview()
             make.top.equalTo(pomodoroContainer.snp.bottom).offset(280)
         }
     }
+    
 }
