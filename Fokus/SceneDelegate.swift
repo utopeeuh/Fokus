@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         let nav : UINavigationController
-        nav = UINavigationController(rootViewController: DetailTaskVC())
+        nav = UINavigationController(rootViewController: PomodoroVC())
         
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
