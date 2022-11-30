@@ -1,14 +1,14 @@
 //
-//  DummyVC.swift
+//  DetailTaskVC.swift
 //  Fokus
 //
-//  Created by Tb. Daffa Amadeo Zhafrana on 16/11/22.
+//  Created by Firzha Ardhia Ramadhan on 30/11/22.
 //
 
 import UIKit
 import SnapKit
 
-class DummyVC: UIViewController {
+class DetailTaskVC: UIViewController {
     
     private let pomodoroCycle = PomodoroDetail(title: "Pomodoros", value: "4 Cycles")
     private let workDuration = PomodoroDetail(title: "Work", value: "20:00")
@@ -65,6 +65,7 @@ class DummyVC: UIViewController {
         return title
     }()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blackFokus
@@ -85,6 +86,7 @@ class DummyVC: UIViewController {
 
         
         configureConstraints()
+        // Do any additional setup after loading the view.
     }
     
     func configureConstraints(){
@@ -153,5 +155,5 @@ class DummyVC: UIViewController {
     @objc func onClickDoneTask () {
         
     }
-    
+
 }
