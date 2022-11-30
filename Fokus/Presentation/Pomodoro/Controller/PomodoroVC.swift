@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class PomodoroViewController: UIViewController {
+class PomodoroVC: UIViewController {
     
     var muteOrUnmuteSymbol = String("unmuteVolumeLogo")
     
@@ -75,6 +75,8 @@ class PomodoroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .blackFokus
+
         view.addSubview(pomodoroPhase)
         
         pomodoroContainer.addSubview(pomodoroLabel)

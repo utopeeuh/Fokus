@@ -75,6 +75,7 @@ class DummyVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(hexString: "#171717")
         view.addSubview(pomodoroPhase)
         
         pomodoroContainer.addSubview(pomodoroLabel)
