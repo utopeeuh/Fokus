@@ -42,7 +42,8 @@ class HomeVC: UIViewController {
     }()
 
     override func viewWillAppear(_ animated: Bool){
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.isNavigationBarHidden = true
+        tabBarController?.tabBar.isHidden = false
     }
 
     override func viewDidLoad() {
@@ -53,6 +54,8 @@ class HomeVC: UIViewController {
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
         homeFeedTable.reloadData()
+        
+        btnAddNewTask.addTarget(self, action: #selector(addTaskOnClick), for: .touchUpInside)
         
         view.addSubview(homeFeedTable)
         view.addSubview(profileView)
@@ -72,7 +75,7 @@ class HomeVC: UIViewController {
 //        }
 //
         profileView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.top.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(profileView.height)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().offset(-40)
@@ -97,6 +100,11 @@ class HomeVC: UIViewController {
             make.centerX.equalToSuperview()
             make.height.equalTo(60)
         }
+    }
+    
+    @objc func addTaskOnClick(){
+        let controller = CreateTaskVC()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }

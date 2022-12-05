@@ -19,7 +19,14 @@ class CounterView: UIView {
     
     public let height : CGFloat = 134
     
-    private var counter = 4
+    public var counter : Int = 4 {
+        didSet {
+            if counter < 1 {
+                counter = 1
+            }
+            numberLabel.text = String(counter)
+        }
+    }
     
     private let numberLabel : UILabel = {
         let label = UILabel()
@@ -131,7 +138,7 @@ class CounterView: UIView {
         }
     }
     
-    @objc func add(){
+    @objc private func add(){
         counter += 1
         if counter == 2 {
             minButton.addGestureRecognizer(minGesture)
@@ -144,7 +151,7 @@ class CounterView: UIView {
         numberLabel.text = String(describing: counter)
     }
     
-    @objc func min(){
+    @objc private func min(){
         counter -= 1
         if counter == 1 {
             minButton.removeGestureRecognizer(minGesture)

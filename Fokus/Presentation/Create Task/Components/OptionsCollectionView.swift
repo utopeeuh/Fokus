@@ -14,7 +14,7 @@ class OptionsCollectionView: UIView {
     private var title: String!
     private var source: [String] = []
     
-    public var selectedOption : String?
+    public var selectedOption = ""
     
     public let height = 76
     
@@ -109,7 +109,7 @@ class OptionsCollectionView: UIView {
     
     @objc func didTapButton(_ sender: OptionButton){
         sender.select()
-        selectedOption = sender.titleLabel?.text
+        selectedOption = (sender.titleLabel?.text)!
         
         buttonStack.arrangedSubviews.forEach { view in
             if (view as! OptionButton) != sender {

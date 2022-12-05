@@ -26,6 +26,11 @@
 		955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB92912A7F300513D8E /* Fokus.xcdatamodeld */; };
 		955A2FBD2912A7F400513D8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955A2FBC2912A7F400513D8E /* Assets.xcassets */; };
 		955A2FC02912A7F400513D8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A2FBE2912A7F400513D8E /* LaunchScreen.storyboard */; };
+		958B0F53293D69F1006A19E4 /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F52293D69F1006A19E4 /* Navbar.swift */; };
+		958B0F55293D778F006A19E4 /* UIWindow+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F54293D778F006A19E4 /* UIWindow+TopViewController.swift */; };
+		958B0F6A293D7F22006A19E4 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F69293D7F22006A19E4 /* TaskModel.swift */; };
+		958B0F6E293D81EA006A19E4 /* CreateTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */; };
+		958B0F70293D8791006A19E4 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F6F293D8791006A19E4 /* TaskRepository.swift */; };
 		95ECFEC92931F02900F5F334 /* CreateTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFEC82931F02900F5F334 /* CreateTaskVC.swift */; };
 		95ECFECC2931F09200F5F334 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECB2931F09200F5F334 /* TitleTextField.swift */; };
 		95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */; };
@@ -58,6 +63,11 @@
 		955A2FBC2912A7F400513D8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		955A2FBF2912A7F400513D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955A2FC12912A7F400513D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		958B0F52293D69F1006A19E4 /* Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
+		958B0F54293D778F006A19E4 /* UIWindow+TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIWindow+TopViewController.swift"; path = "Fokus/Presentation/General/Components/UIWindow+TopViewController.swift"; sourceTree = SOURCE_ROOT; };
+		958B0F69293D7F22006A19E4 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskModel.swift; path = Fokus/Presentation/General/Components/TaskModel.swift; sourceTree = SOURCE_ROOT; };
+		958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewModel.swift; sourceTree = "<group>"; };
+		958B0F6F293D8791006A19E4 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskRepository.swift; path = "Fokus/Presentation/Create Task/ViewModels/TaskRepository.swift"; sourceTree = SOURCE_ROOT; };
 		95ECFEC82931F02900F5F334 /* CreateTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskVC.swift; sourceTree = "<group>"; };
 		95ECFECB2931F09200F5F334 /* TitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextField.swift; sourceTree = "<group>"; };
 		95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeadLabel.swift; sourceTree = "<group>"; };
@@ -140,6 +150,7 @@
 		952BA1332925214C00767FDD /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				958B0F6F293D8791006A19E4 /* TaskRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -147,6 +158,7 @@
 		952BA1342925216000767FDD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				958B0F69293D7F22006A19E4 /* TaskModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,21 +170,14 @@
 				952BA13A292521EE00767FDD /* Preview SwiftUI */,
 				952BA1382925219800767FDD /* Assets */,
 				952BA1372925218F00767FDD /* Extensions */,
-				952BA1362925218200767FDD /* Fonts */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		952BA1362925218200767FDD /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		952BA1372925218F00767FDD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				958B0F54293D778F006A19E4 /* UIWindow+TopViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,11 +214,11 @@
 		952BA13F2925220800767FDD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				B6D725EE2937245B00165A53 /* Pomodoro */,
-				F9BE0C3F29364FB6007529FB /* Detail Task */,
 				952BA1402925221500767FDD /* General */,
-				952BF7EB292CF2BE00D924A8 /* Create Task */,
 				9513AFB829295E8500415C8B /* Home */,
+				952BF7EB292CF2BE00D924A8 /* Create Task */,
+				F9BE0C3F29364FB6007529FB /* Detail Task */,
+				B6D725EE2937245B00165A53 /* Pomodoro */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -233,20 +238,15 @@
 			children = (
 				95ECFECB2931F09200F5F334 /* TitleTextField.swift */,
 				95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */,
+				958B0F52293D69F1006A19E4 /* Navbar.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		952BA14A292522CB00767FDD /* Misc */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Misc;
 			sourceTree = "<group>";
 		};
 		952BF7EB292CF2BE00D924A8 /* Create Task */ = {
 			isa = PBXGroup;
 			children = (
+				958B0F6C293D81DB006A19E4 /* ViewModels */,
 				95ECFECA2931F03000F5F334 /* Controllers */,
 				952BF7EC292CF2BE00D924A8 /* Components */,
 			);
@@ -290,12 +290,19 @@
 				955A2FB62912A7F300513D8E /* Main.storyboard */,
 				955A2FBE2912A7F400513D8E /* LaunchScreen.storyboard */,
 				955A2FC12912A7F400513D8E /* Info.plist */,
-				952BA14A292522CB00767FDD /* Misc */,
 				952BA1322925213800767FDD /* Data */,
 				952BA13F2925220800767FDD /* Presentation */,
 				952BA1352925216700767FDD /* Helpers */,
 			);
 			path = Fokus;
+			sourceTree = "<group>";
+		};
+		958B0F6C293D81DB006A19E4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		95ECFECA2931F03000F5F334 /* Controllers */ = {
@@ -474,15 +481,18 @@
 			files = (
 				F9BE0C462936DE84007529FB /* DetailTaskVC.swift in Sources */,
 				952BA1462925227800767FDD /* TabBarVC.swift in Sources */,
+				958B0F53293D69F1006A19E4 /* Navbar.swift in Sources */,
 				95059FA02928D689002D97D1 /* Colors.swift in Sources */,
 				95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */,
 				B6CEE0942928DC9A00C04532 /* ProfileView.swift in Sources */,
 				955A2FB12912A7F300513D8E /* AppDelegate.swift in Sources */,
+				958B0F6E293D81EA006A19E4 /* CreateTaskViewModel.swift in Sources */,
 				95ECFED02931F20700F5F334 /* Font Size.swift in Sources */,
 				952BA1432925224B00767FDD /* DummyVC.swift in Sources */,
 				95ECFECC2931F09200F5F334 /* TitleTextField.swift in Sources */,
 				952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */,
 				F9CB5DA82928EB52003C6371 /* TaskListCell.swift in Sources */,
+				958B0F6A293D7F22006A19E4 /* TaskModel.swift in Sources */,
 				95059FA22928D83B002D97D1 /* Font.swift in Sources */,
 				952BF7F0292D00A500D924A8 /* OptionButton.swift in Sources */,
 				952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */,
@@ -491,7 +501,9 @@
 				955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */,
 				95ECFEC92931F02900F5F334 /* CreateTaskVC.swift in Sources */,
 				F9BE0C4329365A05007529FB /* PomodoroDetail.swift in Sources */,
+				958B0F55293D778F006A19E4 /* UIWindow+TopViewController.swift in Sources */,
 				955A2FB32912A7F300513D8E /* SceneDelegate.swift in Sources */,
+				958B0F70293D8791006A19E4 /* TaskRepository.swift in Sources */,
 				952BF7F2292D060A00D924A8 /* CounterView.swift in Sources */,
 				B6D725F22937245B00165A53 /* PomodoroVC.swift in Sources */,
 			);
