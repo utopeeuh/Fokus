@@ -31,6 +31,7 @@
 		958B0F6A293D7F22006A19E4 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F69293D7F22006A19E4 /* TaskModel.swift */; };
 		958B0F6E293D81EA006A19E4 /* CreateTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */; };
 		958B0F70293D8791006A19E4 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F6F293D8791006A19E4 /* TaskRepository.swift */; };
+		958B0F73293E291F006A19E4 /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F72293E291F006A19E4 /* UIView+Shake.swift */; };
 		95ECFEC92931F02900F5F334 /* CreateTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFEC82931F02900F5F334 /* CreateTaskVC.swift */; };
 		95ECFECC2931F09200F5F334 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECB2931F09200F5F334 /* TitleTextField.swift */; };
 		95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */; };
@@ -68,6 +69,7 @@
 		958B0F69293D7F22006A19E4 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskModel.swift; path = Fokus/Presentation/General/Components/TaskModel.swift; sourceTree = SOURCE_ROOT; };
 		958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewModel.swift; sourceTree = "<group>"; };
 		958B0F6F293D8791006A19E4 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskRepository.swift; path = "Fokus/Presentation/Create Task/ViewModels/TaskRepository.swift"; sourceTree = SOURCE_ROOT; };
+		958B0F72293E291F006A19E4 /* UIView+Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
 		95ECFEC82931F02900F5F334 /* CreateTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskVC.swift; sourceTree = "<group>"; };
 		95ECFECB2931F09200F5F334 /* TitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextField.swift; sourceTree = "<group>"; };
 		95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeadLabel.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				958B0F54293D778F006A19E4 /* UIWindow+TopViewController.swift */,
+				958B0F72293E291F006A19E4 /* UIView+Shake.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				95059FA22928D83B002D97D1 /* Font.swift in Sources */,
 				952BF7F0292D00A500D924A8 /* OptionButton.swift in Sources */,
 				952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */,
+				958B0F73293E291F006A19E4 /* UIView+Shake.swift in Sources */,
 				952BF7EE292CF2BF00D924A8 /* OptionsCollectionView.swift in Sources */,
 				9513AFBC29295ECE00415C8B /* HomeVC.swift in Sources */,
 				955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */,
