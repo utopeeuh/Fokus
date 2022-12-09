@@ -73,7 +73,6 @@ class TaskRepository: TaskRepositoryDelegate{
     }
     
     
-    
     /// CONTOH FETCH
     
 //    func fetchEffectList(ids: [Int]) -> [EffectModel]{

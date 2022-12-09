@@ -117,6 +117,11 @@ class HomeVC: UIViewController {
         }
     }
     
+    @objc func onClickTaskList(){
+        let controller = CreateTaskVC()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     @objc func addTaskOnClick(){
         let controller = CreateTaskVC()
         navigationController?.pushViewController(controller, animated: true)
@@ -163,7 +168,11 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(taskList[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
+        let controller = DetailTaskVC()
+        controller.task = taskList[indexPath.row]
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
