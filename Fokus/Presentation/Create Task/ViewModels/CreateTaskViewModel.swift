@@ -9,8 +9,6 @@ import Foundation
 
 class CreateTaskViewModel : NSObject {
     
-//    var bindEmployeeViewModelToController : (() -> ()) = {}
-    
     override init() {
         super.init()
     }
@@ -22,7 +20,7 @@ class CreateTaskViewModel : NSObject {
         let longBreakDuration = cleanDurationString(str: longBreak)
         let shortBreakDuration = cleanDurationString(str: shortBreak)
         
-        // Convert whiteNoise to bool
+        // Convert whiteNoise to nsnumber
         let isWhiteNoiseOn = (whiteNoise == "OFF" ? false : true) as NSNumber
         
         // Insert to DB

@@ -16,8 +16,6 @@ class CreateTaskVC: UIViewController {
     
     private let navbar: Navbar = {
         let navbar = Navbar(title: "Create task")
-        navbar.isRightBarItemEnabled = true
-        navbar.barItemTitle = "Edit"
         return navbar
     }()
     
@@ -127,8 +125,6 @@ class CreateTaskVC: UIViewController {
         title = "Create Task"
         view.backgroundColor = .blackFokus
         
-        navbar.delegate = self
-        
         // Add onclick to reminder's options
         // to show datetime picker
         
@@ -235,11 +231,5 @@ class CreateTaskVC: UIViewController {
 extension CreateTaskVC: DateTimePickerDelegate{
     func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date) {
         reminderDateLabel.text = "Reminder set for \(dateTimePicker.selectedDateString)"
-    }
-}
-
-extension CreateTaskVC: NavbarDelegate {
-    @objc func rightBarItemOnClick() {
-        print("Edit clicked")
     }
 }

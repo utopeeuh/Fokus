@@ -12,8 +12,10 @@ import CoreData
 @objc(TaskModel)
 
 class TaskModel: NSManagedObject {
+    @NSManaged var id: String!
+    @NSManaged var dateCreated: Date!
+    @NSManaged var dateFinished: Date?
     @NSManaged var title: String!
-    @NSManaged var isDone: NSNumber!
     @NSManaged var reminder: Date?
     @NSManaged var pomodoros: NSNumber!
     @NSManaged var work: NSNumber!

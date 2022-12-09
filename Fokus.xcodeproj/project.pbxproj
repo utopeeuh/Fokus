@@ -32,6 +32,9 @@
 		958B0F6E293D81EA006A19E4 /* CreateTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */; };
 		958B0F70293D8791006A19E4 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F6F293D8791006A19E4 /* TaskRepository.swift */; };
 		958B0F73293E291F006A19E4 /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F72293E291F006A19E4 /* UIView+Shake.swift */; };
+		95E1BF3A2942E6D500F58A96 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E1BF392942E6D500F58A96 /* HomeViewModel.swift */; };
+		95E1BF3C2942FBFC00F58A96 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E1BF3B2942FBFC00F58A96 /* UserModel.swift */; };
+		95E1BF3F2942FF2100F58A96 /* NameModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E1BF3E2942FF2100F58A96 /* NameModalVC.swift */; };
 		95ECFEC92931F02900F5F334 /* CreateTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFEC82931F02900F5F334 /* CreateTaskVC.swift */; };
 		95ECFECC2931F09200F5F334 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECB2931F09200F5F334 /* TitleTextField.swift */; };
 		95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */; };
@@ -70,6 +73,9 @@
 		958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewModel.swift; sourceTree = "<group>"; };
 		958B0F6F293D8791006A19E4 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskRepository.swift; path = "Fokus/Presentation/Create Task/ViewModels/TaskRepository.swift"; sourceTree = SOURCE_ROOT; };
 		958B0F72293E291F006A19E4 /* UIView+Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
+		95E1BF392942E6D500F58A96 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		95E1BF3B2942FBFC00F58A96 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		95E1BF3E2942FF2100F58A96 /* NameModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameModalVC.swift; sourceTree = "<group>"; };
 		95ECFEC82931F02900F5F334 /* CreateTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskVC.swift; sourceTree = "<group>"; };
 		95ECFECB2931F09200F5F334 /* TitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextField.swift; sourceTree = "<group>"; };
 		95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeadLabel.swift; sourceTree = "<group>"; };
@@ -116,8 +122,9 @@
 		9513AFB829295E8500415C8B /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				9513AFBA29295EA700415C8B /* Components */,
+				95E1BF382942E6C800F58A96 /* ViewModels */,
 				9513AFB929295E9A00415C8B /* Controllers */,
+				9513AFBA29295EA700415C8B /* Components */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				9513AFBB29295ECE00415C8B /* HomeVC.swift */,
+				95E1BF3E2942FF2100F58A96 /* NameModalVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				958B0F69293D7F22006A19E4 /* TaskModel.swift */,
+				95E1BF3B2942FBFC00F58A96 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,6 +313,14 @@
 			isa = PBXGroup;
 			children = (
 				958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		95E1BF382942E6C800F58A96 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				95E1BF392942E6D500F58A96 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -497,6 +514,7 @@
 				F9CB5DA82928EB52003C6371 /* TaskListCell.swift in Sources */,
 				958B0F6A293D7F22006A19E4 /* TaskModel.swift in Sources */,
 				95059FA22928D83B002D97D1 /* Font.swift in Sources */,
+				95E1BF3A2942E6D500F58A96 /* HomeViewModel.swift in Sources */,
 				952BF7F0292D00A500D924A8 /* OptionButton.swift in Sources */,
 				952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */,
 				958B0F73293E291F006A19E4 /* UIView+Shake.swift in Sources */,
@@ -509,6 +527,8 @@
 				955A2FB32912A7F300513D8E /* SceneDelegate.swift in Sources */,
 				958B0F70293D8791006A19E4 /* TaskRepository.swift in Sources */,
 				952BF7F2292D060A00D924A8 /* CounterView.swift in Sources */,
+				95E1BF3F2942FF2100F58A96 /* NameModalVC.swift in Sources */,
+				95E1BF3C2942FBFC00F58A96 /* UserModel.swift in Sources */,
 				B6D725F22937245B00165A53 /* PomodoroVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

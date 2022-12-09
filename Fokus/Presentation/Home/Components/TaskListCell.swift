@@ -9,42 +9,47 @@ import UIKit
 
 class TaskListCell: UITableViewCell {
     
-    public var titleTask = UILabel()
-    public var titleTime = UILabel()
+    private var titleTask = UILabel()
+    private var timeTask = UILabel()
     
-    var checkedLogo: UIImageView = {
+    private var checkedLogo: UIImageView = {
         var imageView = UIImageView(image: UIImage(named: "uncheckedTaskLogo"))
         return imageView
     }()
-    var arrowRightLogo: UIImageView = {
+    
+    private var arrowRightLogo: UIImageView = {
         var imageView = UIImageView(image: UIImage(named: "arrowRight"))
         return imageView
     }()
 
-    var titleAndTime = UIView()
-    var containerList = UIView()
+    private var titleAndTime = UIView()
+    private var containerList = UIView()
     
     let spacer = UIView()
+    
+    public var task : TaskModel? {
+        didSet {
+            setTask()
+        }
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: "TaskListCell")
         backgroundColor = .clear
+        selectionStyle = .none
         
         containerList.backgroundColor = .darkGrey
         containerList.layer.cornerRadius = 8
         
-        titleTask.text = "Lorem ipsum dolor sit jamet"
         titleTask.font = UIFont.systemFont(ofSize: 20)
-        titleTime.text = "03:00 PM, 10 January 2022"
-        titleTime.font = UIFont.systemFont(ofSize: 18)
-        titleTime.textColor = .lightGray
-        
+        timeTask.font = UIFont.systemFont(ofSize: 18)
+        timeTask.textColor = .lightGray
         
         layer.cornerRadius = 8
         containerList.addSubview(checkedLogo)
         
         titleAndTime.addSubview(titleTask)
-        titleAndTime.addSubview(titleTime)
+        titleAndTime.addSubview(timeTask)
         
         containerList.addSubview(titleAndTime)
         
@@ -66,23 +71,25 @@ class TaskListCell: UITableViewCell {
             make.centerY.equalToSuperview()
             make.left.equalTo(checkedLogo.snp.right).offset(14)
         }
+        
         titleTask.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.width.equalToSuperview()
         }
-        titleTime.snp.makeConstraints { make in
+        
+        timeTask.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
             make.width.equalToSuperview()
         }
+        
         checkedLogo.snp.makeConstraints { make in
             make.size.equalTo(30)
             make.left.equalToSuperview().offset(16)
             make.centerY.equalToSuperview()
         }
+        
         arrowRightLogo.snp.makeConstraints { make in
-            make.height.equalTo(15)
-            make.width.equalTo(12)
-            make.right.equalToSuperview().offset(-15)
+            make.right.equalToSuperview().offset(-16)
             make.centerY.equalToSuperview()
         }
         
@@ -93,16 +100,42 @@ class TaskListCell: UITableViewCell {
         }
         
         containerList.snp.makeConstraints { make in
-//            make.width.equalToSuperview()
             make.top.width.equalToSuperview()
             make.height.equalTo(80)
         }
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setTask(){
+        
+        if task?.dateFinished != nil {
+            let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: (task?.title)!)
+            
+            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSRange(location: 0, length: attributeString.length))
+            
+            attributeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.lightGray, range: NSRange(location: 0, length: attributeString.length))
+            
+            titleTask.attributedText = attributeString
+            
+            checkedLogo.image = UIImage(named: "checkedTaskLogo")
+        }
+        else {
+            titleTask.text = task?.title
+        }
+        
+        if task?.reminder != nil {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "hh:mm a, dd MMM YYYY"
+            timeTask.text = formatter.string(from: (task?.reminder)!)
+        }
+        else {
+            titleTask.snp.remakeConstraints { make in
+                make.width.centerY.equalToSuperview()
+            }
+            
+            timeTask.isHidden = true
+        }
+        
+        
+        
     }
-
 }

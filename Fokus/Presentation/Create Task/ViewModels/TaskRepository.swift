@@ -25,11 +25,15 @@ class TaskRepository: TaskRepositoryDelegate{
         
         let newTask = TaskModel(entity: entity, insertInto: context)
 
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        newTask.id = "T\(formatter.string(from: Date()))"
+        
         newTask.title = title
         newTask.reminder = reminder
         newTask.pomodoros = pomodoros
         newTask.work = work
-        newTask.isDone = false
+        newTask.dateCreated = Date()
         newTask.shortBreak = shortBreak
         newTask.longBreak = longBreak
         newTask.isWhiteNoiseOn = isWhiteNoiseOn
@@ -42,6 +46,33 @@ class TaskRepository: TaskRepositoryDelegate{
             print("Create task failed")
         }
     }
+    
+    
+    func fetchTasks() -> [TaskModel]{
+    
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+    
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
+
+        //Sort hasil
+        let idSort = NSSortDescriptor(key:"id", ascending:true)
+        request.sortDescriptors = [idSort]
+
+        do{
+            //Ambil hasil query
+            if let results = try context.fetch(request) as? [TaskModel] {
+                return results
+            }
+        }
+        catch{
+            print("fetch failed")
+        }
+
+        return []
+    }
+    
+    
     
     /// CONTOH FETCH
     
