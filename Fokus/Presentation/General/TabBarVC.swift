@@ -48,13 +48,13 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 0, green: 172/255, blue: 141/255, alpha: 1), NSAttributedString.Key.font: UIFont(name: "AtkinsonHyperlegible-Regular", size: 13)!], for: .selected)
         
-        // Routine tab
+        // Home tab
         let tabOne = UINavigationController(rootViewController: HomeVC())
         let tabOneBarItem = UITabBarItem(title: "Home", image: UIImage(named:"Home"), selectedImage: UIImage(named: "HomeFilled"))
         tabOne.tabBarItem = tabOneBarItem
         
         
-        // Treatment tab
+        // Stats tab
         let tabTwo = UINavigationController(rootViewController: DummyVC())
         let tabTwoBarItem = UITabBarItem(title: "Statistics", image: UIImage(named:"Stats"), selectedImage: UIImage(named: "StatsFilled"))
         

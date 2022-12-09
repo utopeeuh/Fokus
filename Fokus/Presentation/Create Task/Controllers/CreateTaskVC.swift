@@ -12,10 +12,17 @@ import DateTimePicker
 
 class CreateTaskVC: UIViewController {
     
+    private var vm = CreateTaskViewModel()
+    
+    private let navbar: Navbar = {
+        let navbar = Navbar(title: "Create task")
+        return navbar
+    }()
+    
     private let scrollView : UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height)
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 888)
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 928)
         scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
@@ -108,13 +115,14 @@ class CreateTaskVC: UIViewController {
     }()
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
-        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.isNavigationBarHidden = true
+        tabBarController?.tabBar.isHidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Create Task"
         view.backgroundColor = .blackFokus
         
         // Add onclick to reminder's options
@@ -132,8 +140,11 @@ class CreateTaskVC: UIViewController {
         
         // Set DateTimePicker delegate
         dateTimePicker.delegate = self
+        
+        // Create task onclick
+        createTaskButton.addTarget(self, action: #selector(createTaskOnClick), for: .touchUpInside)
     
-        let components = [titleLabel, titleTextField, pomodoroLabel, pomodoroCounter, workDurationView, shortDurationView, longDurationView, whiteNoiseView, reminderView, reminderDateLabel, createTaskButton]
+        let components = [navbar, titleLabel, titleTextField, pomodoroLabel, pomodoroCounter, workDurationView, shortDurationView, longDurationView, whiteNoiseView, reminderView, reminderDateLabel, createTaskButton]
         
         view.addSubview(scrollView)
         
@@ -147,7 +158,7 @@ class CreateTaskVC: UIViewController {
     func configureConstraints(){
         
         scrollView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.edges.equalToSuperview()
         }
         
         scrollView.subviews.forEach { subview in
@@ -170,9 +181,27 @@ class CreateTaskVC: UIViewController {
             }
         }
         
+        navbar.snp.makeConstraints { make in
+            make.height.equalTo(navbar.frame.height)
+            make.width.equalToSuperview()
+        }
+        
         createTaskButton.snp.makeConstraints { make in
             make.height.equalTo(createTaskButton.frame.height)
         }
+    }
+    
+    @objc func createTaskOnClick(){
+        if titleTextField.text == "" {
+            createTaskButton.shake(count: 3, for: 0.1, withTranslation: 5)
+            return
+        }
+        
+        let reminderDate = reminderView.selectedOption == "OFF" ? nil : dateTimePicker.selectedDate
+        
+        vm.createTask(title: titleTextField.text!, reminder: reminderDate, pomodoros: pomodoroCounter.counter, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption)
+        
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func turnOnReminder(){

@@ -8,7 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol ProfileViewDelegate {
+    func editNameOnClick()
+}
+
 class ProfileView: UIView {
+    
+    public var delegate: ProfileViewDelegate?
     
     let badgePlaceholder: UIView = {
         let view = UIView()
@@ -21,11 +27,19 @@ class ProfileView: UIView {
     let userName: UILabel = {
         
         let name = UILabel()
-        name.text = "Hi, Fachry ☺️"
+        name.text = "Hi, Fachry 😊"
         name.textColor = .white
         name.font = .atkinsonBold(size: 24)
         
         return name
+
+    }()
+    
+    let editButton: UIButton = {
+        
+        let button = UIButton()
+        button.setImage(UIImage(named: "editIcon"), for: .normal)
+        return button
         
     }()
     
@@ -53,10 +67,6 @@ class ProfileView: UIView {
     
     let xpLabel: UILabel = {
         let label = UILabel()
-        
-//        label.text = "123 / 1000 xp"
-//        label.textColor = .darkTurq
-        
         let text = NSMutableAttributedString()
         text.append(NSAttributedString(string: "123", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]));
         text.append(NSAttributedString(string: "/1000 xp", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkTurq]))
@@ -75,8 +85,11 @@ class ProfileView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
+        editButton.addTarget(self, action: #selector(editNameOnClick), for: .touchUpInside)
+        
         addSubview(badgePlaceholder)
         profileSectionView.addSubview(userName)
+        profileSectionView.addSubview(editButton)
         profileSectionView.addSubview(levelLabel)
         profileSectionView.addSubview(progressBar)
         profileSectionView.addSubview(xpLabel)
@@ -107,6 +120,11 @@ class ProfileView: UIView {
             make.left.equalToSuperview()
         }
         
+        editButton.snp.makeConstraints { make in
+            make.left.equalTo(userName.snp.right).offset(20)
+            make.centerY.equalTo(userName)
+        }
+        
         levelLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
             make.top.equalTo(userName.snp.bottom).offset(8)
@@ -125,7 +143,10 @@ class ProfileView: UIView {
         }
 
     }
-    
+
+    @objc func editNameOnClick(){
+        delegate?.editNameOnClick()
+    }
     
     required init?(coder: NSCoder) {
         fatalError()
