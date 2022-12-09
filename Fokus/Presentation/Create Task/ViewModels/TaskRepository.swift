@@ -56,7 +56,7 @@ class TaskRepository: TaskRepositoryDelegate{
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
 
         //Sort hasil
-        let idSort = NSSortDescriptor(key:"id", ascending:true)
+        let idSort = NSSortDescriptor(key:"dateCreated", ascending:false)
         request.sortDescriptors = [idSort]
 
         do{

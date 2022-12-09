@@ -14,6 +14,12 @@ class HomeVC: UIViewController {
     
     private let profileView = ProfileView()
     
+    private var taskList : [TaskModel] = []{
+        didSet {
+            refreshData()
+        }
+    }
+    
     private let titleListContainer: UILabel = {
         let title = UILabel()
         title.text = "Task anda ✏️"
@@ -51,6 +57,7 @@ class HomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool){
         navigationController?.isNavigationBarHidden = true
         tabBarController?.tabBar.isHidden = false
+        taskList = homeVM.getTaskList()
     }
 
     override func viewDidLoad() {
@@ -60,12 +67,9 @@ class HomeVC: UIViewController {
         
         profileView.delegate = self
         
-        homeFeedTable.isScrollEnabled = false
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
-        homeFeedTable.reloadData()
-        
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width-40, height: Double(homeVM.taskList.count+1)*100)
+        homeFeedTable.isScrollEnabled = false
         
         btnAddNewTask.addTarget(self, action: #selector(addTaskOnClick), for: .touchUpInside)
         
@@ -102,7 +106,7 @@ class HomeVC: UIViewController {
         
         homeFeedTable.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.height.equalTo(homeVM.taskList.count*100)
+            make.height.equalTo(taskList.count*100)
             make.width.equalToSuperview()
         }
         
@@ -117,6 +121,26 @@ class HomeVC: UIViewController {
         let controller = CreateTaskVC()
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    func refreshData(){
+        homeFeedTable.reloadData()
+        
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width-40, height: Double(taskList.count+1)*100)
+        
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        
+        homeFeedTable.snp.remakeConstraints { make in
+            make.top.equalToSuperview()
+            make.height.equalTo(taskList.count*100)
+            make.width.equalToSuperview()
+        }
+        
+        btnAddNewTask.snp.remakeConstraints { make in
+            make.top.equalTo(homeFeedTable.snp.bottom)
+            make.width.equalToSuperview()
+            make.height.equalTo(60)
+        }
+    }
 }
 
 extension HomeVC: ProfileViewDelegate {
@@ -128,13 +152,13 @@ extension HomeVC: ProfileViewDelegate {
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return homeVM.taskList.count
+        return taskList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskListCell", for: indexPath) as! TaskListCell
-        cell.task = homeVM.taskList[indexPath.row]
-        
+        cell.task = taskList[indexPath.row]
+        print(taskList[indexPath.row].title)
         return cell
     }
     

@@ -10,9 +10,9 @@ import UIKit
 
 class HomeViewModel : NSObject {
     
-    public var taskList : [TaskModel] = {
+    func getTaskList() -> [TaskModel] {
         return TaskRepository.shared.fetchTasks()
-    }()
+    }
     
     override init() {
         super.init()
