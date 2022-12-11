@@ -39,6 +39,7 @@
 		95ECFECC2931F09200F5F334 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECB2931F09200F5F334 /* TitleTextField.swift */; };
 		95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */; };
 		95ECFED02931F20700F5F334 /* Font Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECF2931F20700F5F334 /* Font Size.swift */; };
+		B67019782945E32300872F77 /* PomodoroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67019772945E32300872F77 /* PomodoroViewModel.swift */; };
 		B6CEE0942928DC9A00C04532 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CEE0932928DC9A00C04532 /* ProfileView.swift */; };
 		B6D725F22937245B00165A53 /* PomodoroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D725F02937245B00165A53 /* PomodoroVC.swift */; };
 		F9BE0C4329365A05007529FB /* PomodoroDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BE0C4229365A05007529FB /* PomodoroDetail.swift */; };
@@ -81,6 +82,7 @@
 		95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeadLabel.swift; sourceTree = "<group>"; };
 		95ECFECF2931F20700F5F334 /* Font Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font Size.swift"; sourceTree = "<group>"; };
 		ACF241316042AB47065B50CF /* Pods_Fokus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fokus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B67019772945E32300872F77 /* PomodoroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroViewModel.swift; sourceTree = "<group>"; };
 		B6CEE0932928DC9A00C04532 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Fokus/Presentation/Home/Components/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		B6D725F02937245B00165A53 /* PomodoroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroVC.swift; sourceTree = "<group>"; };
 		CCF6B459E7323D60CB578BF2 /* Pods-Fokus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fokus.release.xcconfig"; path = "Target Support Files/Pods-Fokus/Pods-Fokus.release.xcconfig"; sourceTree = "<group>"; };
@@ -333,9 +335,18 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		B67019762945E31200872F77 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B67019772945E32300872F77 /* PomodoroViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		B6D725EE2937245B00165A53 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				B67019762945E31200872F77 /* ViewModels */,
 				B6D725EF2937245B00165A53 /* Controller */,
 				B6D725F12937245B00165A53 /* Components */,
 			);
@@ -512,6 +523,7 @@
 				95ECFECC2931F09200F5F334 /* TitleTextField.swift in Sources */,
 				952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */,
 				F9CB5DA82928EB52003C6371 /* TaskListCell.swift in Sources */,
+				B67019782945E32300872F77 /* PomodoroViewModel.swift in Sources */,
 				958B0F6A293D7F22006A19E4 /* TaskModel.swift in Sources */,
 				95059FA22928D83B002D97D1 /* Font.swift in Sources */,
 				95E1BF3A2942E6D500F58A96 /* HomeViewModel.swift in Sources */,

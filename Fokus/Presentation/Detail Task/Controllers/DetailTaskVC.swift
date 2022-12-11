@@ -90,6 +90,7 @@ class DetailTaskVC: UIViewController {
         longBreakDuration = PomodoroDetail(title: "Long Break", value: "\(task!.longBreak!):00")
         whiteNoiseView.selectedIndex = (task!.isWhiteNoiseOn == true) ? 0 : 1
 
+        btnStartTask.addTarget(self, action: #selector(onClickStart), for: .touchDown)
         btnMarkDoneTask.addTarget(self, action: #selector(onClickDoneTask), for: .touchUpInside)
         
         view.addSubview(taskTitle)
@@ -182,5 +183,10 @@ class DetailTaskVC: UIViewController {
     @objc func onClickDoneTask () {
         
     }
-
+    
+    @objc func onClickStart() {
+        let controller = PomodoroVC()
+        controller.task = task
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
