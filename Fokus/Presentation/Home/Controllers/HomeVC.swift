@@ -58,10 +58,15 @@ class HomeVC: UIViewController {
         navigationController?.isNavigationBarHidden = true
         tabBarController?.tabBar.isHidden = false
         taskList = homeVM.getTaskList()
+        profileView.refreshUserData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if homeVM.isFirstTimeOpening() == true {
+            showModal()
+        }
         
         view.backgroundColor = .blackFokus
         
@@ -141,11 +146,28 @@ class HomeVC: UIViewController {
             make.height.equalTo(60)
         }
     }
+    
+    func showModal(){
+        let modalController = NameModalVC()
+        modalController.delegate = self
+        
+        modalController.modalPresentationStyle = .overCurrentContext
+        
+        let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+
+        keyWindow?.topViewController()?.present(modalController, animated: false)
+    }
+}
+
+extension HomeVC: NameModalDelegate {
+    func refresh() {
+        profileView.refreshUserData()
+    }
 }
 
 extension HomeVC: ProfileViewDelegate {
     func editNameOnClick() {
-        print("Edit")
+        showModal()
     }
 }
 
@@ -158,7 +180,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskListCell", for: indexPath) as! TaskListCell
         cell.task = taskList[indexPath.row]
-        print(taskList[indexPath.row].title)
         return cell
     }
     
