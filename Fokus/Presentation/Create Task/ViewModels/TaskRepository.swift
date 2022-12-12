@@ -9,11 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol TaskRepositoryDelegate{
-    func createTask(title: String, pomodoros: NSNumber, work: NSNumber, shortBreak: NSNumber, longBreak: NSNumber, reminder: Date?, isWhiteNoiseOn: NSNumber)
-}
-
-class TaskRepository: TaskRepositoryDelegate{
+class TaskRepository{
     
     static let shared = TaskRepository()
     
