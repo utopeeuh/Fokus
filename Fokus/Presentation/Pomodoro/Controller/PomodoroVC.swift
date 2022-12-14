@@ -7,15 +7,20 @@
 
 import UIKit
 import SnapKit
+import MagicTimer
 
 class PomodoroVC: UIViewController {
     
     public var task:TaskModel?
+    private var vm = PomodoroViewModel()
     
     var muteOrUnmuteSymbol = String("unmuteVolumeLogo")
     var currentProgress = 1
+    var currentPhase = 1
     var secondsRemaining = 0
     var timer:Timer?
+    
+    let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
     
     enum TimerEnum {
         case running, paused
@@ -89,16 +94,28 @@ class PomodoroVC: UIViewController {
         return ctx
     }()
     
+    let timerLib = MagicTimerView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blackFokus
         
-        pomodoroPhase.text = "\(currentProgress) / \(task!.pomodoros!)"
+        pomodoroPhase.text = "\(currentPhase) / \(task!.pomodoros!)"
         pomodoroTimer.text = "\(task!.work!):00"
         pomodoroLabel.text = "Work Phase"
+        
+        timerLib.delegate = self
+        
      
-        secondsRemaining = (task?.work as! Int * 60)
+        secondsRemaining = (task?.work as! Int)
         timerState = TimerEnum.running
+        
+        timerLib.isActiveInBackground = true
+        timerLib.font = .atkinsonBold(size: 64)
+        timerLib.textColor = .white
+        timerLib.mode = .countDown(fromSeconds: TimeInterval(secondsRemaining))
+        timerLib.startCounting()
+
         
 //        muteSymbol.addTarget(self, action: #selector(nextProgress), for: .touchUpInside)
         pauseSymbol.addTarget(self, action: #selector(pauseTimer), for: .touchUpInside)
@@ -107,8 +124,10 @@ class PomodoroVC: UIViewController {
         
         view.addSubview(pomodoroPhase)
         
+        
         pomodoroContainer.addSubview(pomodoroLabel)
         pomodoroContainer.addSubview(pomodoroTimer)
+        pomodoroContainer.addSubview(timerLib)
         
         symbolContainer.addSubview(stopSymbol)
         symbolContainer.addSubview(skipSymbol)
@@ -120,7 +139,7 @@ class PomodoroVC: UIViewController {
         view.addSubview(muteSymbol)
         
         setupConstraint()
-        startTimer()
+//        startTimer()
 
     }
     
@@ -129,42 +148,47 @@ class PomodoroVC: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide)
         }
-        
+
         pomodoroContainer.snp.makeConstraints { make in
             make.top.equalTo(pomodoroPhase.snp.bottom).offset(140)
             make.width.equalToSuperview()
             make.height.equalTo(197)
         }
-        
+
         pomodoroLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            
+
         }
         
-        pomodoroTimer.snp.makeConstraints { make in
+        timerLib.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(pomodoroLabel.snp.bottom).offset(24)
         }
-        
+
+//        pomodoroTimer.snp.makeConstraints { make in
+//            make.centerX.equalToSuperview()
+//            make.top.equalTo(pomodoroLabel.snp.bottom).offset(24)
+//        }
+
         symbolContainer.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(pomodoroTimer.snp.bottom).offset(30)
+            make.top.equalTo(timerLib.snp.bottom).offset(30)
             make.width.equalToSuperview().offset(-40)
             make.height.equalTo(40)
         }
-        
+
         skipSymbol.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
         }
-        
+
         stopSymbol.snp.makeConstraints { make in
             make.right.equalTo(skipSymbol.snp.left).offset(-40)
         }
-        
+
         pauseSymbol.snp.makeConstraints { make in
             make.left.equalTo(skipSymbol.snp.right).offset(40)
         }
-        
+
         muteSymbol.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             //            make.width.equalToSuperview()
@@ -172,10 +196,12 @@ class PomodoroVC: UIViewController {
         }
     }
     
+    
     @objc func nextProgress() {
         
-        if (currentProgress == task?.pomodoros as! Int) {
-            timer?.invalidate()
+        if (currentPhase == task?.pomodoros as! Int) {
+            timerLib.stopCounting()
+            self.vm.markAsDone(id: task!.id)
             let controller = HomeVC()
             navigationController?.pushViewController(controller, animated: true)
             return
@@ -187,21 +213,23 @@ class PomodoroVC: UIViewController {
         if (currentProgress % 4 == 0) {
             pomodoroLabel.text = "Long Break"
             secondsRemaining = task?.longBreak as! Int
-            //            pomodoroTimer.text = "\(task!.longBreak!):00"
+
         }
         else if(currentProgress % 2 == 0) {
             pomodoroLabel.text = "Short Break"
             secondsRemaining = task?.shortBreak as! Int
-            //            pomodoroTimer.text = "\(task!.shortBreak!):00"
         } else {
+            if (currentProgress != 1) {
+                currentPhase += 1
+            }
             pomodoroLabel.text = "Work Phase"
             secondsRemaining = task?.work as! Int
-            //            pomodoroTimer.text = "\(task!.work!):00"
         }
-        
-        timer?.invalidate()
-        startTimer()
-        pomodoroPhase.text = "\(currentProgress) / \(task!.pomodoros!)"
+
+        timerLib.mode = .countDown(fromSeconds: TimeInterval(secondsRemaining))
+        timerLib.isActiveInBackground = true
+        timerLib.startCounting()
+        pomodoroPhase.text = "\(currentPhase) / \(task!.pomodoros!)"
         
     }
     
@@ -210,10 +238,12 @@ class PomodoroVC: UIViewController {
         
         if (timerState == TimerEnum.running) {
             timerState = TimerEnum.paused
-            timer?.invalidate()
+            timerLib.stopCounting()
         } else {
             timerState = TimerEnum.running
-            startTimer()
+            timerLib.mode = .countDown(fromSeconds: TimeInterval(secondsRemaining))
+            timerLib.isActiveInBackground = true
+            timerLib.startCounting()
         }
         
     }
@@ -223,37 +253,23 @@ class PomodoroVC: UIViewController {
     }
     
     @objc func stopPomodoro() {
-        timer?.invalidate()
+        timerLib.stopCounting()
         let controller = HomeVC()
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    func timeString(time: TimeInterval) -> String {
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        return String(format:"%02i:%02i", minutes, seconds)
-    }
-    
-    
-    @IBAction func startTimer(
-    ) {
-        if (timerState != TimerEnum.running) {
-            return
-        }
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [self] (Timer) in
-            if self.secondsRemaining > 0 {
-                print ("\(self.secondsRemaining) seconds")
-                self.secondsRemaining -= 1
-                pomodoroTimer.text = timeString(time: TimeInterval(secondsRemaining))
-            } else {
-                Timer.invalidate()
-                nextProgress()
-            }
+}
+
+extension PomodoroVC: MagicTimerViewDelegate {
+    func timerElapsedTimeDidChange(timer: MagicTimerView, elapsedTime: TimeInterval) {
+        
+//        print(elapsedTime)
+        if (elapsedTime > 0) {
+            self.secondsRemaining -= 1
         }
         
+        if (elapsedTime == 0) {
+            nextProgress()
+        }
     }
-    
-    
-    
-    
 }

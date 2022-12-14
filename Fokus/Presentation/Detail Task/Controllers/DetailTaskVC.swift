@@ -11,7 +11,7 @@ import SnapKit
 class DetailTaskVC: UIViewController {
     
     public var task:TaskModel?
-    
+    private var vm = DetailTaskViewModel()
     private var pomodoroCycle = PomodoroDetail(title: "Pomodoros", value:"4 Cycles")
     private var workDuration = PomodoroDetail(title: "Work", value: "20:00")
     private var shortBreakDuration = PomodoroDetail(title: "Short Break", value: "10:00")
@@ -92,6 +92,7 @@ class DetailTaskVC: UIViewController {
 
         btnStartTask.addTarget(self, action: #selector(onClickStart), for: .touchDown)
         btnMarkDoneTask.addTarget(self, action: #selector(onClickDoneTask), for: .touchUpInside)
+        btnDeleteTask.addTarget(self, action: #selector(onClickDeleteTask), for: .touchUpInside)
         
         view.addSubview(taskTitle)
         view.addSubview(btnStartTask)
@@ -115,12 +116,14 @@ class DetailTaskVC: UIViewController {
     func configureConstraints(){
         
         navbar.snp.makeConstraints { make in
-            make.height.equalTo(100)
-            make.width.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(5)
+            make.height.equalTo(navbar.frame.height)
+            make.width.equalToSuperview().offset(-40)
+            make.centerX.equalToSuperview()
         }
                 
         taskTitle.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.top.equalTo(navbar.snp.bottom).offset(20)
 //            make.top.equalToSuperview()
 //            make.width.equalToSuperview().offset(-40)
             make.centerX.equalToSuperview()
@@ -180,8 +183,68 @@ class DetailTaskVC: UIViewController {
 
     }
     
-    @objc func onClickDoneTask () {
+//    @objc func onClickDoneTask () {
+//        let controller = CreateTaskVC()
+//        navigationController?.pushViewController(controller, animated: true)
+//    }
+    
+    @objc func onClickDoneTask(controller: UIViewController) {
+        let alert = UIAlertController(title: "Apakah anda yakin untuk menandai task sebagai selesai?", message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Tandai sebagai selesai", style: .default, handler: { (_) in
+            print("User click Approve button")
+            self.vm.markAsDone(id: self.task?.id as! String)
+            let controller = HomeVC()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }))
+
+//        alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (_) in
+//            print("User click Edit button")
+//        }))
+
+//        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+//            print("User click Delete button")
+//        }))
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+            print("User click Dismiss button")
+        }))
+
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
+    }
+    
+    @objc func onClickDeleteTask(controller: UIViewController) {
+        let alert = UIAlertController(title: "Apakah anda yakin untuk menghapus task?", message: "", preferredStyle: .actionSheet)
+//        alert.addAction(UIAlertAction(title: "Tandai sebagai selesai", style: .default, handler: { (_) in
+//            print("User click Approve button")
+//            self.vm.markAsDone(id: self.task?.id as! String)
+//            let controller = HomeVC()
+//            self.navigationController?.pushViewController(controller, animated: true)
+//        }))
         
+        alert.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: { (_) in
+            print("User click Delete button")
+            self.vm.deleteTask(id: self.task?.id as! String)
+            let controller = HomeVC()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }))
+
+//        alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (_) in
+//            print("User click Edit button")
+//        }))
+
+//        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+//            print("User click Delete button")
+//        }))
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+            print("User click Dismiss button")
+        }))
+
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
     }
     
     @objc func onClickStart() {

@@ -130,8 +130,9 @@ class HomeVC: UIViewController {
     func refreshData(){
         homeFeedTable.reloadData()
         
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width-40, height: Double(taskList.count+1)*100)
-        
+//        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width-40, height: Double(taskList.count+1)*100)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width-40, height: CGFloat( Double(taskList.count+1))*100)
+
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         
         homeFeedTable.snp.remakeConstraints { make in

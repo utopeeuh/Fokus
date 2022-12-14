@@ -7,5 +7,6 @@ target 'Fokus' do
   pod 'SnapKit', '~> 5.6'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'DateTimePicker'
+  pod 'MagicTimer'
 #  pod 'CoreDataHelper'
 end

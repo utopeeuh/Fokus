@@ -72,6 +72,41 @@ class TaskRepository: TaskRepositoryDelegate{
         return []
     }
     
+    func updateTask(id: String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        let resultFetch = fetchTask(id: id)
+        do{
+            resultFetch?.dateFinished = Date()
+            try context.save()
+        }
+        catch{
+            print("update task failed")
+        }
+    }
+    
+    func fetchTask(id: String) -> TaskModel?{
+    
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+    
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
+        
+        let idPredicate = NSPredicate(format: "id == %@", id)
+        request.predicate = idPredicate
+        do{
+            //Ambil hasil query
+            if let results = try context.fetch(request) as? [TaskModel] {
+                return results.first
+            }
+        }
+        catch{
+            print("fetch failed")
+        }
+
+        return nil
+    }
     
     /// CONTOH FETCH
     
@@ -118,16 +153,20 @@ class TaskRepository: TaskRepositoryDelegate{
 //    }
     
     /// CONTOH DELETE
-//    func deleteRoutineStep(step: RoutineStepInfo, time: K.RoutineTime){
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Steps")
-//
-//        var routineId = K.Routine.morning
-//        if time == K.RoutineTime.night{
-//            routineId = K.Routine.night
-//        }
-//
+    func deleteTask(id: String){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+
+        let resultFetch = fetchTask(id: id)
+        
+        do{
+//            resultFetch?.dateFinished = Date()
+            try context.delete(resultFetch as! NSManagedObject)
+        }
+        catch{
+            print("delete failed")
+        }
+
 //        let timePredicate = NSPredicate(format: "routineId == %@", String(describing: routineId))
 //        let idPredicate = NSPredicate(format: "position == %@", String(describing: step.position))
 //        let compoundPredicate = NSCompoundPredicate(type: .or, subpredicates: [timePredicate, idPredicate])
@@ -141,7 +180,7 @@ class TaskRepository: TaskRepositoryDelegate{
 //        catch{
 //            print("fetch failed")
 //        }
-//    }
+    }
     
     /// CONTOH UPDATE
     /// Sama persis kayak fetch, bedanya setelah fetching data &

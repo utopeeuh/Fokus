@@ -7,91 +7,116 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00A2749F46C967ED4725A32357E3FB1B /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572CC258184E0164AAA09C101187EC00 /* ConstraintLayoutSupport.swift */; };
+		00A2749F46C967ED4725A32357E3FB1B /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805DA94F803F311A87AD5C383DACDCDB /* ConstraintLayoutSupport.swift */; };
 		01D2EB30256F2E339C213A6DB6C4924D /* DateTimePicker-DateTimePicker in Resources */ = {isa = PBXBuildFile; fileRef = B04C1EBC2EC90A2DFFEDDD0CF4473840 /* DateTimePicker-DateTimePicker */; };
-		04637C70546B34F93C3A1D79C3F78B37 /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56C013AB20C723B731A59E9561E2DB /* ConstraintDirectionalInsetTarget.swift */; };
-		0591132B5EA1BE4DDA268D8A9C3D0421 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981E861A10BB152E46A8690B0ABD6F7 /* LayoutConstraint.swift */; };
-		065D4D38BFE58CBFDC2F9486CEA07019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		06E43B4751069B47B3BD4AFD936A57E3 /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3697C9AA3998AF9FD0E8276F385898 /* ConstraintPriority.swift */; };
+		04637C70546B34F93C3A1D79C3F78B37 /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2614194EA205BD190D39F6B0B6BB7E2C /* ConstraintDirectionalInsetTarget.swift */; };
+		0591132B5EA1BE4DDA268D8A9C3D0421 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A2DBBAC48EAFAF1AA8A45DF57243F4 /* LayoutConstraint.swift */; };
+		06E43B4751069B47B3BD4AFD936A57E3 /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D999D0EED03321874DA80EB62A87B6 /* ConstraintPriority.swift */; };
 		0833E66E7F19849322305D67777B77DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		0B994CDC79B1AD3A7BE62490D27C60C8 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D0A8A4AFBE1E7A97DA3CD9C390B67 /* ConstraintAttributes.swift */; };
-		0D99D80D1D01459263A93CF21A7573AD /* StepCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27ACC80D19BBDA53A8582E4154EEEA2 /* StepCollectionViewFlowLayout.swift */; };
-		183D8B3E057B885EA7DF9A8CDCCE9029 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F178F5FB1171F7B5FFD66E5B6750721 /* ConstraintMakerRelatable.swift */; };
-		1860426101F5D2C164A889805365DB96 /* Pods-Fokus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 648CB5B1B883DF3C0C2769C08CCEB138 /* Pods-Fokus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		220D6AC9B1B1EC8EFFB204F9C1EAC842 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA03A2F3814627258809576D7C0672 /* ConstraintMakerEditable.swift */; };
-		256558233B40ACA6818F143BBC5B8017 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC068DDE7D4FEF5D855D632334ED031 /* ConstraintViewDSL.swift */; };
+		08B0A49C1DFB6A735A64C11E4B5181BD /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA539F21D7688612DED0B863EE4DEDEF /* Int+Extension.swift */; };
+		0B994CDC79B1AD3A7BE62490D27C60C8 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFD88317F5F82B3355370C04ED2C67A /* ConstraintAttributes.swift */; };
+		0D99D80D1D01459263A93CF21A7573AD /* StepCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20B05600A9825511339977791872C9 /* StepCollectionViewFlowLayout.swift */; };
+		12697F23002E10F2B098841BBA1EA163 /* MGStandardTimerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531F18DFF7B712B55631C49E77600D4 /* MGStandardTimerFormatter.swift */; };
+		183D8B3E057B885EA7DF9A8CDCCE9029 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F13E83F71E7B48AA06083901CC07F5 /* ConstraintMakerRelatable.swift */; };
+		1EE7B5363BCF97C6D2AFBECBF4A14564 /* MGTimerExecutive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C3F371A58923D05DBECECD14D5691 /* MGTimerExecutive.swift */; };
+		220D6AC9B1B1EC8EFFB204F9C1EAC842 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946FFE3095AE5FB57E635F1A67A5AECA /* ConstraintMakerEditable.swift */; };
+		231EBC6889538264BFD686E894F841F0 /* MGBackgroundCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A7BDD0AE36C0F18245B29BF84A7F42 /* MGBackgroundCalculator.swift */; };
+		256558233B40ACA6818F143BBC5B8017 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540093CC2F5CAC238E7CF5EFFC22A2D0 /* ConstraintViewDSL.swift */; };
+		28C356BA1B0819E81436006109A9E7F9 /* MagicTimer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E49999961E2717617AC3C445A25E24 /* MagicTimer-dummy.m */; };
+		31A517FD27FDB2A511130F8C6C10E0FA /* Pods-Fokus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 648CB5B1B883DF3C0C2769C08CCEB138 /* Pods-Fokus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		325CCDB295FFA016638075B5D2CEDD5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 		365116C48B03CB83E4A72A0F538EF62D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		3660B4F629053ABC3C1DF69366770289 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DC3FE93004CD98388A701233A429A /* ConstraintConfig.swift */; };
-		38B9D58E94D9C1CECD7E381C64A2329D /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080A8CE9258D8C3B270507F6DF826B18 /* UILayoutSupport+Extensions.swift */; };
-		427D90D2305D285C01A34C6344922A74 /* DateTimePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 13927C3CBCADE2D5B9E6067FDBDC48AB /* DateTimePicker-dummy.m */; };
-		42B6ACFCF650183030867CB3EF345E95 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D67E7631D203451E714C64751B3A8D /* ConstraintMakerFinalizable.swift */; };
-		4778860BCA49DD06C590D4389BAA9EB4 /* Pods-Fokus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F4CD00C3C5A891E27C98C7960BCA3D /* Pods-Fokus-dummy.m */; };
-		48CE9260DAFE7D744E5F25DF9356D4BC /* DateTimePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EEE51BA652A69A412194330906D083C0 /* DateTimePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BAD99B7394E225CEDBF94B8100BCC7F /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA9F748F14501F7F25822A068FAB5F8 /* ConstraintRelation.swift */; };
-		4DA72FD7F1FB2C0449EDEF4B8A579807 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB13E5E71645F5F7E48E2CAA35B960 /* ConstraintPriorityTarget.swift */; };
-		5380454C48A12A6E376122ABD8096968 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C736DFF7DD41C482B08CDA5A8958A96 /* ConstraintDescription.swift */; };
-		55E51F45F1E157D3B4942BA7252C277E /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B96167CFA6E6BAD9588CE7AD1A9CAEC /* ConstraintRelatableTarget.swift */; };
-		56A72F6D13D930C4A2568F24DEA33C8D /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BB8E9EA8DF330C4B48F47ABB4B0227 /* ConstraintLayoutSupportDSL.swift */; };
-		56AC6DC6459AE47E7BC4AF06E5B148D2 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9421F56012A8836F8E28269CC307561D /* ConstraintDSL.swift */; };
-		5D36B99F3CAB1FC7337082D9581FECA6 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC347A76E9112EDA5AEB83B6EA9F2F59 /* Debugging.swift */; };
-		5FA526557719FDBE81B1974B113CF600 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 992C5DDCAE29D0C9C87FC1C459A6C5E9 /* SwiftyJSON-dummy.m */; };
-		604D3C93C17978C23600EC415949AB64 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ACE9E446DA99E18599DA776080321 /* ConstraintInsets.swift */; };
-		611CEF7FF1EF9EA1BCEF6C73EEE3ACCF /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B486B8C68BB39E512404EE8D7CE61C5 /* ConstraintLayoutGuide.swift */; };
-		69DE75BA185BBAB5FDAA28321F3C849F /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B29B382A66B26D6307568B5C7E1441 /* ConstraintItem.swift */; };
-		6A2EFC661A2E025D1A742A21289CF3E5 /* Bundle+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EAA7BEE4D8D890FFDFFFE114206525 /* Bundle+Resource.swift */; };
-		6AC1B881BB319C89AD023A02CDC8FC3D /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A2718DFA5AF1AD014B1F887480FA2 /* ConstraintLayoutGuide+Extensions.swift */; };
-		6EAC8B6FA2D115DE708A58C601DD25E1 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8256C7E42662E7F9800186D93CC79E66 /* Constraint.swift */; };
-		72F478D974EF3ECD7F2499FBDE04FCCA /* DateTimePicker+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCDE6A81439D4B46E484722C8064A6 /* DateTimePicker+CollectionView.swift */; };
-		775AF399F6E4B7835E14C3DF1E84D98A /* DateTimePicker+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8F31BE0F1CE34FA1B1059939774803 /* DateTimePicker+UITableView.swift */; };
-		7F95E8B8C7518B8479215D6AB4BEFED6 /* FullDateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB1BE4A9BCAEE498BD1DA8D687A77BF7 /* FullDateCollectionViewCell.xib */; };
-		95E194A3AABB5407231E898B6686F73E /* ConstraintMakerRelatable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24F87FD2D3F8513D784FC4B8C7FE56 /* ConstraintMakerRelatable+Extensions.swift */; };
-		98F570DA48370453D648BD526FDAAEAA /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FC46DCCABF27DD96D284B7B0C62A1 /* LayoutConstraintItem.swift */; };
-		9C9548E8B4675954566202F7B87FF0E6 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3B38CB3ABF5B5FD9DF6BF9DF6B0C2D /* ConstraintConstantTarget.swift */; };
-		9E02CFFEFE1BEC978B512286F03D31DA /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01FC077E50187ACA165033D71DE14E1 /* ConstraintInsetTarget.swift */; };
-		A03FDA8BC5741880B1EF11AFD248EF48 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C16ED3E4BA5E1C51E5908DA9BD91994 /* ConstraintOffsetTarget.swift */; };
-		A115142039C23F91827E6961CC479F05 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D126D92585CF0DEA821C4E71A64EFE4 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A3CEE8324948497036C4E123B21CBC59 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C58D473723F66A644B5F1828F36A47 /* SwiftyJSON.swift */; };
-		A3E3AB7C765C21AE17B1E6EE6560040C /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F1DDC9192AB65BD7975F3CC9B6CC7ABB /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A5A8BF973BFE9C9304372A26C9F2E35B /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D68D902ECCBF87D921A2B63545926 /* ConstraintMakerExtendable.swift */; };
+		3660B4F629053ABC3C1DF69366770289 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD2BBD86277E5C97C0145C4DB7B81B0 /* ConstraintConfig.swift */; };
+		38B9D58E94D9C1CECD7E381C64A2329D /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06253C657AB67125B58D355A8FF448 /* UILayoutSupport+Extensions.swift */; };
+		420AC522120FC23DCFC9513D2BF3B034 /* MGCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF2694D1FAA81C36EF0AA8B8FC9C90 /* MGCounter.swift */; };
+		427D90D2305D285C01A34C6344922A74 /* DateTimePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F21177D824E47B649AE5E32E7AAEBDB0 /* DateTimePicker-dummy.m */; };
+		42B6ACFCF650183030867CB3EF345E95 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D35BCC5B7E4E84122CA0BD9D8952F /* ConstraintMakerFinalizable.swift */; };
+		48CE9260DAFE7D744E5F25DF9356D4BC /* DateTimePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 23A4338D608E0C1B16CFEE259B1A8CBF /* DateTimePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BAD99B7394E225CEDBF94B8100BCC7F /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F706D972110C17164358BB75B3D68723 /* ConstraintRelation.swift */; };
+		4DA72FD7F1FB2C0449EDEF4B8A579807 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F1EBE1525E08A8633A2C8FE88EE499 /* ConstraintPriorityTarget.swift */; };
+		5380454C48A12A6E376122ABD8096968 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC64670834B9335A16A43E82D431F50 /* ConstraintDescription.swift */; };
+		55E51F45F1E157D3B4942BA7252C277E /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292E629652B9E57406904698CFB224DA /* ConstraintRelatableTarget.swift */; };
+		56A72F6D13D930C4A2568F24DEA33C8D /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD69FA1347A005D2627C80782CEB584 /* ConstraintLayoutSupportDSL.swift */; };
+		56AC6DC6459AE47E7BC4AF06E5B148D2 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B0807D8CE46B70B8C962ED610D1B /* ConstraintDSL.swift */; };
+		5D36B99F3CAB1FC7337082D9581FECA6 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D45D81916E43C45FC85ACF6E04452B /* Debugging.swift */; };
+		5FA526557719FDBE81B1974B113CF600 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7367BB6246AEF28B196A5011FB4C8CAB /* SwiftyJSON-dummy.m */; };
+		604D3C93C17978C23600EC415949AB64 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352433747740C4F461BE0ADB46F75160 /* ConstraintInsets.swift */; };
+		611CEF7FF1EF9EA1BCEF6C73EEE3ACCF /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB6F42550E98A11192582DE0F368191 /* ConstraintLayoutGuide.swift */; };
+		626385AC254AE5BA240DF3DD80E9A7CC /* MGLogable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34416FE950F3D2AAF791CEB9CE484D4 /* MGLogable.swift */; };
+		69DE75BA185BBAB5FDAA28321F3C849F /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1387FEB9978BF4F8D4A1C0C47EEC3 /* ConstraintItem.swift */; };
+		6A2EFC661A2E025D1A742A21289CF3E5 /* Bundle+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94E278927B80BD9EF348357E7D2A3B7 /* Bundle+Resource.swift */; };
+		6A92768D60037C262183A6B80EE49A92 /* FullDateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98AA7A3FE3AD7412C384AF2ECD868C5C /* FullDateCollectionViewCell.xib */; };
+		6AC1B881BB319C89AD023A02CDC8FC3D /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0FD79A5F99686D5BB1E3B095120011 /* ConstraintLayoutGuide+Extensions.swift */; };
+		6EAC8B6FA2D115DE708A58C601DD25E1 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C87927679CFB8D2D21BCC9C244E4 /* Constraint.swift */; };
+		6F8761D0F91A3B8DFC426C43B6C26A5D /* MGStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4F9A4B2463240A65E899558BDA6F3 /* MGStateManager.swift */; };
+		72F478D974EF3ECD7F2499FBDE04FCCA /* DateTimePicker+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BBF39055F5827612E8078A860E2471 /* DateTimePicker+CollectionView.swift */; };
+		775AF399F6E4B7835E14C3DF1E84D98A /* DateTimePicker+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0028A691D198413EF82307366F2265 /* DateTimePicker+UITableView.swift */; };
+		785CCE696D42ED65DC691A2F3D5421D1 /* MagicTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B460132C0EFBF022DE57017EC2D4F0 /* MagicTimerView.swift */; };
+		9498BE7F2423F1A45AC2F4BAF2A5439B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
+		95E194A3AABB5407231E898B6686F73E /* ConstraintMakerRelatable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E769B9F7B48AD5F6E8E6A811F7AAAA /* ConstraintMakerRelatable+Extensions.swift */; };
+		98F570DA48370453D648BD526FDAAEAA /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78D90528087F93A8D3123D183875C9 /* LayoutConstraintItem.swift */; };
+		9BFCDD0B435EEBA34A4FD6A8F5A3E9CD /* DateTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C8E52D7A0C6D625DA6793CFD4390831 /* DateTimePicker.xib */; };
+		9C9548E8B4675954566202F7B87FF0E6 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C99FA0E2FEFAD6612B9FAF2089721C9 /* ConstraintConstantTarget.swift */; };
+		9E02CFFEFE1BEC978B512286F03D31DA /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72225F7D089738B8038B16129948C582 /* ConstraintInsetTarget.swift */; };
+		A03FDA8BC5741880B1EF11AFD248EF48 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B1064CE075FC02D1857A755687FF1 /* ConstraintOffsetTarget.swift */; };
+		A115142039C23F91827E6961CC479F05 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 90312690AAB160DCAF13A9057E888840 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CEE8324948497036C4E123B21CBC59 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4FE5D9CC5F90AFA3D0CD5C1167C45C /* SwiftyJSON.swift */; };
+		A3E3AB7C765C21AE17B1E6EE6560040C /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 19B88C28A40BFEE009338EE0D733DF59 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5A8BF973BFE9C9304372A26C9F2E35B /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC321B2474BB84F3A81DBB3C85BE38F /* ConstraintMakerExtendable.swift */; };
+		A7106DB11682382E6A6A946A1477970E /* MagicTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509DCEEE65C6AAFB2A5B714458950BD /* MagicTimer.swift */; };
 		AC81F374E364E666EAC65019691DF7B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
-		AEA8D63E576D5BB9FF44DF3689B5B76A /* DateTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423EF1A129FCB583E41D6F08837B2CA7 /* DateTimePicker.swift */; };
-		B03B5579590D528CBA6D11FF638BC2AF /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0850EAE6455DE4ECAC7FFAD18D20BD9 /* Typealiases.swift */; };
-		B43017FEC99D227D4CDD81DD2C27D9D9 /* ConstraintMakerPrioritizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E45CA25692584C1EE893048200D5E8 /* ConstraintMakerPrioritizable.swift */; };
-		B752F7C4BECB65894B1F49421049CE5F /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06F5898BF0869A6242338740BCCEE32 /* ConstraintView.swift */; };
-		BD47CB74CD9B2B4D2D942C9B65748DFB /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5883B0A951B784DAE4F1BAC3500272 /* SnapKit-dummy.m */; };
-		BDC87F2A61149720CA19538A813AC21A /* FullDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4061EDB1647F5B4599665DB1CE8033 /* FullDateCollectionViewCell.swift */; };
-		E757DF70D6F8F69C1933040516663180 /* DateTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = D380916AEDC2F8C0004A8B0B7E16B16D /* DateTimePicker.xib */; };
-		E98DC8FB2578E76A812E0C94BA10E1B1 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D9F4058B9A727DFC2DF84FABA395BD /* ConstraintDirectionalInsets.swift */; };
-		EF21586EC3DFF6097A58EEC87376A0C1 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BE1553B6B4205F4E9E12095213F101 /* ConstraintLayoutGuideDSL.swift */; };
-		F7C0960CEEB8F0C18F4503B405EAC08F /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439D697E15DE4AEE9982D23326C2D60 /* ConstraintMultiplierTarget.swift */; };
-		F953AA9104BFE0C2DAD639EA60104A75 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC18BD4511786ABC7108DF79F04283 /* ConstraintView+Extensions.swift */; };
-		FAB03959C2357E325B19E08BC4775DAB /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F845750871C6EC21ED76495E74907E0 /* ConstraintMaker.swift */; };
+		AEA8D63E576D5BB9FF44DF3689B5B76A /* DateTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3919906F1147D16B0B9C1A7F72E7C775 /* DateTimePicker.swift */; };
+		B03B5579590D528CBA6D11FF638BC2AF /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC764EBBACAE4655F17ED067D14AAD /* Typealiases.swift */; };
+		B03D436E9456ACB430E7759CBCEF85EE /* MagicTimerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB3E308A8C869598C50E1B707326E9 /* MagicTimerViewDelegate.swift */; };
+		B43017FEC99D227D4CDD81DD2C27D9D9 /* ConstraintMakerPrioritizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE8F7483AC92B79AE6B29EAB11E05B /* ConstraintMakerPrioritizable.swift */; };
+		B752F7C4BECB65894B1F49421049CE5F /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28B78FC770A19B364840153A1B8029 /* ConstraintView.swift */; };
+		BA410E83A02009985A0B9F2D686971BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		BD47CB74CD9B2B4D2D942C9B65748DFB /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E870927170E6937E56891860BA7A160A /* SnapKit-dummy.m */; };
+		BDC87F2A61149720CA19538A813AC21A /* FullDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCF506A8C2E1627542EBE3860EEFE /* FullDateCollectionViewCell.swift */; };
+		BF4A0EA7C2C54F4539CFEA31AA0EC08A /* MGObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D8BB26B534A991575F062EB1ABB63 /* MGObservable.swift */; };
+		C545597D8B124BEF07DF7C6003A6E504 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		E4ECF6F1B7CA7A63BE99FEBACEA37943 /* MagicTimer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3124BD195FC75BE9954BDB2D4B387DF5 /* MagicTimer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5A41F238D43BE2983098F7DB8219045 /* TimeInterval+Extesnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D52CC7BEA605957C29507D00087733 /* TimeInterval+Extesnion.swift */; };
+		E788030F3A49BB5D880A9A56737452AC /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B3A703F542858F891B9EDBBC1ADA9 /* UIFont+Extension.swift */; };
+		E98DC8FB2578E76A812E0C94BA10E1B1 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412C66F6C63AF1D912EDD60896C6710D /* ConstraintDirectionalInsets.swift */; };
+		EF21586EC3DFF6097A58EEC87376A0C1 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4184EE1BC1065ECEC97F0B792ACE13 /* ConstraintLayoutGuideDSL.swift */; };
+		F446F938648D0259BAB2A237242302F3 /* MagicTimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B39BE81133CCB81D6B6EC2F1939C3E /* MagicTimerState.swift */; };
+		F7C0960CEEB8F0C18F4503B405EAC08F /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1F0F9633767EEF625B6B2C2C3F224 /* ConstraintMultiplierTarget.swift */; };
+		F953AA9104BFE0C2DAD639EA60104A75 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC66657351099BD923635B2A7910808 /* ConstraintView+Extensions.swift */; };
+		FAB03959C2357E325B19E08BC4775DAB /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819FA27D833DC3FB1B53F5A068539076 /* ConstraintMaker.swift */; };
+		FCD594C9651521D08DA37A35E9B4BED2 /* Pods-Fokus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F4CD00C3C5A891E27C98C7960BCA3D /* Pods-Fokus-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0EA0B6B389AF13196F12FB77A275490B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E0775EC5F6DBAA5D2C37BCFB14908273;
-			remoteInfo = "DateTimePicker-DateTimePicker";
-		};
-		A7CA551C10CA9D945494240B8D7E32E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D118A6A04828FD3CDA8640CD2B6796D2;
-			remoteInfo = SwiftyJSON;
-		};
-		CC80991A27BF621E57CE1440D55EC6B3 /* PBXContainerItemProxy */ = {
+		1BA7A8F504748574035055046B21FA59 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
 			remoteInfo = SnapKit;
 		};
-		E8E79AFC7880D2710ED3E8E1FB97AE21 /* PBXContainerItemProxy */ = {
+		63C08868955F5B0178594FC8937E04C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D118A6A04828FD3CDA8640CD2B6796D2;
+			remoteInfo = SwiftyJSON;
+		};
+		78E42A292127DC5A6DD358B6F53150A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0775EC5F6DBAA5D2C37BCFB14908273;
+			remoteInfo = "DateTimePicker-DateTimePicker";
+		};
+		82A1EA5D772D8B5A1170B9968BA63A71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A2AFD30069CA32CD2E72E7D9D0E0097;
+			remoteInfo = MagicTimer;
+		};
+		8E94857818081B23114824213A9CBD5B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -101,107 +126,130 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0116012DDF1AFCDF2BE1AE803FEAD3EB /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
-		080A8CE9258D8C3B270507F6DF826B18 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Sources/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
+		00F13E83F71E7B48AA06083901CC07F5 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Sources/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
+		04A2DBBAC48EAFAF1AA8A45DF57243F4 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Sources/LayoutConstraint.swift; sourceTree = "<group>"; };
 		0B33A5FB46DAB7AB14D0D14608E1C470 /* Pods-Fokus-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Fokus-frameworks.sh"; sourceTree = "<group>"; };
-		0C3B38CB3ABF5B5FD9DF6BF9DF6B0C2D /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Sources/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
 		0C7C22F6D48DE56FA851EA236CB991DB /* Pods-Fokus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Fokus.debug.xcconfig"; sourceTree = "<group>"; };
-		0D126D92585CF0DEA821C4E71A64EFE4 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
-		0E6177891D4E7B729F9C669D3E83EDFD /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
-		13927C3CBCADE2D5B9E6067FDBDC48AB /* DateTimePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DateTimePicker-dummy.m"; sourceTree = "<group>"; };
-		13E45CA25692584C1EE893048200D5E8 /* ConstraintMakerPrioritizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPrioritizable.swift; path = Sources/ConstraintMakerPrioritizable.swift; sourceTree = "<group>"; };
+		0CFD88317F5F82B3355370C04ED2C67A /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Sources/ConstraintAttributes.swift; sourceTree = "<group>"; };
+		0FB114E27F8414106022220B5B533895 /* MagicTimer */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MagicTimer; path = MagicTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1292C1259A80778B4ABD0607967E3836 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
 		144ED038736B4B08EB110060A0F26C70 /* Pods-Fokus-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Fokus-acknowledgements.markdown"; sourceTree = "<group>"; };
-		17B29B382A66B26D6307568B5C7E1441 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Sources/ConstraintItem.swift; sourceTree = "<group>"; };
-		188DC3FE93004CD98388A701233A429A /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Sources/ConstraintConfig.swift; sourceTree = "<group>"; };
-		18C58D473723F66A644B5F1828F36A47 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
+		189B1064CE075FC02D1857A755687FF1 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Sources/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
+		19B88C28A40BFEE009338EE0D733DF59 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
 		1A34C39DD46AD859892C82B9DBF190EC /* Pods-Fokus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Fokus-Info.plist"; sourceTree = "<group>"; };
-		21FC18BD4511786ABC7108DF79F04283 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Sources/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
-		22D4052AF045D3E41A9F39918AE7408C /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
-		2981E861A10BB152E46A8690B0ABD6F7 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Sources/LayoutConstraint.swift; sourceTree = "<group>"; };
-		2C5883B0A951B784DAE4F1BAC3500272 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
-		2C6D0A8A4AFBE1E7A97DA3CD9C390B67 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Sources/ConstraintAttributes.swift; sourceTree = "<group>"; };
-		2C736DFF7DD41C482B08CDA5A8958A96 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Sources/ConstraintDescription.swift; sourceTree = "<group>"; };
-		3B486B8C68BB39E512404EE8D7CE61C5 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Sources/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
-		3BA9F748F14501F7F25822A068FAB5F8 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Sources/ConstraintRelation.swift; sourceTree = "<group>"; };
-		407231A26B47CB608237B12DF7A7DEB1 /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
-		423EF1A129FCB583E41D6F08837B2CA7 /* DateTimePicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTimePicker.swift; path = Source/DateTimePicker.swift; sourceTree = "<group>"; };
-		4A24F87FD2D3F8513D784FC4B8C7FE56 /* ConstraintMakerRelatable+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintMakerRelatable+Extensions.swift"; path = "Sources/ConstraintMakerRelatable+Extensions.swift"; sourceTree = "<group>"; };
-		4B96167CFA6E6BAD9588CE7AD1A9CAEC /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Sources/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
-		4C16ED3E4BA5E1C51E5908DA9BD91994 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Sources/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
-		4F781C299D95738FDC9BCA991152480E /* DateTimePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DateTimePicker.release.xcconfig; sourceTree = "<group>"; };
-		4F845750871C6EC21ED76495E74907E0 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Sources/ConstraintMaker.swift; sourceTree = "<group>"; };
-		4F9A1FE4FDC5538FEB36F6894BF021E8 /* SwiftyJSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.debug.xcconfig; sourceTree = "<group>"; };
-		5473D8D4191EEB3357F2EEE227117545 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
-		569CB459979FDB3B33072FFE13E20519 /* DateTimePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DateTimePicker-prefix.pch"; sourceTree = "<group>"; };
-		572CC258184E0164AAA09C101187EC00 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Sources/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
-		59D67E7631D203451E714C64751B3A8D /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Sources/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
+		1C8E52D7A0C6D625DA6793CFD4390831 /* DateTimePicker.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DateTimePicker.xib; path = Source/DateTimePicker.xib; sourceTree = "<group>"; };
+		1CC66657351099BD923635B2A7910808 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Sources/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
+		1DA6B0807D8CE46B70B8C962ED610D1B /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Sources/ConstraintDSL.swift; sourceTree = "<group>"; };
+		21FCEA36B2DEDD0F82097BC40F67A7BE /* MagicTimer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MagicTimer.modulemap; sourceTree = "<group>"; };
+		23A4338D608E0C1B16CFEE259B1A8CBF /* DateTimePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DateTimePicker-umbrella.h"; sourceTree = "<group>"; };
+		2614194EA205BD190D39F6B0B6BB7E2C /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Sources/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
+		292E629652B9E57406904698CFB224DA /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Sources/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
+		2C99FA0E2FEFAD6612B9FAF2089721C9 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Sources/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
+		30C80DA8412C9471B949B35889F7DDCB /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
+		3124BD195FC75BE9954BDB2D4B387DF5 /* MagicTimer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MagicTimer-umbrella.h"; sourceTree = "<group>"; };
+		34A35486E49EE11523AD7727EDE8AE6F /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		352433747740C4F461BE0ADB46F75160 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Sources/ConstraintInsets.swift; sourceTree = "<group>"; };
+		3919906F1147D16B0B9C1A7F72E7C775 /* DateTimePicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTimePicker.swift; path = Source/DateTimePicker.swift; sourceTree = "<group>"; };
+		3A78D90528087F93A8D3123D183875C9 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Sources/LayoutConstraintItem.swift; sourceTree = "<group>"; };
+		3CC321B2474BB84F3A81DBB3C85BE38F /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Sources/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
+		3CC4F9A4B2463240A65E899558BDA6F3 /* MGStateManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MGStateManager.swift; path = Sources/MagicTimer/MGStateManager.swift; sourceTree = "<group>"; };
+		3FD1F0F9633767EEF625B6B2C2C3F224 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Sources/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
+		412C66F6C63AF1D912EDD60896C6710D /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Sources/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
+		4509DCEEE65C6AAFB2A5B714458950BD /* MagicTimer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagicTimer.swift; path = Sources/MagicTimer/MagicTimer.swift; sourceTree = "<group>"; };
+		540093CC2F5CAC238E7CF5EFFC22A2D0 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Sources/ConstraintViewDSL.swift; sourceTree = "<group>"; };
+		56E769B9F7B48AD5F6E8E6A811F7AAAA /* ConstraintMakerRelatable+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintMakerRelatable+Extensions.swift"; path = "Sources/ConstraintMakerRelatable+Extensions.swift"; sourceTree = "<group>"; };
+		580BB1925BDB506A5AEE13DEBF427468 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
+		585A1DB4FEB0ABE5DABD5D277CDD42F8 /* MagicTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MagicTimer.debug.xcconfig; sourceTree = "<group>"; };
+		5ABF3377779134D27D12A0410D292654 /* DateTimePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DateTimePicker.modulemap; sourceTree = "<group>"; };
+		5BC64670834B9335A16A43E82D431F50 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Sources/ConstraintDescription.swift; sourceTree = "<group>"; };
+		5BD2BBD86277E5C97C0145C4DB7B81B0 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Sources/ConstraintConfig.swift; sourceTree = "<group>"; };
+		5FB6F42550E98A11192582DE0F368191 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Sources/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
 		648CB5B1B883DF3C0C2769C08CCEB138 /* Pods-Fokus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Fokus-umbrella.h"; sourceTree = "<group>"; };
-		666332CAE2C73490FF3819CF094F9E00 /* DateTimePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DateTimePicker.modulemap; sourceTree = "<group>"; };
-		6DDB73F085783A735572FD808F83B95A /* SwiftyJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.release.xcconfig; sourceTree = "<group>"; };
-		6EC068DDE7D4FEF5D855D632334ED031 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Sources/ConstraintViewDSL.swift; sourceTree = "<group>"; };
-		6FC47E094D6797DB63EE9B6FD7C4FD25 /* DateTimePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DateTimePicker.debug.xcconfig; sourceTree = "<group>"; };
-		7266B871C6199428DAFE965FDD29CE63 /* DateTimePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DateTimePicker-Info.plist"; sourceTree = "<group>"; };
+		6A0028A691D198413EF82307366F2265 /* DateTimePicker+UITableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateTimePicker+UITableView.swift"; path = "Source/DateTimePicker+UITableView.swift"; sourceTree = "<group>"; };
+		6D06253C657AB67125B58D355A8FF448 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Sources/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
+		72225F7D089738B8038B16129948C582 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Sources/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
+		7367BB6246AEF28B196A5011FB4C8CAB /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		73F1EBE1525E08A8633A2C8FE88EE499 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Sources/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
+		74B39BE81133CCB81D6B6EC2F1939C3E /* MagicTimerState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagicTimerState.swift; path = Sources/MagicTimer/MagicTimerState.swift; sourceTree = "<group>"; };
+		74BBF39055F5827612E8078A860E2471 /* DateTimePicker+CollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateTimePicker+CollectionView.swift"; path = "Source/DateTimePicker+CollectionView.swift"; sourceTree = "<group>"; };
+		75B9B39237FEDA93D3E384E80BD758FE /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
+		7A4CCF506A8C2E1627542EBE3860EEFE /* FullDateCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FullDateCollectionViewCell.swift; path = Source/FullDateCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B9A563865B0B1F706E94BF981609F02 /* MagicTimer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MagicTimer-Info.plist"; sourceTree = "<group>"; };
 		7D3017A7174F6C223400068E519BC763 /* Pods-Fokus */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Fokus"; path = Pods_Fokus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F178F5FB1171F7B5FFD66E5B6750721 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Sources/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
-		8256C7E42662E7F9800186D93CC79E66 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Sources/Constraint.swift; sourceTree = "<group>"; };
-		87BE1553B6B4205F4E9E12095213F101 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Sources/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
-		8B56C013AB20C723B731A59E9561E2DB /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Sources/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
-		8C3697C9AA3998AF9FD0E8276F385898 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Sources/ConstraintPriority.swift; sourceTree = "<group>"; };
-		92D9F4058B9A727DFC2DF84FABA395BD /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Sources/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
-		9421F56012A8836F8E28269CC307561D /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Sources/ConstraintDSL.swift; sourceTree = "<group>"; };
+		805DA94F803F311A87AD5C383DACDCDB /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Sources/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
+		819FA27D833DC3FB1B53F5A068539076 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Sources/ConstraintMaker.swift; sourceTree = "<group>"; };
+		8404E64E447BFD74945B3D39209ED8E7 /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
+		840AFFA1211E77E055D931ED688F346A /* DateTimePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DateTimePicker.debug.xcconfig; sourceTree = "<group>"; };
+		84B460132C0EFBF022DE57017EC2D4F0 /* MagicTimerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagicTimerView.swift; path = Sources/MagicTimer/MagicTimerView.swift; sourceTree = "<group>"; };
+		8B4420E2539ADD27441754F7B30AED58 /* MagicTimer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MagicTimer-prefix.pch"; sourceTree = "<group>"; };
+		90312690AAB160DCAF13A9057E888840 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		946FFE3095AE5FB57E635F1A67A5AECA /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Sources/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
+		96928B5D0E1738964D9CE6DDCC3FDE17 /* SwiftyJSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.debug.xcconfig; sourceTree = "<group>"; };
 		979486118B3E90C08386079D57962701 /* SnapKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98AA7A3FE3AD7412C384AF2ECD868C5C /* FullDateCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = FullDateCollectionViewCell.xib; path = Source/FullDateCollectionViewCell.xib; sourceTree = "<group>"; };
 		99291217F845BBD6EFA2E21D8E34FBAD /* Pods-Fokus-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Fokus-acknowledgements.plist"; sourceTree = "<group>"; };
-		992C5DDCAE29D0C9C87FC1C459A6C5E9 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		9AD69FA1347A005D2627C80782CEB584 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Sources/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0F4CD00C3C5A891E27C98C7960BCA3D /* Pods-Fokus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Fokus-dummy.m"; sourceTree = "<group>"; };
-		A15FC46DCCABF27DD96D284B7B0C62A1 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Sources/LayoutConstraintItem.swift; sourceTree = "<group>"; };
-		A1BB8E9EA8DF330C4B48F47ABB4B0227 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Sources/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
-		A27ACC80D19BBDA53A8582E4154EEEA2 /* StepCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StepCollectionViewFlowLayout.swift; path = Source/StepCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		AA5D68D902ECCBF87D921A2B63545926 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Sources/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
-		AB8F31BE0F1CE34FA1B1059939774803 /* DateTimePicker+UITableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateTimePicker+UITableView.swift"; path = "Source/DateTimePicker+UITableView.swift"; sourceTree = "<group>"; };
+		A3E49999961E2717617AC3C445A25E24 /* MagicTimer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MagicTimer-dummy.m"; sourceTree = "<group>"; };
+		A413C7A2D5F4379DE23654F05EAE7F51 /* ResourceBundle-DateTimePicker-DateTimePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-DateTimePicker-DateTimePicker-Info.plist"; sourceTree = "<group>"; };
+		A531F18DFF7B712B55631C49E77600D4 /* MGStandardTimerFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MGStandardTimerFormatter.swift; path = Sources/MagicTimer/MGStandardTimerFormatter.swift; sourceTree = "<group>"; };
+		A5D999D0EED03321874DA80EB62A87B6 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Sources/ConstraintPriority.swift; sourceTree = "<group>"; };
+		A66B50336B3E6DC7E2E7804AA72D237D /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		A8AA621566E13FBE45B51F8ED05FAF97 /* MagicTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MagicTimer.release.xcconfig; sourceTree = "<group>"; };
+		AA67C225E0396C79436F44C68921586A /* SwiftyJSON-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyJSON-Info.plist"; sourceTree = "<group>"; };
+		ABBD1E281DC3DECEDC1DC9A2971F9C07 /* DateTimePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DateTimePicker.release.xcconfig; sourceTree = "<group>"; };
+		AC20B05600A9825511339977791872C9 /* StepCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StepCollectionViewFlowLayout.swift; path = Source/StepCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		ACAC764EBBACAE4655F17ED067D14AAD /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Sources/Typealiases.swift; sourceTree = "<group>"; };
 		B04C1EBC2EC90A2DFFEDDD0CF4473840 /* DateTimePicker-DateTimePicker */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "DateTimePicker-DateTimePicker"; path = DateTimePicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26CB6AD16677CB8E5B8A5059EA05677 /* DateTimePicker */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DateTimePicker; path = DateTimePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B81ACE9E446DA99E18599DA776080321 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Sources/ConstraintInsets.swift; sourceTree = "<group>"; };
-		BB1BE4A9BCAEE498BD1DA8D687A77BF7 /* FullDateCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = FullDateCollectionViewCell.xib; path = Source/FullDateCollectionViewCell.xib; sourceTree = "<group>"; };
-		C0850EAE6455DE4ECAC7FFAD18D20BD9 /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Sources/Typealiases.swift; sourceTree = "<group>"; };
-		C12D5E4BB7B6D0058C5752E7D4B122F0 /* ResourceBundle-DateTimePicker-DateTimePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-DateTimePicker-DateTimePicker-Info.plist"; sourceTree = "<group>"; };
+		B3B1387FEB9978BF4F8D4A1C0C47EEC3 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Sources/ConstraintItem.swift; sourceTree = "<group>"; };
+		B75B3A703F542858F891B9EDBBC1ADA9 /* UIFont+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIFont+Extension.swift"; path = "Sources/MagicTimer/UIFont+Extension.swift"; sourceTree = "<group>"; };
+		B94E278927B80BD9EF348357E7D2A3B7 /* Bundle+Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Resource.swift"; path = "Source/Bundle+Resource.swift"; sourceTree = "<group>"; };
+		BA539F21D7688612DED0B863EE4DEDEF /* Int+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+Extension.swift"; path = "Sources/MagicTimer/Int+Extension.swift"; sourceTree = "<group>"; };
+		BE28B78FC770A19B364840153A1B8029 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Sources/ConstraintView.swift; sourceTree = "<group>"; };
+		C1AE8F7483AC92B79AE6B29EAB11E05B /* ConstraintMakerPrioritizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPrioritizable.swift; path = Sources/ConstraintMakerPrioritizable.swift; sourceTree = "<group>"; };
+		C34416FE950F3D2AAF791CEB9CE484D4 /* MGLogable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MGLogable.swift; path = Sources/MagicTimer/MGLogable.swift; sourceTree = "<group>"; };
 		CA18A746D0DCFC7F4F88B4E98EC28584 /* Pods-Fokus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Fokus.modulemap"; sourceTree = "<group>"; };
+		CCC2C87927679CFB8D2D21BCC9C244E4 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Sources/Constraint.swift; sourceTree = "<group>"; };
+		CE86A8AE660DF1759E9FEE0039D6F146 /* DateTimePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DateTimePicker-prefix.pch"; sourceTree = "<group>"; };
+		D1D45D81916E43C45FC85ACF6E04452B /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Sources/Debugging.swift; sourceTree = "<group>"; };
 		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		D380916AEDC2F8C0004A8B0B7E16B16D /* DateTimePicker.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DateTimePicker.xib; path = Source/DateTimePicker.xib; sourceTree = "<group>"; };
-		D99C892AE8D44379B6E93A39CA264413 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
-		DC347A76E9112EDA5AEB83B6EA9F2F59 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Sources/Debugging.swift; sourceTree = "<group>"; };
-		DDDCDE6A81439D4B46E484722C8064A6 /* DateTimePicker+CollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateTimePicker+CollectionView.swift"; path = "Source/DateTimePicker+CollectionView.swift"; sourceTree = "<group>"; };
-		DE621A525A6C796E443788C9D1E462EF /* SwiftyJSON-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyJSON-Info.plist"; sourceTree = "<group>"; };
-		E0EAA7BEE4D8D890FFDFFFE114206525 /* Bundle+Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Resource.swift"; path = "Source/Bundle+Resource.swift"; sourceTree = "<group>"; };
-		E19A2718DFA5AF1AD014B1F887480FA2 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Sources/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
+		D608C9C8609E93878EB604A67624E653 /* SwiftyJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.release.xcconfig; sourceTree = "<group>"; };
+		D70D35BCC5B7E4E84122CA0BD9D8952F /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Sources/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
+		DAFF2694D1FAA81C36EF0AA8B8FC9C90 /* MGCounter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MGCounter.swift; path = Sources/MagicTimer/MGCounter.swift; sourceTree = "<group>"; };
+		DF4184EE1BC1065ECEC97F0B792ACE13 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Sources/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
 		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3AA03A2F3814627258809576D7C0672 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Sources/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
+		E4EB3E308A8C869598C50E1B707326E9 /* MagicTimerViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagicTimerViewDelegate.swift; path = Sources/MagicTimer/MagicTimerViewDelegate.swift; sourceTree = "<group>"; };
+		E870927170E6937E56891860BA7A160A /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		EDEB13E5E71645F5F7E48E2CAA35B960 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Sources/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
-		EEE51BA652A69A412194330906D083C0 /* DateTimePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DateTimePicker-umbrella.h"; sourceTree = "<group>"; };
-		F01FC077E50187ACA165033D71DE14E1 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Sources/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
-		F06F5898BF0869A6242338740BCCEE32 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Sources/ConstraintView.swift; sourceTree = "<group>"; };
-		F1DDC9192AB65BD7975F3CC9B6CC7ABB /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
-		F439D697E15DE4AEE9982D23326C2D60 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Sources/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
-		FC4061EDB1647F5B4599665DB1CE8033 /* FullDateCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FullDateCollectionViewCell.swift; path = Source/FullDateCollectionViewCell.swift; sourceTree = "<group>"; };
-		FC58A68DEEDF716AC3F8636FCBFAF129 /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
+		EB5C3F371A58923D05DBECECD14D5691 /* MGTimerExecutive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MGTimerExecutive.swift; path = Sources/MagicTimer/MGTimerExecutive.swift; sourceTree = "<group>"; };
+		ED3D8BB26B534A991575F062EB1ABB63 /* MGObservable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MGObservable.swift; path = Sources/MagicTimer/MGObservable.swift; sourceTree = "<group>"; };
+		ED421C5E0A7C887846E78F6FE4945A6D /* DateTimePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DateTimePicker-Info.plist"; sourceTree = "<group>"; };
+		EF4FE5D9CC5F90AFA3D0CD5C1167C45C /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
+		F21177D824E47B649AE5E32E7AAEBDB0 /* DateTimePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DateTimePicker-dummy.m"; sourceTree = "<group>"; };
+		F706D972110C17164358BB75B3D68723 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Sources/ConstraintRelation.swift; sourceTree = "<group>"; };
+		F8D52CC7BEA605957C29507D00087733 /* TimeInterval+Extesnion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TimeInterval+Extesnion.swift"; path = "Sources/MagicTimer/TimeInterval+Extesnion.swift"; sourceTree = "<group>"; };
+		F9A7BDD0AE36C0F18245B29BF84A7F42 /* MGBackgroundCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MGBackgroundCalculator.swift; path = Sources/MagicTimer/MGBackgroundCalculator.swift; sourceTree = "<group>"; };
+		FC0FD79A5F99686D5BB1E3B095120011 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Sources/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
 		FCCD9A3BC68DE50D9AACD8157BC858ED /* Pods-Fokus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Fokus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1759DE2FE84013462AC53EE2D8ED58B3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				065D4D38BFE58CBFDC2F9486CEA07019 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3977393A21672F0FBC6F1193739E0D15 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				325CCDB295FFA016638075B5D2CEDD5C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AAAC538DD1C3C30FE6524FC440275F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C545597D8B124BEF07DF7C6003A6E504 /* Foundation.framework in Frameworks */,
+				9498BE7F2423F1A45AC2F4BAF2A5439B /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,10 +262,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8DF7DE9195431BE3FC6C2A649E6DF54 /* Frameworks */ = {
+		AB3AD2455FF50B48760CBC884103BF3C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA410E83A02009985A0B9F2D686971BB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,24 +278,68 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EF48F6FBA938D5BE256CB5B2AC7218EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E3F1BF9BE5CA15BD8C45853B07C57F5 /* SnapKit */ = {
+			isa = PBXGroup;
+			children = (
+				CCC2C87927679CFB8D2D21BCC9C244E4 /* Constraint.swift */,
+				0CFD88317F5F82B3355370C04ED2C67A /* ConstraintAttributes.swift */,
+				5BD2BBD86277E5C97C0145C4DB7B81B0 /* ConstraintConfig.swift */,
+				2C99FA0E2FEFAD6612B9FAF2089721C9 /* ConstraintConstantTarget.swift */,
+				5BC64670834B9335A16A43E82D431F50 /* ConstraintDescription.swift */,
+				412C66F6C63AF1D912EDD60896C6710D /* ConstraintDirectionalInsets.swift */,
+				2614194EA205BD190D39F6B0B6BB7E2C /* ConstraintDirectionalInsetTarget.swift */,
+				1DA6B0807D8CE46B70B8C962ED610D1B /* ConstraintDSL.swift */,
+				352433747740C4F461BE0ADB46F75160 /* ConstraintInsets.swift */,
+				72225F7D089738B8038B16129948C582 /* ConstraintInsetTarget.swift */,
+				B3B1387FEB9978BF4F8D4A1C0C47EEC3 /* ConstraintItem.swift */,
+				5FB6F42550E98A11192582DE0F368191 /* ConstraintLayoutGuide.swift */,
+				FC0FD79A5F99686D5BB1E3B095120011 /* ConstraintLayoutGuide+Extensions.swift */,
+				DF4184EE1BC1065ECEC97F0B792ACE13 /* ConstraintLayoutGuideDSL.swift */,
+				805DA94F803F311A87AD5C383DACDCDB /* ConstraintLayoutSupport.swift */,
+				9AD69FA1347A005D2627C80782CEB584 /* ConstraintLayoutSupportDSL.swift */,
+				819FA27D833DC3FB1B53F5A068539076 /* ConstraintMaker.swift */,
+				946FFE3095AE5FB57E635F1A67A5AECA /* ConstraintMakerEditable.swift */,
+				3CC321B2474BB84F3A81DBB3C85BE38F /* ConstraintMakerExtendable.swift */,
+				D70D35BCC5B7E4E84122CA0BD9D8952F /* ConstraintMakerFinalizable.swift */,
+				C1AE8F7483AC92B79AE6B29EAB11E05B /* ConstraintMakerPrioritizable.swift */,
+				00F13E83F71E7B48AA06083901CC07F5 /* ConstraintMakerRelatable.swift */,
+				56E769B9F7B48AD5F6E8E6A811F7AAAA /* ConstraintMakerRelatable+Extensions.swift */,
+				3FD1F0F9633767EEF625B6B2C2C3F224 /* ConstraintMultiplierTarget.swift */,
+				189B1064CE075FC02D1857A755687FF1 /* ConstraintOffsetTarget.swift */,
+				A5D999D0EED03321874DA80EB62A87B6 /* ConstraintPriority.swift */,
+				73F1EBE1525E08A8633A2C8FE88EE499 /* ConstraintPriorityTarget.swift */,
+				292E629652B9E57406904698CFB224DA /* ConstraintRelatableTarget.swift */,
+				F706D972110C17164358BB75B3D68723 /* ConstraintRelation.swift */,
+				BE28B78FC770A19B364840153A1B8029 /* ConstraintView.swift */,
+				1CC66657351099BD923635B2A7910808 /* ConstraintView+Extensions.swift */,
+				540093CC2F5CAC238E7CF5EFFC22A2D0 /* ConstraintViewDSL.swift */,
+				D1D45D81916E43C45FC85ACF6E04452B /* Debugging.swift */,
+				04A2DBBAC48EAFAF1AA8A45DF57243F4 /* LayoutConstraint.swift */,
+				3A78D90528087F93A8D3123D183875C9 /* LayoutConstraintItem.swift */,
+				ACAC764EBBACAE4655F17ED067D14AAD /* Typealiases.swift */,
+				6D06253C657AB67125B58D355A8FF448 /* UILayoutSupport+Extensions.swift */,
+				B6891EB8E847F1E72F3EB2E4F1CB1538 /* Support Files */,
+			);
+			name = SnapKit;
+			path = SnapKit;
+			sourceTree = "<group>";
+		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		469F152E338605021ACB7F88A880B7E7 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				D380916AEDC2F8C0004A8B0B7E16B16D /* DateTimePicker.xib */,
-				BB1BE4A9BCAEE498BD1DA8D687A77BF7 /* FullDateCollectionViewCell.xib */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		502BE48FA9F37EC1A107EE6029981664 /* Pods-Fokus */ = {
@@ -266,20 +359,19 @@
 			path = "Target Support Files/Pods-Fokus";
 			sourceTree = "<group>";
 		};
-		58E8F8F642849A81F16B22E82FFB4B23 /* DateTimePicker */ = {
+		50A8DA5F8EF20E0A14DC8CDD591BCB2D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E0EAA7BEE4D8D890FFDFFFE114206525 /* Bundle+Resource.swift */,
-				423EF1A129FCB583E41D6F08837B2CA7 /* DateTimePicker.swift */,
-				DDDCDE6A81439D4B46E484722C8064A6 /* DateTimePicker+CollectionView.swift */,
-				AB8F31BE0F1CE34FA1B1059939774803 /* DateTimePicker+UITableView.swift */,
-				FC4061EDB1647F5B4599665DB1CE8033 /* FullDateCollectionViewCell.swift */,
-				A27ACC80D19BBDA53A8582E4154EEEA2 /* StepCollectionViewFlowLayout.swift */,
-				469F152E338605021ACB7F88A880B7E7 /* Resources */,
-				A4A5A624A7F4668EA89B57E30F95BA5A /* Support Files */,
+				21FCEA36B2DEDD0F82097BC40F67A7BE /* MagicTimer.modulemap */,
+				A3E49999961E2717617AC3C445A25E24 /* MagicTimer-dummy.m */,
+				7B9A563865B0B1F706E94BF981609F02 /* MagicTimer-Info.plist */,
+				8B4420E2539ADD27441754F7B30AED58 /* MagicTimer-prefix.pch */,
+				3124BD195FC75BE9954BDB2D4B387DF5 /* MagicTimer-umbrella.h */,
+				585A1DB4FEB0ABE5DABD5D277CDD42F8 /* MagicTimer.debug.xcconfig */,
+				A8AA621566E13FBE45B51F8ED05FAF97 /* MagicTimer.release.xcconfig */,
 			);
-			name = DateTimePicker;
-			path = DateTimePicker;
+			name = "Support Files";
+			path = "../Target Support Files/MagicTimer";
 			sourceTree = "<group>";
 		};
 		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
@@ -291,19 +383,43 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		83913FE8365466D38FFD88559B315B72 /* Support Files */ = {
+		59FF993B60D17123F63C6B7CC753C55B /* SwiftyJSON */ = {
 			isa = PBXGroup;
 			children = (
-				22D4052AF045D3E41A9F39918AE7408C /* SnapKit.modulemap */,
-				2C5883B0A951B784DAE4F1BAC3500272 /* SnapKit-dummy.m */,
-				D99C892AE8D44379B6E93A39CA264413 /* SnapKit-Info.plist */,
-				0116012DDF1AFCDF2BE1AE803FEAD3EB /* SnapKit-prefix.pch */,
-				F1DDC9192AB65BD7975F3CC9B6CC7ABB /* SnapKit-umbrella.h */,
-				407231A26B47CB608237B12DF7A7DEB1 /* SnapKit.debug.xcconfig */,
-				FC58A68DEEDF716AC3F8636FCBFAF129 /* SnapKit.release.xcconfig */,
+				EF4FE5D9CC5F90AFA3D0CD5C1167C45C /* SwiftyJSON.swift */,
+				C853FA557300ECB3928A2F72F5F81589 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SnapKit";
+			name = SwiftyJSON;
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		7D74C39AEA8D594455DFA36F009295D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B26CB6AD16677CB8E5B8A5059EA05677 /* DateTimePicker */,
+				B04C1EBC2EC90A2DFFEDDD0CF4473840 /* DateTimePicker-DateTimePicker */,
+				0FB114E27F8414106022220B5B533895 /* MagicTimer */,
+				7D3017A7174F6C223400068E519BC763 /* Pods-Fokus */,
+				979486118B3E90C08386079D57962701 /* SnapKit */,
+				E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8675BE8027770B9188E9561F36A9EE7B /* DateTimePicker */ = {
+			isa = PBXGroup;
+			children = (
+				B94E278927B80BD9EF348357E7D2A3B7 /* Bundle+Resource.swift */,
+				3919906F1147D16B0B9C1A7F72E7C775 /* DateTimePicker.swift */,
+				74BBF39055F5827612E8078A860E2471 /* DateTimePicker+CollectionView.swift */,
+				6A0028A691D198413EF82307366F2265 /* DateTimePicker+UITableView.swift */,
+				7A4CCF506A8C2E1627542EBE3860EEFE /* FullDateCollectionViewCell.swift */,
+				AC20B05600A9825511339977791872C9 /* StepCollectionViewFlowLayout.swift */,
+				92E6308C0EA1E0E0B8C5B61FF10E074A /* Resources */,
+				8D4AAB7F07E2D6F8B9DD20A318BB4486 /* Support Files */,
+			);
+			name = DateTimePicker;
+			path = DateTimePicker;
 			sourceTree = "<group>";
 		};
 		869A6CCCE2868B7693D79872870A7CDF /* Targets Support Files */ = {
@@ -314,32 +430,67 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		A4A5A624A7F4668EA89B57E30F95BA5A /* Support Files */ = {
+		8D4AAB7F07E2D6F8B9DD20A318BB4486 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				666332CAE2C73490FF3819CF094F9E00 /* DateTimePicker.modulemap */,
-				13927C3CBCADE2D5B9E6067FDBDC48AB /* DateTimePicker-dummy.m */,
-				7266B871C6199428DAFE965FDD29CE63 /* DateTimePicker-Info.plist */,
-				569CB459979FDB3B33072FFE13E20519 /* DateTimePicker-prefix.pch */,
-				EEE51BA652A69A412194330906D083C0 /* DateTimePicker-umbrella.h */,
-				6FC47E094D6797DB63EE9B6FD7C4FD25 /* DateTimePicker.debug.xcconfig */,
-				4F781C299D95738FDC9BCA991152480E /* DateTimePicker.release.xcconfig */,
-				C12D5E4BB7B6D0058C5752E7D4B122F0 /* ResourceBundle-DateTimePicker-DateTimePicker-Info.plist */,
+				5ABF3377779134D27D12A0410D292654 /* DateTimePicker.modulemap */,
+				F21177D824E47B649AE5E32E7AAEBDB0 /* DateTimePicker-dummy.m */,
+				ED421C5E0A7C887846E78F6FE4945A6D /* DateTimePicker-Info.plist */,
+				CE86A8AE660DF1759E9FEE0039D6F146 /* DateTimePicker-prefix.pch */,
+				23A4338D608E0C1B16CFEE259B1A8CBF /* DateTimePicker-umbrella.h */,
+				840AFFA1211E77E055D931ED688F346A /* DateTimePicker.debug.xcconfig */,
+				ABBD1E281DC3DECEDC1DC9A2971F9C07 /* DateTimePicker.release.xcconfig */,
+				A413C7A2D5F4379DE23654F05EAE7F51 /* ResourceBundle-DateTimePicker-DateTimePicker-Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/DateTimePicker";
 			sourceTree = "<group>";
 		};
-		C74494503A77EDA8EB8BE671DD264667 /* Support Files */ = {
+		92E6308C0EA1E0E0B8C5B61FF10E074A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0E6177891D4E7B729F9C669D3E83EDFD /* SwiftyJSON.modulemap */,
-				992C5DDCAE29D0C9C87FC1C459A6C5E9 /* SwiftyJSON-dummy.m */,
-				DE621A525A6C796E443788C9D1E462EF /* SwiftyJSON-Info.plist */,
-				5473D8D4191EEB3357F2EEE227117545 /* SwiftyJSON-prefix.pch */,
-				0D126D92585CF0DEA821C4E71A64EFE4 /* SwiftyJSON-umbrella.h */,
-				4F9A1FE4FDC5538FEB36F6894BF021E8 /* SwiftyJSON.debug.xcconfig */,
-				6DDB73F085783A735572FD808F83B95A /* SwiftyJSON.release.xcconfig */,
+				1C8E52D7A0C6D625DA6793CFD4390831 /* DateTimePicker.xib */,
+				98AA7A3FE3AD7412C384AF2ECD868C5C /* FullDateCollectionViewCell.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B6891EB8E847F1E72F3EB2E4F1CB1538 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				580BB1925BDB506A5AEE13DEBF427468 /* SnapKit.modulemap */,
+				E870927170E6937E56891860BA7A160A /* SnapKit-dummy.m */,
+				1292C1259A80778B4ABD0607967E3836 /* SnapKit-Info.plist */,
+				75B9B39237FEDA93D3E384E80BD758FE /* SnapKit-prefix.pch */,
+				19B88C28A40BFEE009338EE0D733DF59 /* SnapKit-umbrella.h */,
+				8404E64E447BFD74945B3D39209ED8E7 /* SnapKit.debug.xcconfig */,
+				30C80DA8412C9471B949B35889F7DDCB /* SnapKit.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SnapKit";
+			sourceTree = "<group>";
+		};
+		C5594098DE4FF9DFB1778D7AE8D0D52B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8675BE8027770B9188E9561F36A9EE7B /* DateTimePicker */,
+				FC60A6B7488AD1E237C21B0CAE19B921 /* MagicTimer */,
+				0E3F1BF9BE5CA15BD8C45853B07C57F5 /* SnapKit */,
+				59FF993B60D17123F63C6B7CC753C55B /* SwiftyJSON */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C853FA557300ECB3928A2F72F5F81589 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				34A35486E49EE11523AD7727EDE8AE6F /* SwiftyJSON.modulemap */,
+				7367BB6246AEF28B196A5011FB4C8CAB /* SwiftyJSON-dummy.m */,
+				AA67C225E0396C79436F44C68921586A /* SwiftyJSON-Info.plist */,
+				A66B50336B3E6DC7E2E7804AA72D237D /* SwiftyJSON-prefix.pch */,
+				90312690AAB160DCAF13A9057E888840 /* SwiftyJSON-umbrella.h */,
+				96928B5D0E1738964D9CE6DDCC3FDE17 /* SwiftyJSON.debug.xcconfig */,
+				D608C9C8609E93878EB604A67624E653 /* SwiftyJSON.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftyJSON";
@@ -350,98 +501,43 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				EB2B15B5E64CBD46BE54AC8ED3C54CD2 /* Pods */,
-				DC2EE3B1A768E24738171646DE632583 /* Products */,
+				C5594098DE4FF9DFB1778D7AE8D0D52B /* Pods */,
+				7D74C39AEA8D594455DFA36F009295D5 /* Products */,
 				869A6CCCE2868B7693D79872870A7CDF /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D5B714CE794D89B1094C2185E9F3F6DB /* SnapKit */ = {
+		FC60A6B7488AD1E237C21B0CAE19B921 /* MagicTimer */ = {
 			isa = PBXGroup;
 			children = (
-				8256C7E42662E7F9800186D93CC79E66 /* Constraint.swift */,
-				2C6D0A8A4AFBE1E7A97DA3CD9C390B67 /* ConstraintAttributes.swift */,
-				188DC3FE93004CD98388A701233A429A /* ConstraintConfig.swift */,
-				0C3B38CB3ABF5B5FD9DF6BF9DF6B0C2D /* ConstraintConstantTarget.swift */,
-				2C736DFF7DD41C482B08CDA5A8958A96 /* ConstraintDescription.swift */,
-				92D9F4058B9A727DFC2DF84FABA395BD /* ConstraintDirectionalInsets.swift */,
-				8B56C013AB20C723B731A59E9561E2DB /* ConstraintDirectionalInsetTarget.swift */,
-				9421F56012A8836F8E28269CC307561D /* ConstraintDSL.swift */,
-				B81ACE9E446DA99E18599DA776080321 /* ConstraintInsets.swift */,
-				F01FC077E50187ACA165033D71DE14E1 /* ConstraintInsetTarget.swift */,
-				17B29B382A66B26D6307568B5C7E1441 /* ConstraintItem.swift */,
-				3B486B8C68BB39E512404EE8D7CE61C5 /* ConstraintLayoutGuide.swift */,
-				E19A2718DFA5AF1AD014B1F887480FA2 /* ConstraintLayoutGuide+Extensions.swift */,
-				87BE1553B6B4205F4E9E12095213F101 /* ConstraintLayoutGuideDSL.swift */,
-				572CC258184E0164AAA09C101187EC00 /* ConstraintLayoutSupport.swift */,
-				A1BB8E9EA8DF330C4B48F47ABB4B0227 /* ConstraintLayoutSupportDSL.swift */,
-				4F845750871C6EC21ED76495E74907E0 /* ConstraintMaker.swift */,
-				E3AA03A2F3814627258809576D7C0672 /* ConstraintMakerEditable.swift */,
-				AA5D68D902ECCBF87D921A2B63545926 /* ConstraintMakerExtendable.swift */,
-				59D67E7631D203451E714C64751B3A8D /* ConstraintMakerFinalizable.swift */,
-				13E45CA25692584C1EE893048200D5E8 /* ConstraintMakerPrioritizable.swift */,
-				7F178F5FB1171F7B5FFD66E5B6750721 /* ConstraintMakerRelatable.swift */,
-				4A24F87FD2D3F8513D784FC4B8C7FE56 /* ConstraintMakerRelatable+Extensions.swift */,
-				F439D697E15DE4AEE9982D23326C2D60 /* ConstraintMultiplierTarget.swift */,
-				4C16ED3E4BA5E1C51E5908DA9BD91994 /* ConstraintOffsetTarget.swift */,
-				8C3697C9AA3998AF9FD0E8276F385898 /* ConstraintPriority.swift */,
-				EDEB13E5E71645F5F7E48E2CAA35B960 /* ConstraintPriorityTarget.swift */,
-				4B96167CFA6E6BAD9588CE7AD1A9CAEC /* ConstraintRelatableTarget.swift */,
-				3BA9F748F14501F7F25822A068FAB5F8 /* ConstraintRelation.swift */,
-				F06F5898BF0869A6242338740BCCEE32 /* ConstraintView.swift */,
-				21FC18BD4511786ABC7108DF79F04283 /* ConstraintView+Extensions.swift */,
-				6EC068DDE7D4FEF5D855D632334ED031 /* ConstraintViewDSL.swift */,
-				DC347A76E9112EDA5AEB83B6EA9F2F59 /* Debugging.swift */,
-				2981E861A10BB152E46A8690B0ABD6F7 /* LayoutConstraint.swift */,
-				A15FC46DCCABF27DD96D284B7B0C62A1 /* LayoutConstraintItem.swift */,
-				C0850EAE6455DE4ECAC7FFAD18D20BD9 /* Typealiases.swift */,
-				080A8CE9258D8C3B270507F6DF826B18 /* UILayoutSupport+Extensions.swift */,
-				83913FE8365466D38FFD88559B315B72 /* Support Files */,
+				BA539F21D7688612DED0B863EE4DEDEF /* Int+Extension.swift */,
+				4509DCEEE65C6AAFB2A5B714458950BD /* MagicTimer.swift */,
+				74B39BE81133CCB81D6B6EC2F1939C3E /* MagicTimerState.swift */,
+				84B460132C0EFBF022DE57017EC2D4F0 /* MagicTimerView.swift */,
+				E4EB3E308A8C869598C50E1B707326E9 /* MagicTimerViewDelegate.swift */,
+				F9A7BDD0AE36C0F18245B29BF84A7F42 /* MGBackgroundCalculator.swift */,
+				DAFF2694D1FAA81C36EF0AA8B8FC9C90 /* MGCounter.swift */,
+				C34416FE950F3D2AAF791CEB9CE484D4 /* MGLogable.swift */,
+				ED3D8BB26B534A991575F062EB1ABB63 /* MGObservable.swift */,
+				A531F18DFF7B712B55631C49E77600D4 /* MGStandardTimerFormatter.swift */,
+				3CC4F9A4B2463240A65E899558BDA6F3 /* MGStateManager.swift */,
+				EB5C3F371A58923D05DBECECD14D5691 /* MGTimerExecutive.swift */,
+				F8D52CC7BEA605957C29507D00087733 /* TimeInterval+Extesnion.swift */,
+				B75B3A703F542858F891B9EDBBC1ADA9 /* UIFont+Extension.swift */,
+				50A8DA5F8EF20E0A14DC8CDD591BCB2D /* Support Files */,
 			);
-			name = SnapKit;
-			path = SnapKit;
-			sourceTree = "<group>";
-		};
-		DC2EE3B1A768E24738171646DE632583 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B26CB6AD16677CB8E5B8A5059EA05677 /* DateTimePicker */,
-				B04C1EBC2EC90A2DFFEDDD0CF4473840 /* DateTimePicker-DateTimePicker */,
-				7D3017A7174F6C223400068E519BC763 /* Pods-Fokus */,
-				979486118B3E90C08386079D57962701 /* SnapKit */,
-				E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EB2B15B5E64CBD46BE54AC8ED3C54CD2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				58E8F8F642849A81F16B22E82FFB4B23 /* DateTimePicker */,
-				D5B714CE794D89B1094C2185E9F3F6DB /* SnapKit */,
-				EE27BBFA9F8A784AF97F665F68050AD1 /* SwiftyJSON */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		EE27BBFA9F8A784AF97F665F68050AD1 /* SwiftyJSON */ = {
-			isa = PBXGroup;
-			children = (
-				18C58D473723F66A644B5F1828F36A47 /* SwiftyJSON.swift */,
-				C74494503A77EDA8EB8BE671DD264667 /* Support Files */,
-			);
-			name = SwiftyJSON;
-			path = SwiftyJSON;
+			name = MagicTimer;
+			path = MagicTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		40DD22F39C45B32A90CE7EC22230BB4D /* Headers */ = {
+		189C68C42041D9CF3E8D78E78612291D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1860426101F5D2C164A889805365DB96 /* Pods-Fokus-umbrella.h in Headers */,
+				31A517FD27FDB2A511130F8C6C10E0FA /* Pods-Fokus-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +557,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7A47106251F510CC1E71E2261B602A77 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4ECF6F1B7CA7A63BE99FEBACEA37943 /* MagicTimer-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E504037C6C720B288B1671D16E0546E9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -474,19 +578,20 @@
 /* Begin PBXNativeTarget section */
 		0DEEA3567A66D931FA30580FC57E63B6 /* Pods-Fokus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5368E5D75408E490240A3DE7DF9FA9A3 /* Build configuration list for PBXNativeTarget "Pods-Fokus" */;
+			buildConfigurationList = 2F7A220E2A5ABE68073B3C0E3D2ADD40 /* Build configuration list for PBXNativeTarget "Pods-Fokus" */;
 			buildPhases = (
-				40DD22F39C45B32A90CE7EC22230BB4D /* Headers */,
-				ECFA2DF1DA5D2027E0E337DD3B962327 /* Sources */,
-				1759DE2FE84013462AC53EE2D8ED58B3 /* Frameworks */,
-				03E16CF0709F66CD89DCCD71E1ED4FCB /* Resources */,
+				189C68C42041D9CF3E8D78E78612291D /* Headers */,
+				A25575CCDF845E4479AE0E45FCA560DE /* Sources */,
+				AB3AD2455FF50B48760CBC884103BF3C /* Frameworks */,
+				B1B8C2FDF5CC1E1D6CF378F1EA8DB15D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9535F9AD01838CD86E2B9F6B1DD32E8B /* PBXTargetDependency */,
-				C21C06286D488081483D71D355283377 /* PBXTargetDependency */,
-				E23530533E45EF8992AE51C05990CD30 /* PBXTargetDependency */,
+				5914E6BE3B04977A4A0A87D47CC78C68 /* PBXTargetDependency */,
+				A9C44058BBB21B615E43C8DAB845FAB4 /* PBXTargetDependency */,
+				C81403AB3474794E36E92F472BC51CF4 /* PBXTargetDependency */,
+				E1EC5BCB95A3C004D67919515CF8C9E8 /* PBXTargetDependency */,
 			);
 			name = "Pods-Fokus";
 			productName = Pods_Fokus;
@@ -523,11 +628,29 @@
 			buildRules = (
 			);
 			dependencies = (
-				7E2CA4FCE082E1DFA769576C9E3BD3C7 /* PBXTargetDependency */,
+				8D8E18E8AC7BFBC9F6135A75E6601E1B /* PBXTargetDependency */,
 			);
 			name = DateTimePicker;
 			productName = DateTimePicker;
 			productReference = B26CB6AD16677CB8E5B8A5059EA05677 /* DateTimePicker */;
+			productType = "com.apple.product-type.framework";
+		};
+		9A2AFD30069CA32CD2E72E7D9D0E0097 /* MagicTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58AA5ED89C3751911EE2694A3CD922A0 /* Build configuration list for PBXNativeTarget "MagicTimer" */;
+			buildPhases = (
+				7A47106251F510CC1E71E2261B602A77 /* Headers */,
+				6CE29E119EB0A59FA2EE67E80D49DDEA /* Sources */,
+				3AAAC538DD1C3C30FE6524FC440275F7 /* Frameworks */,
+				98ED7A796972C0E4DA99BA2C47DD1A7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MagicTimer;
+			productName = MagicTimer;
+			productReference = 0FB114E27F8414106022220B5B533895 /* MagicTimer */;
 			productType = "com.apple.product-type.framework";
 		};
 		D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */ = {
@@ -550,11 +673,11 @@
 		};
 		E0775EC5F6DBAA5D2C37BCFB14908273 /* DateTimePicker-DateTimePicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 23D8376403B8A94F50B9905D87E0AE2F /* Build configuration list for PBXNativeTarget "DateTimePicker-DateTimePicker" */;
+			buildConfigurationList = E1A608C407A178A2726F29163D121873 /* Build configuration list for PBXNativeTarget "DateTimePicker-DateTimePicker" */;
 			buildPhases = (
-				7EFCC146B37DFE18E847290F8EE1FA34 /* Sources */,
-				B8DF7DE9195431BE3FC6C2A649E6DF54 /* Frameworks */,
-				B227E239BE49D68277C1CD74A6D97A03 /* Resources */,
+				B6BFC285435F1810FE8BBB11ECE4D9FA /* Sources */,
+				EF48F6FBA938D5BE256CB5B2AC7218EA /* Frameworks */,
+				AAEB98C23EBF7C390C691B843AE9BC0F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -583,12 +706,13 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = DC2EE3B1A768E24738171646DE632583 /* Products */;
+			productRefGroup = 7D74C39AEA8D594455DFA36F009295D5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				31E89965CFA54DE4BCC99C05112D7483 /* DateTimePicker */,
 				E0775EC5F6DBAA5D2C37BCFB14908273 /* DateTimePicker-DateTimePicker */,
+				9A2AFD30069CA32CD2E72E7D9D0E0097 /* MagicTimer */,
 				0DEEA3567A66D931FA30580FC57E63B6 /* Pods-Fokus */,
 				19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */,
 				D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */,
@@ -597,13 +721,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		03E16CF0709F66CD89DCCD71E1ED4FCB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		08D85D41B9636AF08B21317E5A6456B0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -619,6 +736,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		98ED7A796972C0E4DA99BA2C47DD1A7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAEB98C23EBF7C390C691B843AE9BC0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BFCDD0B435EEBA34A4FD6A8F5A3E9CD /* DateTimePicker.xib in Resources */,
+				6A92768D60037C262183A6B80EE49A92 /* FullDateCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B05597C458D738E12F170EAC515F8483 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -626,12 +759,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B227E239BE49D68277C1CD74A6D97A03 /* Resources */ = {
+		B1B8C2FDF5CC1E1D6CF378F1EA8DB15D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E757DF70D6F8F69C1933040516663180 /* DateTimePicker.xib in Resources */,
-				7F95E8B8C7518B8479215D6AB4BEFED6 /* FullDateCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +780,28 @@
 				427D90D2305D285C01A34C6344922A74 /* DateTimePicker-dummy.m in Sources */,
 				BDC87F2A61149720CA19538A813AC21A /* FullDateCollectionViewCell.swift in Sources */,
 				0D99D80D1D01459263A93CF21A7573AD /* StepCollectionViewFlowLayout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CE29E119EB0A59FA2EE67E80D49DDEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08B0A49C1DFB6A735A64C11E4B5181BD /* Int+Extension.swift in Sources */,
+				A7106DB11682382E6A6A946A1477970E /* MagicTimer.swift in Sources */,
+				28C356BA1B0819E81436006109A9E7F9 /* MagicTimer-dummy.m in Sources */,
+				F446F938648D0259BAB2A237242302F3 /* MagicTimerState.swift in Sources */,
+				785CCE696D42ED65DC691A2F3D5421D1 /* MagicTimerView.swift in Sources */,
+				B03D436E9456ACB430E7759CBCEF85EE /* MagicTimerViewDelegate.swift in Sources */,
+				231EBC6889538264BFD686E894F841F0 /* MGBackgroundCalculator.swift in Sources */,
+				420AC522120FC23DCFC9513D2BF3B034 /* MGCounter.swift in Sources */,
+				626385AC254AE5BA240DF3DD80E9A7CC /* MGLogable.swift in Sources */,
+				BF4A0EA7C2C54F4539CFEA31AA0EC08A /* MGObservable.swift in Sources */,
+				12697F23002E10F2B098841BBA1EA163 /* MGStandardTimerFormatter.swift in Sources */,
+				6F8761D0F91A3B8DFC426C43B6C26A5D /* MGStateManager.swift in Sources */,
+				1EE7B5363BCF97C6D2AFBECBF4A14564 /* MGTimerExecutive.swift in Sources */,
+				E5A41F238D43BE2983098F7DB8219045 /* TimeInterval+Extesnion.swift in Sources */,
+				E788030F3A49BB5D880A9A56737452AC /* UIFont+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,91 +859,76 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7EFCC146B37DFE18E847290F8EE1FA34 /* Sources */ = {
+		A25575CCDF845E4479AE0E45FCA560DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD594C9651521D08DA37A35E9B4BED2 /* Pods-Fokus-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ECFA2DF1DA5D2027E0E337DD3B962327 /* Sources */ = {
+		B6BFC285435F1810FE8BBB11ECE4D9FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4778860BCA49DD06C590D4389BAA9EB4 /* Pods-Fokus-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7E2CA4FCE082E1DFA769576C9E3BD3C7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "DateTimePicker-DateTimePicker";
-			target = E0775EC5F6DBAA5D2C37BCFB14908273 /* DateTimePicker-DateTimePicker */;
-			targetProxy = 0EA0B6B389AF13196F12FB77A275490B /* PBXContainerItemProxy */;
-		};
-		9535F9AD01838CD86E2B9F6B1DD32E8B /* PBXTargetDependency */ = {
+		5914E6BE3B04977A4A0A87D47CC78C68 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DateTimePicker;
 			target = 31E89965CFA54DE4BCC99C05112D7483 /* DateTimePicker */;
-			targetProxy = E8E79AFC7880D2710ED3E8E1FB97AE21 /* PBXContainerItemProxy */;
+			targetProxy = 8E94857818081B23114824213A9CBD5B /* PBXContainerItemProxy */;
 		};
-		C21C06286D488081483D71D355283377 /* PBXTargetDependency */ = {
+		8D8E18E8AC7BFBC9F6135A75E6601E1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "DateTimePicker-DateTimePicker";
+			target = E0775EC5F6DBAA5D2C37BCFB14908273 /* DateTimePicker-DateTimePicker */;
+			targetProxy = 78E42A292127DC5A6DD358B6F53150A6 /* PBXContainerItemProxy */;
+		};
+		A9C44058BBB21B615E43C8DAB845FAB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MagicTimer;
+			target = 9A2AFD30069CA32CD2E72E7D9D0E0097 /* MagicTimer */;
+			targetProxy = 82A1EA5D772D8B5A1170B9968BA63A71 /* PBXContainerItemProxy */;
+		};
+		C81403AB3474794E36E92F472BC51CF4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SnapKit;
 			target = 19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */;
-			targetProxy = CC80991A27BF621E57CE1440D55EC6B3 /* PBXContainerItemProxy */;
+			targetProxy = 1BA7A8F504748574035055046B21FA59 /* PBXContainerItemProxy */;
 		};
-		E23530533E45EF8992AE51C05990CD30 /* PBXTargetDependency */ = {
+		E1EC5BCB95A3C004D67919515CF8C9E8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyJSON;
 			target = D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */;
-			targetProxy = A7CA551C10CA9D945494240B8D7E32E4 /* PBXContainerItemProxy */;
+			targetProxy = 63C08868955F5B0178594FC8937E04C3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		00410569AC670115AAEFF149285FF002 /* Debug */ = {
+		128E42D9C07D8873BAEBE816CE0BBC8D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C7C22F6D48DE56FA851EA236CB991DB /* Pods-Fokus.debug.xcconfig */;
+			baseConfigurationReference = 840AFFA1211E77E055D931ED688F346A /* DateTimePicker.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Fokus/Pods-Fokus-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Fokus/Pods-Fokus.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DateTimePicker";
+				IBSC_MODULE = DateTimePicker;
+				INFOPLIST_FILE = "Target Support Files/DateTimePicker/ResourceBundle-DateTimePicker-DateTimePicker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = DateTimePicker;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
 		24CB875D5B25BF16969BE395662EAFD0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DDB73F085783A735572FD808F83B95A /* SwiftyJSON.release.xcconfig */;
+			baseConfigurationReference = D608C9C8609E93878EB604A67624E653 /* SwiftyJSON.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -823,9 +961,9 @@
 			};
 			name = Release;
 		};
-		74F01128F7EE529B64E2D7A5F7A31136 /* Release */ = {
+		26DD87F4AB47253A91653449A010C305 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F781C299D95738FDC9BCA991152480E /* DateTimePicker.release.xcconfig */;
+			baseConfigurationReference = ABBD1E281DC3DECEDC1DC9A2971F9C07 /* DateTimePicker.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DateTimePicker";
 				IBSC_MODULE = DateTimePicker;
@@ -839,9 +977,45 @@
 			};
 			name = Release;
 		};
+		6D72C9A17E49144FBAA19718767EAEE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8AA621566E13FBE45B51F8ED05FAF97 /* MagicTimer.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MagicTimer/MagicTimer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MagicTimer/MagicTimer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MagicTimer/MagicTimer.modulemap";
+				PRODUCT_MODULE_NAME = MagicTimer;
+				PRODUCT_NAME = MagicTimer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		7E5E0A6C5AA0E10D5D43AD46CE9676DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F781C299D95738FDC9BCA991152480E /* DateTimePicker.release.xcconfig */;
+			baseConfigurationReference = ABBD1E281DC3DECEDC1DC9A2971F9C07 /* DateTimePicker.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -874,25 +1048,9 @@
 			};
 			name = Release;
 		};
-		876725EACDBA3733D99133321E0F908E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FC47E094D6797DB63EE9B6FD7C4FD25 /* DateTimePicker.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DateTimePicker";
-				IBSC_MODULE = DateTimePicker;
-				INFOPLIST_FILE = "Target Support Files/DateTimePicker/ResourceBundle-DateTimePicker-DateTimePicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PRODUCT_NAME = DateTimePicker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		8C925430B65BE03F92ABCD1B2005EE0C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC58A68DEEDF716AC3F8636FCBFAF129 /* SnapKit.release.xcconfig */;
+			baseConfigurationReference = 30C80DA8412C9471B949B35889F7DDCB /* SnapKit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -994,7 +1152,7 @@
 		};
 		8E1CA5274E973A74743F8953371105DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FC47E094D6797DB63EE9B6FD7C4FD25 /* DateTimePicker.debug.xcconfig */;
+			baseConfigurationReference = 840AFFA1211E77E055D931ED688F346A /* DateTimePicker.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1026,7 +1184,7 @@
 			};
 			name = Debug;
 		};
-		90FDCAF5FCCFB1A4F7D4E109197C861D /* Release */ = {
+		9E2117F5559ABB47DF002D5E378A4B97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FCCD9A3BC68DE50D9AACD8157BC858ED /* Pods-Fokus.release.xcconfig */;
 			buildSettings = {
@@ -1128,7 +1286,7 @@
 		};
 		A6C06F26F3D6739F2C6E9775A4465B64 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F9A1FE4FDC5538FEB36F6894BF021E8 /* SwiftyJSON.debug.xcconfig */;
+			baseConfigurationReference = 96928B5D0E1738964D9CE6DDCC3FDE17 /* SwiftyJSON.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1162,7 +1320,7 @@
 		};
 		A6F0173BAEB974532D93E05E5A94E50A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 407231A26B47CB608237B12DF7A7DEB1 /* SnapKit.debug.xcconfig */;
+			baseConfigurationReference = 8404E64E447BFD74945B3D39209ED8E7 /* SnapKit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1195,23 +1353,95 @@
 			};
 			name = Debug;
 		};
+		CC85A65C71DAB7C954D49B06E74CEC90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 585A1DB4FEB0ABE5DABD5D277CDD42F8 /* MagicTimer.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MagicTimer/MagicTimer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MagicTimer/MagicTimer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MagicTimer/MagicTimer.modulemap";
+				PRODUCT_MODULE_NAME = MagicTimer;
+				PRODUCT_NAME = MagicTimer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D25A525F732D44A528BBBB39C599C513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C7C22F6D48DE56FA851EA236CB991DB /* Pods-Fokus.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Fokus/Pods-Fokus-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Fokus/Pods-Fokus.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		23D8376403B8A94F50B9905D87E0AE2F /* Build configuration list for PBXNativeTarget "DateTimePicker-DateTimePicker" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				876725EACDBA3733D99133321E0F908E /* Debug */,
-				74F01128F7EE529B64E2D7A5F7A31136 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2490E828D479276A7E0AFBA515DD77FA /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6C06F26F3D6739F2C6E9775A4465B64 /* Debug */,
 				24CB875D5B25BF16969BE395662EAFD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F7A220E2A5ABE68073B3C0E3D2ADD40 /* Build configuration list for PBXNativeTarget "Pods-Fokus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D25A525F732D44A528BBBB39C599C513 /* Debug */,
+				9E2117F5559ABB47DF002D5E378A4B97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1225,11 +1455,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5368E5D75408E490240A3DE7DF9FA9A3 /* Build configuration list for PBXNativeTarget "Pods-Fokus" */ = {
+		58AA5ED89C3751911EE2694A3CD922A0 /* Build configuration list for PBXNativeTarget "MagicTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				00410569AC670115AAEFF149285FF002 /* Debug */,
-				90FDCAF5FCCFB1A4F7D4E109197C861D /* Release */,
+				CC85A65C71DAB7C954D49B06E74CEC90 /* Debug */,
+				6D72C9A17E49144FBAA19718767EAEE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1248,6 +1478,15 @@
 			buildConfigurations = (
 				8E1CA5274E973A74743F8953371105DD /* Debug */,
 				7E5E0A6C5AA0E10D5D43AD46CE9676DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1A608C407A178A2726F29163D121873 /* Build configuration list for PBXNativeTarget "DateTimePicker-DateTimePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				128E42D9C07D8873BAEBE816CE0BBC8D /* Debug */,
+				26DD87F4AB47253A91653449A010C305 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
