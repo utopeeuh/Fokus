@@ -201,7 +201,7 @@ class PomodoroVC: UIViewController {
         
         if (currentPhase == task?.pomodoros as! Int) {
             timerLib.stopCounting()
-            self.vm.markAsDone(id: task!.id)
+            self.vm.markAsDone(id: task!.id ?? "")
             let controller = HomeVC()
             navigationController?.pushViewController(controller, animated: true)
             return
