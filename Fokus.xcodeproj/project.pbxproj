@@ -42,6 +42,7 @@
 		B67019782945E32300872F77 /* PomodoroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67019772945E32300872F77 /* PomodoroViewModel.swift */; };
 		B6CEE0942928DC9A00C04532 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CEE0932928DC9A00C04532 /* ProfileView.swift */; };
 		B6D725F22937245B00165A53 /* PomodoroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D725F02937245B00165A53 /* PomodoroVC.swift */; };
+		F9437BE8294A4796002D015C /* ohJakarta.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F9437BE7294A4796002D015C /* ohJakarta.mp3 */; };
 		F97EBF7D2945D59D00FD4E3B /* DetailTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97EBF7C2945D59D00FD4E3B /* DetailTaskViewModel.swift */; };
 		F9BE0C4329365A05007529FB /* PomodoroDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BE0C4229365A05007529FB /* PomodoroDetail.swift */; };
 		F9BE0C462936DE84007529FB /* DetailTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BE0C452936DE83007529FB /* DetailTaskVC.swift */; };
@@ -87,6 +88,7 @@
 		B6CEE0932928DC9A00C04532 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Fokus/Presentation/Home/Components/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		B6D725F02937245B00165A53 /* PomodoroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroVC.swift; sourceTree = "<group>"; };
 		CCF6B459E7323D60CB578BF2 /* Pods-Fokus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fokus.release.xcconfig"; path = "Target Support Files/Pods-Fokus/Pods-Fokus.release.xcconfig"; sourceTree = "<group>"; };
+		F9437BE7294A4796002D015C /* ohJakarta.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ohJakarta.mp3; path = ../../../../../Downloads/ohJakarta.mp3; sourceTree = "<group>"; };
 		F97EBF7C2945D59D00FD4E3B /* DetailTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskViewModel.swift; sourceTree = "<group>"; };
 		F9BE0C4229365A05007529FB /* PomodoroDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroDetail.swift; sourceTree = "<group>"; };
 		F9BE0C452936DE83007529FB /* DetailTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskVC.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				955A2FB22912A7F300513D8E /* SceneDelegate.swift */,
 				955A2FBC2912A7F400513D8E /* Assets.xcassets */,
 				955A2FB62912A7F300513D8E /* Main.storyboard */,
+				F9437BE7294A4796002D015C /* ohJakarta.mp3 */,
 				955A2FBE2912A7F400513D8E /* LaunchScreen.storyboard */,
 				955A2FC12912A7F400513D8E /* Info.plist */,
 				952BA1322925213800767FDD /* Data */,
@@ -466,6 +469,7 @@
 			files = (
 				95059FA52928E6D0002D97D1 /* AtkinsonHyperlegible-Regular.ttf in Resources */,
 				955A2FC02912A7F400513D8E /* LaunchScreen.storyboard in Resources */,
+				F9437BE8294A4796002D015C /* ohJakarta.mp3 in Resources */,
 				955A2FBD2912A7F400513D8E /* Assets.xcassets in Resources */,
 				955A2FB82912A7F300513D8E /* Main.storyboard in Resources */,
 				95059FA62928E6D3002D97D1 /* AtkinsonHyperlegible-Bold.ttf in Resources */,

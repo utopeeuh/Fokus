@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import MagicTimer
+import AVFoundation
 
 class PomodoroVC: UIViewController {
     
@@ -20,6 +21,7 @@ class PomodoroVC: UIViewController {
     var secondsRemaining = 0
     var timer:Timer?
     
+    var player: AVAudioPlayer!
     let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
     
     enum TimerEnum {
@@ -121,7 +123,8 @@ class PomodoroVC: UIViewController {
         pauseSymbol.addTarget(self, action: #selector(pauseTimer), for: .touchUpInside)
         skipSymbol.addTarget(self, action: #selector(skipPhase), for: .touchUpInside)
         stopSymbol.addTarget(self, action: #selector(stopPomodoro), for: .touchUpInside)
-        
+        muteSymbol.addTarget(self, action: #selector(pause), for: .touchUpInside)
+
         view.addSubview(pomodoroPhase)
         
         
@@ -256,6 +259,22 @@ class PomodoroVC: UIViewController {
         timerLib.stopCounting()
         let controller = HomeVC()
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func playSound() {
+       let url = Bundle.main.url(forResource: "ohJakarta", withExtension: "mp3")
+       player = try! AVAudioPlayer(contentsOf: url!)
+       player.play()
+    }
+    @IBAction func pause(_ sender: Any) {
+       if player != nil {
+           player.stop()
+           player = nil
+//           button.setImage(UIImage(named: "play"), for: .normal)
+       } else {
+//           button.setImage(UIImage(named: "pause"), for: .normal)
+           playSound()
+       }
     }
     
 }
