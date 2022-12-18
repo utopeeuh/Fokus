@@ -33,6 +33,11 @@
 		958B0F53293D69F1006A19E4 /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F52293D69F1006A19E4 /* Navbar.swift */; };
 		958B0F6E293D81EA006A19E4 /* CreateTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */; };
 		958B0F73293E291F006A19E4 /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F72293E291F006A19E4 /* UIView+Shake.swift */; };
+		95AA5730295194AD001D6A50 /* DateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA572B295194AD001D6A50 /* DateLabel.swift */; };
+		95AA5731295194AD001D6A50 /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA572C295194AD001D6A50 /* LabelButton.swift */; };
+		95AA5732295194AD001D6A50 /* DateIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA572D295194AD001D6A50 /* DateIterator.swift */; };
+		95AA5733295194AD001D6A50 /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA572F295194AD001D6A50 /* StatsVC.swift */; };
+		95AA5735295194D0001D6A50 /* Calendar+Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA5734295194D0001D6A50 /* Calendar+Dates.swift */; };
 		95E1BF3A2942E6D500F58A96 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E1BF392942E6D500F58A96 /* HomeViewModel.swift */; };
 		95E1BF3C2942FBFC00F58A96 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E1BF3B2942FBFC00F58A96 /* UserModel.swift */; };
 		95E1BF3F2942FF2100F58A96 /* NameModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E1BF3E2942FF2100F58A96 /* NameModalVC.swift */; };
@@ -80,6 +85,11 @@
 		958B0F52293D69F1006A19E4 /* Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
 		958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewModel.swift; sourceTree = "<group>"; };
 		958B0F72293E291F006A19E4 /* UIView+Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
+		95AA572B295194AD001D6A50 /* DateLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateLabel.swift; sourceTree = "<group>"; };
+		95AA572C295194AD001D6A50 /* LabelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelButton.swift; sourceTree = "<group>"; };
+		95AA572D295194AD001D6A50 /* DateIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIterator.swift; sourceTree = "<group>"; };
+		95AA572F295194AD001D6A50 /* StatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
+		95AA5734295194D0001D6A50 /* Calendar+Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Calendar+Dates.swift"; sourceTree = "<group>"; };
 		95E1BF392942E6D500F58A96 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		95E1BF3B2942FBFC00F58A96 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		95E1BF3E2942FF2100F58A96 /* NameModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameModalVC.swift; sourceTree = "<group>"; };
@@ -210,6 +220,7 @@
 		952BA1372925218F00767FDD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				95AA5734295194D0001D6A50 /* Calendar+Dates.swift */,
 				F9D86DE22950C0CF00A6636F /* UIWindow+TopViewController.swift */,
 				958B0F72293E291F006A19E4 /* UIView+Shake.swift */,
 			);
@@ -251,6 +262,7 @@
 			children = (
 				952BA1402925221500767FDD /* General */,
 				9513AFB829295E8500415C8B /* Home */,
+				95AA5728295194AD001D6A50 /* Stats */,
 				952BF7EB292CF2BE00D924A8 /* Create Task */,
 				F9BE0C3F29364FB6007529FB /* Detail Task */,
 				B6D725EE2937245B00165A53 /* Pomodoro */,
@@ -346,6 +358,41 @@
 				958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		95AA5728295194AD001D6A50 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				95AA5729295194AD001D6A50 /* ViewModels */,
+				95AA572A295194AD001D6A50 /* Components */,
+				95AA572E295194AD001D6A50 /* Controllers */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		95AA5729295194AD001D6A50 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		95AA572A295194AD001D6A50 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				95AA572B295194AD001D6A50 /* DateLabel.swift */,
+				95AA572C295194AD001D6A50 /* LabelButton.swift */,
+				95AA572D295194AD001D6A50 /* DateIterator.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		95AA572E295194AD001D6A50 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				95AA572F295194AD001D6A50 /* StatsVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		95E1BF382942E6C800F58A96 /* ViewModels */ = {
@@ -550,9 +597,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95AA5730295194AD001D6A50 /* DateLabel.swift in Sources */,
 				F9BE0C462936DE84007529FB /* DetailTaskVC.swift in Sources */,
 				952BA1462925227800767FDD /* TabBarVC.swift in Sources */,
 				958B0F53293D69F1006A19E4 /* Navbar.swift in Sources */,
+				95AA5731295194AD001D6A50 /* LabelButton.swift in Sources */,
 				95059FA02928D689002D97D1 /* Colors.swift in Sources */,
 				95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */,
 				954033A42951FB0F00E6FEFE /* FinishTaskModalVC.swift in Sources */,
@@ -565,6 +614,7 @@
 				952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */,
 				F9CB5DA82928EB52003C6371 /* TaskListCell.swift in Sources */,
 				B67019782945E32300872F77 /* PomodoroViewModel.swift in Sources */,
+				95AA5733295194AD001D6A50 /* StatsVC.swift in Sources */,
 				F9D86DE62950C0DF00A6636F /* TaskModel.swift in Sources */,
 				951842002951918800C52AF7 /* UserDefaults.swift in Sources */,
 				F9D86DE02950BEBD00A6636F /* TaskRepository.swift in Sources */,
@@ -575,6 +625,7 @@
 				958B0F73293E291F006A19E4 /* UIView+Shake.swift in Sources */,
 				952BF7EE292CF2BF00D924A8 /* OptionsCollectionView.swift in Sources */,
 				9513AFBC29295ECE00415C8B /* HomeVC.swift in Sources */,
+				95AA5735295194D0001D6A50 /* Calendar+Dates.swift in Sources */,
 				955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */,
 				95ECFEC92931F02900F5F334 /* CreateTaskVC.swift in Sources */,
 				F9BE0C4329365A05007529FB /* PomodoroDetail.swift in Sources */,
@@ -582,6 +633,7 @@
 				952BF7F2292D060A00D924A8 /* CounterView.swift in Sources */,
 				F9D86DE32950C0CF00A6636F /* UIWindow+TopViewController.swift in Sources */,
 				95E1BF3F2942FF2100F58A96 /* NameModalVC.swift in Sources */,
+				95AA5732295194AD001D6A50 /* DateIterator.swift in Sources */,
 				95E1BF3C2942FBFC00F58A96 /* UserModel.swift in Sources */,
 				95845DE42951D8B000EF2996 /* LevelViewModel.swift in Sources */,
 				F9D86DEA2950C21300A6636F /* ProfileView.swift in Sources */,
