@@ -14,6 +14,8 @@
 		95059FA62928E6D3002D97D1 /* AtkinsonHyperlegible-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95059FA32928D8AF002D97D1 /* AtkinsonHyperlegible-Bold.ttf */; };
 		9513AFBC29295ECE00415C8B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9513AFBB29295ECE00415C8B /* HomeVC.swift */; };
 		951841FD29516EB000C52AF7 /* WhiteNoise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 951841FC29516EB000C52AF7 /* WhiteNoise.mp3 */; };
+		951842002951918800C52AF7 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951841FF2951918800C52AF7 /* UserDefaults.swift */; };
+		95184202295191AF00C52AF7 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95184201295191AF00C52AF7 /* UserRepository.swift */; };
 		952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13B292521EE00767FDD /* ViewPreview.swift */; };
 		952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13C292521EE00767FDD /* ViewControllerPreview.swift */; };
 		952BA1462925227800767FDD /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA1452925227800767FDD /* TabBarVC.swift */; };
@@ -55,6 +57,8 @@
 		95059FA42928D8AF002D97D1 /* AtkinsonHyperlegible-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AtkinsonHyperlegible-Regular.ttf"; sourceTree = "<group>"; };
 		9513AFBB29295ECE00415C8B /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		951841FC29516EB000C52AF7 /* WhiteNoise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WhiteNoise.mp3; sourceTree = "<group>"; };
+		951841FF2951918800C52AF7 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		95184201295191AF00C52AF7 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		952BA13B292521EE00767FDD /* ViewPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPreview.swift; sourceTree = "<group>"; };
 		952BA13C292521EE00767FDD /* ViewControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
 		952BA1452925227800767FDD /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 		952BA1332925214C00767FDD /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				95184201295191AF00C52AF7 /* UserRepository.swift */,
 				F9D86DDF2950BEBD00A6636F /* TaskRepository.swift */,
 			);
 			path = Repositories;
@@ -221,6 +226,7 @@
 			children = (
 				95059F9F2928D689002D97D1 /* Colors.swift */,
 				95059FA12928D83B002D97D1 /* Font.swift */,
+				951841FF2951918800C52AF7 /* UserDefaults.swift */,
 				95ECFECF2931F20700F5F334 /* Font Size.swift */,
 			);
 			path = Constants;
@@ -536,6 +542,7 @@
 				95059FA02928D689002D97D1 /* Colors.swift in Sources */,
 				95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */,
 				F97EBF7D2945D59D00FD4E3B /* DetailTaskViewModel.swift in Sources */,
+				95184202295191AF00C52AF7 /* UserRepository.swift in Sources */,
 				955A2FB12912A7F300513D8E /* AppDelegate.swift in Sources */,
 				958B0F6E293D81EA006A19E4 /* CreateTaskViewModel.swift in Sources */,
 				95ECFED02931F20700F5F334 /* Font Size.swift in Sources */,
@@ -544,6 +551,7 @@
 				F9CB5DA82928EB52003C6371 /* TaskListCell.swift in Sources */,
 				B67019782945E32300872F77 /* PomodoroViewModel.swift in Sources */,
 				F9D86DE62950C0DF00A6636F /* TaskModel.swift in Sources */,
+				951842002951918800C52AF7 /* UserDefaults.swift in Sources */,
 				F9D86DE02950BEBD00A6636F /* TaskRepository.swift in Sources */,
 				95059FA22928D83B002D97D1 /* Font.swift in Sources */,
 				95E1BF3A2942E6D500F58A96 /* HomeViewModel.swift in Sources */,
