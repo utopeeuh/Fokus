@@ -152,6 +152,13 @@ class CreateTaskVC: UIViewController {
             scrollView.addSubview(subview)
         }
         
+        // Add alert on back
+        let cancelAction = UIAlertAction(title: "Batal", style: .default)
+        let backAction = UIAlertAction(title: "Kembali ke home", style: .cancel) { (_) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        navbar.addAlertOnBack(title: "Apakah anda yakin ingin kembali? Hal yang belum disimpan tidak dapat dikembalikan", actions: [cancelAction, backAction])
+        
         configureConstraints()
     }
     
