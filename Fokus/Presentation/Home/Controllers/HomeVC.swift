@@ -58,12 +58,17 @@ class HomeVC: UIViewController {
         navigationController?.isNavigationBarHidden = true
         tabBarController?.tabBar.isHidden = false
         taskList = homeVM.getTaskList()
+        profileView.refreshUserData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .blackFokus
+        
+        if homeVM.isFirstTimeOpening() == true {
+            showModal()
+        }
         
         profileView.delegate = self
         
@@ -124,6 +129,18 @@ class HomeVC: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    func showModal(){
+        let modalController = NameModalVC()
+        modalController.delegate = self
+        
+        modalController.modalPresentationStyle = .overCurrentContext
+        
+        let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+
+        keyWindow?.topViewController()?.present(modalController, animated: false)
+        
+    }
+    
     func refreshData(){
         homeFeedTable.reloadData()
         
@@ -145,9 +162,15 @@ class HomeVC: UIViewController {
     }
 }
 
+extension HomeVC: NameModalDelegate {
+    func refresh() {
+        profileView.refreshUserData()
+    }
+}
+
 extension HomeVC: ProfileViewDelegate {
     func editNameOnClick() {
-        print("Edit")
+        showModal()
     }
 }
 
