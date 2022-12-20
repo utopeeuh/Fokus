@@ -27,7 +27,7 @@ class ProfileView: UIView {
     let userName: UILabel = {
         
         let name = UILabel()
-        name.text = "Hi, Fachry 😊"
+        name.text = "Hi, User 😊"
         name.textColor = .white
         name.font = .atkinsonBold(size: 24)
         
@@ -146,6 +146,14 @@ class ProfileView: UIView {
 
     @objc func editNameOnClick(){
         delegate?.editNameOnClick()
+    }
+    
+    func refreshUserData(){
+        let user = UserRepository.shared.fetchUser()
+        if user == nil {
+            return
+        }
+        userName.text = "Hi, \(user!.name!) 😊"
     }
     
     required init?(coder: NSCoder) {

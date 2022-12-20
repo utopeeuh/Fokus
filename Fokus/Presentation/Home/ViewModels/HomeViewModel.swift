@@ -10,11 +10,19 @@ import UIKit
 
 class HomeViewModel : NSObject {
     
-    func getTaskList() -> [TaskModel] {
-        return TaskRepository.shared.fetchTasks()
-    }
-    
     override init() {
         super.init()
+    }
+    
+    private let firstTimeKey = "FIRST_TIME_KEY"
+    
+    func isFirstTimeOpening() -> Bool {
+        return UserDefaults.standard.object(forKey: UserDefaultsKey.firstTime) as? Bool ?? true
+    }
+    
+    
+    
+    func getTaskList() -> [TaskModel] {
+        return TaskRepository.shared.fetchTasks()
     }
 }
