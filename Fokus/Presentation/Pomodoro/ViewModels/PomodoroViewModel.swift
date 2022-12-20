@@ -15,6 +15,6 @@ class PomodoroViewModel : NSObject {
     func markAsDone(id: String) {
                 
         // Update to DB
-        TaskRepository.shared.updateTask(id: id)
+        TaskRepository.shared.markAsDone(id: id)
     }
 }

@@ -12,10 +12,16 @@ class DetailTaskViewModel : NSObject {
         super.init()
     }
     
+    func markAsUndone(id: String) {
+                
+        // Update to DB
+        TaskRepository.shared.markAsUndone(id: id)
+    }
+    
     func markAsDone(id: String) {
                 
         // Update to DB
-        TaskRepository.shared.updateTask(id: id)
+        TaskRepository.shared.markAsDone(id: id)
     }
     
     func deleteTask(id: String) {

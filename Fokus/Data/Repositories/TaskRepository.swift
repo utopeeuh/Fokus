@@ -72,13 +72,27 @@ class TaskRepository: TaskRepositoryDelegate{
         return []
     }
     
-    func updateTask(id: String) {
+    func markAsDone(id: String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         
         let resultFetch = fetchTask(id: id)
         do{
             resultFetch?.dateFinished = Date()
+            try context.save()
+        }
+        catch{
+            print("update task failed")
+        }
+    }
+    
+    func markAsUndone(id: String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        let resultFetch = fetchTask(id: id)
+        do{
+            resultFetch?.dateFinished = nil
             try context.save()
         }
         catch{

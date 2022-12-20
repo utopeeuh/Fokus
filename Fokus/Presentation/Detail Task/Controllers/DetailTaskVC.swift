@@ -117,8 +117,9 @@ class DetailTaskVC: UIViewController {
         view.addSubview(btnMarkDoneTask)
         view.addSubview(btnDeleteTask)
 
-        
         configureConstraints()
+        
+        checkIfTaskDone()
     }
     
     func configureConstraints(){
@@ -188,12 +189,11 @@ class DetailTaskVC: UIViewController {
 
     }
     
-    @objc func onClickDoneTask(controller: UIViewController) {
+    @objc func onClickDoneTask() {
         let alert = UIAlertController(title: "Apakah anda yakin untuk menandai task sebagai selesai?", message: "", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Tandai sebagai selesai", style: .default, handler: { (_) in
             self.vm.markAsDone(id: self.task!.id)
-            let controller = HomeVC()
-            self.navigationController?.pushViewController(controller, animated: true)
+            self.navigationController?.popViewController(animated: true)
         }))
         
         alert.addAction(UIAlertAction(title: "Batal", style: .cancel, handler: nil))
@@ -201,7 +201,7 @@ class DetailTaskVC: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    @objc func onClickDeleteTask(controller: UIViewController) {
+    @objc func onClickDeleteTask() {
         let alert = UIAlertController(title: "Apakah anda yakin untuk menghapus task?", message: "", preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: { (_) in
@@ -222,6 +222,32 @@ class DetailTaskVC: UIViewController {
         let controller = PomodoroVC()
         controller.task = task
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func checkIfTaskDone(){
+        if task?.dateFinished == nil {
+            return
+        }
+        
+        btnStartTask.layer.borderColor = UIColor.lightGrey.cgColor
+        btnStartTask.setTitleColor(.lightGrey, for: .normal)
+        btnStartTask.isEnabled = false
+        
+        btnMarkDoneTask.setTitle("Ulangi task 📝", for: .normal)
+        btnMarkDoneTask.removeTarget(self, action: #selector(onClickDoneTask), for: .touchUpInside)
+        btnMarkDoneTask.addTarget(self, action: #selector(redoTask), for: .touchUpInside)
+    }
+    
+    @objc func redoTask(){
+        vm.markAsUndone(id: task!.id)
+        
+        btnStartTask.layer.borderColor = UIColor.turq.cgColor
+        btnStartTask.setTitleColor(.turq, for: .normal)
+        btnStartTask.isEnabled = true
+        
+        btnMarkDoneTask.setTitle("Selesai 📝", for: .normal)
+        btnMarkDoneTask.removeTarget(self, action: #selector(redoTask), for: .touchUpInside)
+        btnMarkDoneTask.addTarget(self, action: #selector(onClickDoneTask), for: .touchUpInside)
     }
 }
 
