@@ -43,6 +43,8 @@ class Navbar: UIView {
         return button
     }()
     
+    private var alert : UIAlertController?
+    
     /**
         Enables right navbar item. Implement delegate to use on-click function.
     */
@@ -101,11 +103,24 @@ class Navbar: UIView {
     @objc func backOnClick(){
         let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
 
+        if alert != nil {
+            keyWindow?.topViewController()?.present(alert!, animated: true)
+            return
+        }
+        
         keyWindow?.topViewController()?.navigationController?.popViewController(animated: true)
     }
     
     @objc func barButtonOnClick(){
         delegate?.rightBarItemOnClick()
+    }
+    
+    func addAlertOnBack(title: String, actions: [UIAlertAction]){
+        alert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+        
+        actions.forEach { action in
+            alert?.addAction(action)
+        }
     }
     
     required init?(coder: NSCoder) {

@@ -58,15 +58,10 @@ class HomeVC: UIViewController {
         navigationController?.isNavigationBarHidden = true
         tabBarController?.tabBar.isHidden = false
         taskList = homeVM.getTaskList()
-        profileView.refreshUserData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if homeVM.isFirstTimeOpening() == true {
-            showModal()
-        }
         
         view.backgroundColor = .blackFokus
         
@@ -86,6 +81,8 @@ class HomeVC: UIViewController {
         view.addSubview(scrollView)
         
         configureConstraints()
+        
+        taskList = homeVM.getTaskList()
     }
     
     func configureConstraints(){
@@ -130,8 +127,8 @@ class HomeVC: UIViewController {
     func refreshData(){
         homeFeedTable.reloadData()
         
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width-40, height: Double(taskList.count+1)*100)
-        
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width-40, height: CGFloat( Double(taskList.count+1))*100)
+
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         
         homeFeedTable.snp.remakeConstraints { make in
@@ -146,28 +143,11 @@ class HomeVC: UIViewController {
             make.height.equalTo(60)
         }
     }
-    
-    func showModal(){
-        let modalController = NameModalVC()
-        modalController.delegate = self
-        
-        modalController.modalPresentationStyle = .overCurrentContext
-        
-        let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-
-        keyWindow?.topViewController()?.present(modalController, animated: false)
-    }
-}
-
-extension HomeVC: NameModalDelegate {
-    func refresh() {
-        profileView.refreshUserData()
-    }
 }
 
 extension HomeVC: ProfileViewDelegate {
     func editNameOnClick() {
-        showModal()
+        print("Edit")
     }
 }
 
@@ -179,12 +159,16 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskListCell", for: indexPath) as! TaskListCell
-        cell.task = taskList[indexPath.row]
+        cell.setTask(task: taskList[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(taskList[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
+        let controller = DetailTaskVC()
+        controller.task = taskList[indexPath.row]
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

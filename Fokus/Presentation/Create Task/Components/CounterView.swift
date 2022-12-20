@@ -49,7 +49,7 @@ class CounterView: UIView {
     
     private let addButton : UIButton = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "AddCounter")
+        imageView.image = UIImage(named: "addCounter")
         
         let button = UIButton()
         button.addSubview(imageView)
@@ -64,7 +64,7 @@ class CounterView: UIView {
     
     private let minButton : UIButton = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "MinusCounter")
+        imageView.image = UIImage(named: "minusCounter")
         
         let button = UIButton()
         button.addSubview(imageView)
@@ -144,7 +144,7 @@ class CounterView: UIView {
             minButton.addGestureRecognizer(minGesture)
             minButton.subviews.forEach { view in
                 if let imageView = view as? UIImageView{
-                    imageView.image = UIImage(named: "MinusCounter")
+                    imageView.image = UIImage(named: "minusCounter")
                 }
             }
         }
@@ -157,7 +157,7 @@ class CounterView: UIView {
             minButton.removeGestureRecognizer(minGesture)
             minButton.subviews.forEach { view in
                 if let imageView = view as? UIImageView{
-                    imageView.image = UIImage(named: "MinusCounterDisabled")
+                    imageView.image = UIImage(named: "minusCounterDisabled")
                 }
             }
         }

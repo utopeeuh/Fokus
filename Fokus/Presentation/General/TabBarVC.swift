@@ -17,6 +17,7 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
 
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()
+    
         
         let tabBarItemAppearance = UITabBarItemAppearance()
         let normalTA = [NSAttributedString.Key.foregroundColor : UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1), NSAttributedString.Key.font: UIFont(name: "AtkinsonHyperlegible-Regular", size: 13)!]
@@ -55,7 +56,7 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
         
         
         // Stats tab
-        let tabTwo = UINavigationController(rootViewController: DummyVC())
+        let tabTwo = UINavigationController(rootViewController: HomeVC())
         let tabTwoBarItem = UITabBarItem(title: "Statistics", image: UIImage(named:"Stats"), selectedImage: UIImage(named: "StatsFilled"))
         
         tabTwo.tabBarItem = tabTwoBarItem
