@@ -358,7 +358,6 @@
 			children = (
 				B67019762945E31200872F77 /* ViewModels */,
 				B6D725EF2937245B00165A53 /* Controller */,
-				B6D725F12937245B00165A53 /* Components */,
 			);
 			path = Pomodoro;
 			sourceTree = "<group>";
@@ -369,13 +368,6 @@
 				B6D725F02937245B00165A53 /* PomodoroVC.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		B6D725F12937245B00165A53 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		F97EBF7B2945D52200FD4E3B /* DetailTaskViewModel */ = {

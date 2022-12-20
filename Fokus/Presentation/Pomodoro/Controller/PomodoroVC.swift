@@ -56,7 +56,7 @@ class PomodoroVC: UIViewController {
         
         ctx.text = "1 / 4"
         ctx.font = .atkinsonRegular(size: 24)
-        ctx.textColor = UIColor(hexString: "#FEFEFE")
+        ctx.textColor = .whiteFokus
         return ctx
     }()
     
@@ -64,7 +64,7 @@ class PomodoroVC: UIViewController {
     
     var pomodoroLabel :UILabel = {
         let ctx = UILabel()
-        ctx.text = "Work Phase"
+        ctx.text = "Fase Kerja"
         ctx.textColor = .turq
         ctx.font = .atkinsonRegular(size: 24)
         return ctx
@@ -107,7 +107,7 @@ class PomodoroVC: UIViewController {
         view.backgroundColor = .blackFokus
         
         pomodoroPhase.text = "\(currentCycle) / \(task!.pomodoros!)"
-        pomodoroLabel.text = "Work Phase"
+        pomodoroLabel.text = "Fase Kerja"
         
         timerLib.delegate = self
      
@@ -209,12 +209,12 @@ class PomodoroVC: UIViewController {
             
             // Long break every 4 cycles
             else if currentCycle % 4 == 0 {
-                pomodoroLabel.text = "Long Break"
+                pomodoroLabel.text = "Istirahat Panjang"
                 secondsRemaining = task?.longBreak as! Int
             }
             
             else {
-                pomodoroLabel.text = "Short Break"
+                pomodoroLabel.text = "Istirahat Pendek"
                 secondsRemaining = task?.shortBreak as! Int
             }
             
@@ -224,7 +224,7 @@ class PomodoroVC: UIViewController {
         else {
             currPhase = .workPhase
             
-            pomodoroLabel.text = "Work Phase"
+            pomodoroLabel.text = "Fase Kerja"
             pomodoroLabel.textColor = .turq
             
             secondsRemaining = task?.work as! Int
