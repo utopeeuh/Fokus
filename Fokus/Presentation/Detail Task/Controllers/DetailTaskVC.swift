@@ -71,6 +71,9 @@ class DetailTaskVC: UIViewController {
         return title
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +92,8 @@ class DetailTaskVC: UIViewController {
         shortBreakDuration = PomodoroDetail(title: "Short Break", value: "\(task!.shortBreak!):00")
         longBreakDuration = PomodoroDetail(title: "Long Break", value: "\(task!.longBreak!):00")
         whiteNoiseView.selectedIndex = (task!.isWhiteNoiseOn == true) ? 0 : 1
+        
+        whiteNoiseView.delegate = self
 
         btnStartTask.addTarget(self, action: #selector(onClickStart), for: .touchDown)
         btnMarkDoneTask.addTarget(self, action: #selector(onClickDoneTask), for: .touchUpInside)
@@ -109,23 +114,18 @@ class DetailTaskVC: UIViewController {
 
         
         configureConstraints()
-        
-       
     }
     
     func configureConstraints(){
         
         navbar.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(5)
-            make.height.equalTo(navbar.frame.height)
+            make.top.equalTo(view.safeAreaLayoutGuide)
             make.width.equalToSuperview().offset(-40)
             make.centerX.equalToSuperview()
         }
                 
         taskTitle.snp.makeConstraints { make in
             make.top.equalTo(navbar.snp.bottom).offset(20)
-//            make.top.equalToSuperview()
-//            make.width.equalToSuperview().offset(-40)
             make.centerX.equalToSuperview()
         }
         
@@ -196,49 +196,23 @@ class DetailTaskVC: UIViewController {
             let controller = HomeVC()
             self.navigationController?.pushViewController(controller, animated: true)
         }))
-
-//        alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (_) in
-//            print("User click Edit button")
-//        }))
-
-//        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
-//            print("User click Delete button")
-//        }))
-
+        
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
             print("User click Dismiss button")
         }))
 
-        self.present(alert, animated: true, completion: {
-            print("completion block")
-        })
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func onClickDeleteTask(controller: UIViewController) {
         let alert = UIAlertController(title: "Apakah anda yakin untuk menghapus task?", message: "", preferredStyle: .actionSheet)
-//        alert.addAction(UIAlertAction(title: "Tandai sebagai selesai", style: .default, handler: { (_) in
-//            print("User click Approve button")
-//            self.vm.markAsDone(id: self.task?.id as! String)
-//            let controller = HomeVC()
-//            self.navigationController?.pushViewController(controller, animated: true)
-//        }))
         
         alert.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: { (_) in
-            print("User click Delete button")
-            self.vm.deleteTask(id: self.task?.id as! String)
-            let controller = HomeVC()
-            self.navigationController?.pushViewController(controller, animated: true)
+            self.vm.deleteTask(id: self.task!.id)
+            self.navigationController?.popViewController(animated: true)
         }))
 
-//        alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (_) in
-//            print("User click Edit button")
-//        }))
-
-//        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
-//            print("User click Delete button")
-//        }))
-
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "Batal", style: .cancel, handler: { (_) in
             print("User click Dismiss button")
         }))
 
@@ -251,5 +225,12 @@ class DetailTaskVC: UIViewController {
         let controller = PomodoroVC()
         controller.task = task
         navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+extension DetailTaskVC: OptionsCollectionViewDelegate {
+    func didTapButton(tappedButton button: OptionButton) {
+        let isOn : Bool = button.titleLabel?.text?.lowercased() == "on" ? true : false
+        vm.toggleWhiteNoise(id: task!.id, isOn: isOn)
     }
 }

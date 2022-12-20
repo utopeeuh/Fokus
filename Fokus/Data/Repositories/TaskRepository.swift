@@ -108,84 +108,30 @@ class TaskRepository: TaskRepositoryDelegate{
         return nil
     }
     
-    /// CONTOH FETCH
+    func toggleWhiteNoise(id: String, isOn: Bool) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        let resultFetch = fetchTask(id: id)
+        do{
+            resultFetch?.isWhiteNoiseOn = isOn as NSNumber
+            try context.save()
+        }
+        catch{
+            print("update task failed")
+        }
+    }
     
-//    func fetchEffectList(ids: [Int]) -> [EffectModel]{
-//
-//        var effectList: [EffectModel] = []
-    
-//        // appDelegate & context bakal ada di setiap function
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-    
-//        // Entity name ubah sesuai nama entitias lu
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Effects")
-//
-//        var predicateList: [NSPredicate] = []
-//        ids.forEach { id in
-//            let idPredicate = NSPredicate(format: "id == %@", String(describing:id))
-//            predicateList.append(idPredicate)
-//        }
-    
-//        //Gabungin query predicate
-//        let compoundPredicate = NSCompoundPredicate(type: .or, subpredicates: predicateList)
-//
-//        request.predicate = compoundPredicate
-//
-//        //Sort hasil
-//        let idSort = NSSortDescriptor(key:"id", ascending:true)
-//        request.sortDescriptors = [idSort]
-//
-//        do{
-//            //Ambil hasil query
-//            let results:NSArray = try context.fetch(request) as NSArray
-//
-//            for result in results {
-//                let effect = result as? EffectModel
-//                effectList.append(effect!)
-//            }
-//        }
-//        catch{
-//            print("fetch failed")
-//        }
-//
-//        return effectList
-//    }
-    
-    /// CONTOH DELETE
     func deleteTask(id: String){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-
-        let resultFetch = fetchTask(id: id)
         
         do{
-//            resultFetch?.dateFinished = Date()
+            let resultFetch = fetchTask(id: id)
             try context.delete(resultFetch as! NSManagedObject)
         }
         catch{
             print("delete failed")
         }
-
-//        let timePredicate = NSPredicate(format: "routineId == %@", String(describing: routineId))
-//        let idPredicate = NSPredicate(format: "position == %@", String(describing: step.position))
-//        let compoundPredicate = NSCompoundPredicate(type: .or, subpredicates: [timePredicate, idPredicate])
-//
-//        request.predicate = compoundPredicate
-//
-//        do{
-//            let results:NSArray = try context.fetch(request) as NSArray
-//            context.delete(results.firstObject as! NSManagedObject)
-//        }
-//        catch{
-//            print("fetch failed")
-//        }
     }
-    
-    /// CONTOH UPDATE
-    /// Sama persis kayak fetch, bedanya setelah fetching data &
-    /// parse ke data type class yang sesuai,
-    /// attribute objectnya diubah aja di dalem do-block nya
-    /// trs tinggal panggil "try context.save()" dibawahnya
-    /// Contoh context.save() ada di function create
 }

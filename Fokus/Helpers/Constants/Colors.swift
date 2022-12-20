@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
     static let whiteFokus = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1)
     
-    static let lightGrey =  UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
+    static let lightGrey =  UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
     
     static let turq = UIColor(red: 0, green: 172/255, blue: 141/255, alpha: 1)
     

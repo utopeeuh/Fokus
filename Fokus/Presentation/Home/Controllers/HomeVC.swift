@@ -81,6 +81,8 @@ class HomeVC: UIViewController {
         view.addSubview(scrollView)
         
         configureConstraints()
+        
+        taskList = homeVM.getTaskList()
     }
     
     func configureConstraints(){
@@ -117,11 +119,6 @@ class HomeVC: UIViewController {
         }
     }
     
-    @objc func onClickTaskList(){
-        let controller = CreateTaskVC()
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
     @objc func addTaskOnClick(){
         let controller = CreateTaskVC()
         navigationController?.pushViewController(controller, animated: true)
@@ -130,7 +127,6 @@ class HomeVC: UIViewController {
     func refreshData(){
         homeFeedTable.reloadData()
         
-//        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width-40, height: Double(taskList.count+1)*100)
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width-40, height: CGFloat( Double(taskList.count+1))*100)
 
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
@@ -163,8 +159,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskListCell", for: indexPath) as! TaskListCell
-        cell.task = taskList[indexPath.row]
-        print(taskList[indexPath.row].title)
+        cell.setTask(task: taskList[indexPath.row])
         return cell
     }
     

@@ -23,6 +23,10 @@ class DetailTaskViewModel : NSObject {
         // Update to DB
         TaskRepository.shared.deleteTask(id: id)
     }
+    
+    func toggleWhiteNoise(id: String, isOn: Bool){
+        TaskRepository.shared.toggleWhiteNoise(id: id, isOn: isOn)
+    }
 
     
     private func cleanDurationString(str: String) -> NSNumber {

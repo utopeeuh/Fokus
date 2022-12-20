@@ -27,36 +27,29 @@ class TaskListCell: UITableViewCell {
     
     let spacer = UIView()
     
-    public var task : TaskModel? {
-        didSet {
-            setTask()
-        }
-    }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: "TaskListCell")
+        
         backgroundColor = .clear
         selectionStyle = .none
         
         containerList.backgroundColor = .darkGrey
         containerList.layer.cornerRadius = 8
         
-        titleTask.font = UIFont.systemFont(ofSize: 20)
-        timeTask.font = UIFont.systemFont(ofSize: 18)
+        titleTask.font = .atkinsonRegular(size: 20)
+        timeTask.font = .atkinsonRegular(size: 18)
         timeTask.textColor = .lightGray
-        
-        layer.cornerRadius = 8
-        containerList.addSubview(checkedLogo)
         
         titleAndTime.addSubview(titleTask)
         titleAndTime.addSubview(timeTask)
         
+        containerList.addSubview(checkedLogo)
         containerList.addSubview(titleAndTime)
-        
         containerList.addSubview(arrowRightLogo)
         
         addSubview(containerList)
         addSubview(spacer)
+        
         setupConstraint()
     }
     
@@ -105,10 +98,9 @@ class TaskListCell: UITableViewCell {
         }
     }
 
-    func setTask(){
-        
-        if task?.dateFinished != nil {
-            let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: (task?.title)!)
+    func setTask(task: TaskModel){
+        if task.dateFinished != nil {
+            let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: (task.title)!)
             
             attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSRange(location: 0, length: attributeString.length))
             
@@ -119,13 +111,13 @@ class TaskListCell: UITableViewCell {
             checkedLogo.image = UIImage(named: "checkedTaskLogo")
         }
         else {
-            titleTask.text = task?.title
+            titleTask.text = task.title
         }
         
-        if task?.reminder != nil {
+        if task.reminder != nil {
             let formatter = DateFormatter()
             formatter.dateFormat = "hh:mm a, dd MMM YYYY"
-            timeTask.text = formatter.string(from: (task?.reminder)!)
+            timeTask.text = formatter.string(from: (task.reminder)!)
         }
         else {
             titleTask.snp.remakeConstraints { make in
@@ -134,8 +126,19 @@ class TaskListCell: UITableViewCell {
             
             timeTask.isHidden = true
         }
+    }
+    
+    override func prepareForReuse() {
         
+        checkedLogo.image = UIImage(named: "uncheckedTaskLogo")
         
+        titleTask.attributedText = nil
         
+        timeTask.isHidden = false
+        
+        titleTask.snp.remakeConstraints { make in
+            make.top.equalToSuperview()
+            make.width.equalToSuperview()
+        }
     }
 }

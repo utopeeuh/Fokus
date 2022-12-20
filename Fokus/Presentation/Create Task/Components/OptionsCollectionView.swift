@@ -9,7 +9,13 @@ import Foundation
 import UIKit
 import SnapKit
 
+protocol OptionsCollectionViewDelegate {
+    func didTapButton(tappedButton button: OptionButton)
+}
+
 class OptionsCollectionView: UIView {
+    
+    var delegate: OptionsCollectionViewDelegate?
     
     private var title: String!
     private var source: [String] = []
@@ -109,6 +115,9 @@ class OptionsCollectionView: UIView {
     
     @objc func didTapButton(_ sender: OptionButton){
         sender.select()
+        
+        delegate?.didTapButton(tappedButton: sender)
+        
         selectedOption = (sender.titleLabel?.text)!
         
         buttonStack.arrangedSubviews.forEach { view in

@@ -56,7 +56,7 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
         
         
         // Stats tab
-        let tabTwo = UINavigationController(rootViewController: DummyVC())
+        let tabTwo = UINavigationController(rootViewController: HomeVC())
         let tabTwoBarItem = UITabBarItem(title: "Statistics", image: UIImage(named:"Stats"), selectedImage: UIImage(named: "StatsFilled"))
         
         tabTwo.tabBarItem = tabTwoBarItem
