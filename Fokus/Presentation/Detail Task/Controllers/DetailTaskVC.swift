@@ -11,14 +11,16 @@ import SnapKit
 class DetailTaskVC: UIViewController {
     
     public var task:TaskModel?
+    
     private var vm = DetailTaskViewModel()
-    private var pomodoroCycle = PomodoroDetail(title: "Pomodoros", value:"4 Cycles")
-    private var workDuration = PomodoroDetail(title: "Work", value: "20:00")
-    private var shortBreakDuration = PomodoroDetail(title: "Short Break", value: "10:00")
-    private var longBreakDuration = PomodoroDetail(title: "Long Break", value: "25:00")
+    
+    private var pomodoroCycle : PomodoroDetail!
+    private var workDuration : PomodoroDetail!
+    private var shortBreakDuration : PomodoroDetail!
+    private var longBreakDuration : PomodoroDetail!
 
     private let navbar: Navbar = {
-        let navbar = Navbar(title: "Task Detail")
+        let navbar = Navbar(title: "Detil task")
         return navbar
     }()
 
@@ -30,7 +32,7 @@ class DetailTaskVC: UIViewController {
     
     private let btnStartTask: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Start", for: .normal)
+        btn.setTitle("Mulai", for: .normal)
         btn.layer.borderWidth = 1
         btn.layer.borderColor = UIColor.turq.cgColor
         btn.layer.cornerRadius = 60
@@ -40,7 +42,7 @@ class DetailTaskVC: UIViewController {
     
     private let btnMarkDoneTask: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Mark as done📝", for: .normal)
+        btn.setTitle("Selesai 📝", for: .normal)
         btn.layer.borderWidth = 1
         btn.layer.borderColor = UIColor.turq.cgColor
         btn.layer.cornerRadius = 8
@@ -50,7 +52,7 @@ class DetailTaskVC: UIViewController {
     
     private let btnDeleteTask: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Delete Task", for: .normal)
+        btn.setTitle("Hapus task", for: .normal)
         btn.setTitleColor(.systemRed, for: .normal)
         btn.backgroundColor = UIColor.clear
         return btn
@@ -59,14 +61,12 @@ class DetailTaskVC: UIViewController {
     
     private let taskTitle: UILabel = {
         let title = UILabel()
-        title.text = "This is my title"
         title.font = .atkinsonRegular(size: 24)
         return title
     }()
     
     private let taskScheduleLabel: UILabel = {
         let title = UILabel()
-        title.text = "03.00 PM 15 Jul 2022"
         title.font = .atkinsonRegular(size: 16)
         return title
     }()
@@ -81,16 +81,21 @@ class DetailTaskVC: UIViewController {
         
         taskTitle.text = task?.title
         
-        if task?.dateCreated != nil {
+        if task?.reminder != nil {
             let formatter = DateFormatter()
             formatter.dateFormat = "hh:mm a, dd MMM YYYY"
-            taskScheduleLabel.text = formatter.string(from: (task?.dateCreated)!)
+            taskScheduleLabel.text = formatter.string(from: (task?.reminder)!)
         }
         
-        pomodoroCycle = PomodoroDetail(title: "Pomodoros", value: "\(task!.pomodoros!) Cycles")
-        workDuration = PomodoroDetail(title: "Work", value: "\(task!.work!):00")
-        shortBreakDuration = PomodoroDetail(title: "Short Break", value: "\(task!.shortBreak!):00")
-        longBreakDuration = PomodoroDetail(title: "Long Break", value: "\(task!.longBreak!):00")
+        else {
+            taskScheduleLabel.text = "Tidak ada reminder untuk task ini"
+            taskScheduleLabel.textColor = .lightGrey
+        }
+        
+        pomodoroCycle = PomodoroDetail(title: "Pomodoro", value: "\(task!.pomodoros!) Cycles")
+        workDuration = PomodoroDetail(title: "Kerja", value: "\(task!.work!):00")
+        shortBreakDuration = PomodoroDetail(title: "Istirahat Pendek", value: "\(task!.shortBreak!):00")
+        longBreakDuration = PomodoroDetail(title: "Istirahat Panjang", value: "\(task!.longBreak!):00")
         whiteNoiseView.selectedIndex = (task!.isWhiteNoiseOn == true) ? 0 : 1
         
         whiteNoiseView.delegate = self
@@ -183,23 +188,15 @@ class DetailTaskVC: UIViewController {
 
     }
     
-//    @objc func onClickDoneTask () {
-//        let controller = CreateTaskVC()
-//        navigationController?.pushViewController(controller, animated: true)
-//    }
-    
     @objc func onClickDoneTask(controller: UIViewController) {
         let alert = UIAlertController(title: "Apakah anda yakin untuk menandai task sebagai selesai?", message: "", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Tandai sebagai selesai", style: .default, handler: { (_) in
-            print("User click Approve button")
-            self.vm.markAsDone(id: self.task?.id as! String)
+            self.vm.markAsDone(id: self.task!.id)
             let controller = HomeVC()
             self.navigationController?.pushViewController(controller, animated: true)
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
-            print("User click Dismiss button")
-        }))
+        alert.addAction(UIAlertAction(title: "Batal", style: .cancel, handler: nil))
 
         self.present(alert, animated: true, completion: nil)
     }

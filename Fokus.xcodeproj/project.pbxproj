@@ -151,6 +151,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		951841FE29518C5400C52AF7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F9B043F02950484A00C4CF4E /* Sounds */,
+				952BA1382925219800767FDD /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		952BA1322925213800767FDD /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,9 +190,9 @@
 		952BA1352925216700767FDD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				951841FE29518C5400C52AF7 /* Assets */,
 				952BA139292521AA00767FDD /* Constants */,
 				952BA13A292521EE00767FDD /* Preview SwiftUI */,
-				952BA1382925219800767FDD /* Assets */,
 				952BA1372925218F00767FDD /* Extensions */,
 			);
 			path = Helpers;
@@ -198,13 +207,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		952BA1382925219800767FDD /* Assets */ = {
+		952BA1382925219800767FDD /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				95059FA32928D8AF002D97D1 /* AtkinsonHyperlegible-Bold.ttf */,
 				95059FA42928D8AF002D97D1 /* AtkinsonHyperlegible-Regular.ttf */,
 			);
-			path = Assets;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		952BA139292521AA00767FDD /* Constants */ = {
@@ -299,15 +308,14 @@
 		955A2FAF2912A7F300513D8E /* Fokus */ = {
 			isa = PBXGroup;
 			children = (
-				F9B043F02950484A00C4CF4E /* Sounds */,
 				955A2FB02912A7F300513D8E /* AppDelegate.swift */,
 				955A2FB22912A7F300513D8E /* SceneDelegate.swift */,
 				955A2FBC2912A7F400513D8E /* Assets.xcassets */,
 				955A2FB62912A7F300513D8E /* Main.storyboard */,
 				955A2FBE2912A7F400513D8E /* LaunchScreen.storyboard */,
 				955A2FC12912A7F400513D8E /* Info.plist */,
-				952BA13F2925220800767FDD /* Presentation */,
 				952BA1322925213800767FDD /* Data */,
+				952BA13F2925220800767FDD /* Presentation */,
 				952BA1352925216700767FDD /* Helpers */,
 			);
 			path = Fokus;
