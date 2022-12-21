@@ -16,9 +16,16 @@ class ProfileView: UIView {
     
     public var delegate: ProfileViewDelegate?
     
+    let levelVm = LevelViewModel()
+    
+    let badgeImage : UIImageView = {
+        let imageView = UIImageView()
+        return imageView
+    }()
+    
     let badgePlaceholder: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(hexString: "#1b1b1b")
+        view.backgroundColor = .turq
         view.layer.cornerRadius = 50
         view.clipsToBounds = true
         return view
@@ -28,7 +35,7 @@ class ProfileView: UIView {
         
         let name = UILabel()
         name.text = "Hi, User 😊"
-        name.textColor = .white
+        name.textColor = .whiteFokus
         name.font = .atkinsonBold(size: 24)
         
         return name
@@ -45,8 +52,7 @@ class ProfileView: UIView {
     
     let levelLabel: UILabel = {
         let label = UILabel()
-        
-        label.text = "Level 3"
+    
         label.textColor = .darkTurq
         label.font = .atkinsonBold(size: 18)
         
@@ -67,11 +73,6 @@ class ProfileView: UIView {
     
     let xpLabel: UILabel = {
         let label = UILabel()
-        let text = NSMutableAttributedString()
-        text.append(NSAttributedString(string: "123", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]));
-        text.append(NSAttributedString(string: "/1000 xp", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkTurq]))
-        
-        label.attributedText = text
         label.font = .atkinsonRegular(size: 16)
         
         return label
@@ -88,6 +89,8 @@ class ProfileView: UIView {
         editButton.addTarget(self, action: #selector(editNameOnClick), for: .touchUpInside)
         
         addSubview(badgePlaceholder)
+        addSubview(badgeImage)
+        
         profileSectionView.addSubview(userName)
         profileSectionView.addSubview(editButton)
         profileSectionView.addSubview(levelLabel)
@@ -101,6 +104,7 @@ class ProfileView: UIView {
     
     
     private func setupConstraint() {
+        
         badgePlaceholder.snp.makeConstraints { make in
             make.left.equalTo(10)
             make.centerY.equalToSuperview()
@@ -108,6 +112,10 @@ class ProfileView: UIView {
             make.height.equalTo(100)
         }
         
+        badgeImage.snp.makeConstraints { make in
+            make.center.equalTo(badgePlaceholder)
+            make.size.equalTo(80)
+        }
         
         profileSectionView.snp.makeConstraints { make in
             make.left.equalTo(badgePlaceholder.snp.right).offset(20)
@@ -154,6 +162,21 @@ class ProfileView: UIView {
             return
         }
         userName.text = "Hi, \(user!.name!) 😊"
+        
+        // Level
+        levelLabel.text = "Level \(levelVm.getLevel())"
+        
+        // Xp
+        let text = NSMutableAttributedString()
+        text.append(NSAttributedString(string: "\(levelVm.getExcessXp())", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]));
+        text.append(NSAttributedString(string: "/\(levelVm.maxXp) xp", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkTurq]))
+        
+        xpLabel.attributedText = text
+        
+        progressBar.progress = Float(levelVm.getExcessXp())/Float(levelVm.maxXp)
+        
+        // Badge
+        badgeImage.image = levelVm.getBadgeIcon()
     }
     
     required init?(coder: NSCoder) {

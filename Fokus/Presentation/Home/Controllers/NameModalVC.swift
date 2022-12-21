@@ -64,10 +64,12 @@ class NameModalVC: UIViewController {
     
     let user = UserRepository.shared.fetchUser()
     
+    override func viewDidAppear(_ animated: Bool) {
+        showModal()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        showModal()
         
         saveButton.addTarget(self, action: #selector(saveOnClick), for: .touchUpInside)
         
@@ -85,6 +87,7 @@ class NameModalVC: UIViewController {
         view.addSubview(containerView)
         
         configureConstraints()
+        
         setupModal()
     }
 
