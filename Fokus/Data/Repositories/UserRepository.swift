@@ -13,6 +13,8 @@ class UserRepository {
     
     static let shared = UserRepository()
     
+    private let levelViewModel = LevelViewModel()
+    
     func createUser(name: String){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -59,6 +61,21 @@ class UserRepository {
         }
         catch {
             print("update user name failed")
+        }
+    }
+    
+    func addXp(xp: Int){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        do {
+            let user = fetchUser()
+            user?.xp = (user?.xp as! Int + xp) as NSNumber
+            
+            try context.save()
+        }
+        catch {
+            print("update user xp failed")
         }
     }
 }

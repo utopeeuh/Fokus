@@ -14,7 +14,8 @@ class PomodoroVC: UIViewController {
     
     public var task:TaskModel?
     
-    private var vm = PomodoroViewModel()
+    private var levelVm = LevelViewModel()
+    private var pomodoroVm = PomodoroViewModel()
     
     var currentCycle = 1
     
@@ -277,13 +278,23 @@ class PomodoroVC: UIViewController {
     }
     
     func finishTask(){
+        
+        // Task xp
+        
+        let xp = levelVm.calculateTaskXp(task: task!, isPomdoroUsed: true)
+        
         // Show finish modal
+        let modal = FinishTaskModalVC()
+        modal.delegate = self
+        modal.xp = xp
         
+        // Update task as done and add user xp
+        levelVm.addUserXp(xp: xp)
+        pomodoroVm.markAsDone(id: (task?.id)!)
         
-        // Update task as done
-        vm.markAsDone(id: (task?.id)!)
-        
-        // Back to home
+        // Show modal
+        modal.modalPresentationStyle = .overCurrentContext
+        self.present(modal, animated: true)
     }
     
     @objc func cancelPomodoro(){
@@ -344,5 +355,11 @@ extension PomodoroVC: MagicTimerViewDelegate {
         else {
             secondsRemaining -= 1
         }
+    }
+}
+
+extension PomodoroVC: FinishTaskModalDelegate {
+    func onModalClosed() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }

@@ -22,12 +22,14 @@
 		952BF7EE292CF2BF00D924A8 /* OptionsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BF7ED292CF2BE00D924A8 /* OptionsCollectionView.swift */; };
 		952BF7F0292D00A500D924A8 /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BF7EF292D00A500D924A8 /* OptionButton.swift */; };
 		952BF7F2292D060A00D924A8 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BF7F1292D060A00D924A8 /* CounterView.swift */; };
+		954033A42951FB0F00E6FEFE /* FinishTaskModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954033A32951FB0F00E6FEFE /* FinishTaskModalVC.swift */; };
 		955A2FB12912A7F300513D8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB02912A7F300513D8E /* AppDelegate.swift */; };
 		955A2FB32912A7F300513D8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB22912A7F300513D8E /* SceneDelegate.swift */; };
 		955A2FB82912A7F300513D8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A2FB62912A7F300513D8E /* Main.storyboard */; };
 		955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB92912A7F300513D8E /* Fokus.xcdatamodeld */; };
 		955A2FBD2912A7F400513D8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955A2FBC2912A7F400513D8E /* Assets.xcassets */; };
 		955A2FC02912A7F400513D8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A2FBE2912A7F400513D8E /* LaunchScreen.storyboard */; };
+		95845DE42951D8B000EF2996 /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95845DE32951D8B000EF2996 /* LevelViewModel.swift */; };
 		958B0F53293D69F1006A19E4 /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F52293D69F1006A19E4 /* Navbar.swift */; };
 		958B0F6E293D81EA006A19E4 /* CreateTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */; };
 		958B0F73293E291F006A19E4 /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F72293E291F006A19E4 /* UIView+Shake.swift */; };
@@ -65,6 +67,7 @@
 		952BF7ED292CF2BE00D924A8 /* OptionsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsCollectionView.swift; sourceTree = "<group>"; };
 		952BF7EF292D00A500D924A8 /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
 		952BF7F1292D060A00D924A8 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		954033A32951FB0F00E6FEFE /* FinishTaskModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishTaskModalVC.swift; sourceTree = "<group>"; };
 		955A2FAD2912A7F300513D8E /* Fokus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fokus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955A2FB02912A7F300513D8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		955A2FB22912A7F300513D8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 		955A2FBC2912A7F400513D8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		955A2FBF2912A7F400513D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955A2FC12912A7F400513D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95845DE32951D8B000EF2996 /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
 		958B0F52293D69F1006A19E4 /* Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
 		958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewModel.swift; sourceTree = "<group>"; };
 		958B0F72293E291F006A19E4 /* UIView+Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 		952BA1402925221500767FDD /* General */ = {
 			isa = PBXGroup;
 			children = (
+				95845DE22951D8A300EF2996 /* ViewModels */,
 				952BA1452925227800767FDD /* TabBarVC.swift */,
 				952BA1412925222300767FDD /* Components */,
 			);
@@ -327,6 +332,14 @@
 			path = Fokus;
 			sourceTree = "<group>";
 		};
+		95845DE22951D8A300EF2996 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				95845DE32951D8B000EF2996 /* LevelViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		958B0F6C293D81DB006A19E4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				B6D725F02937245B00165A53 /* PomodoroVC.swift */,
+				954033A32951FB0F00E6FEFE /* FinishTaskModalVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -541,6 +555,7 @@
 				958B0F53293D69F1006A19E4 /* Navbar.swift in Sources */,
 				95059FA02928D689002D97D1 /* Colors.swift in Sources */,
 				95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */,
+				954033A42951FB0F00E6FEFE /* FinishTaskModalVC.swift in Sources */,
 				F97EBF7D2945D59D00FD4E3B /* DetailTaskViewModel.swift in Sources */,
 				95184202295191AF00C52AF7 /* UserRepository.swift in Sources */,
 				955A2FB12912A7F300513D8E /* AppDelegate.swift in Sources */,
@@ -568,6 +583,7 @@
 				F9D86DE32950C0CF00A6636F /* UIWindow+TopViewController.swift in Sources */,
 				95E1BF3F2942FF2100F58A96 /* NameModalVC.swift in Sources */,
 				95E1BF3C2942FBFC00F58A96 /* UserModel.swift in Sources */,
+				95845DE42951D8B000EF2996 /* LevelViewModel.swift in Sources */,
 				F9D86DEA2950C21300A6636F /* ProfileView.swift in Sources */,
 				B6D725F22937245B00165A53 /* PomodoroVC.swift in Sources */,
 			);

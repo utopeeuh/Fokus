@@ -12,7 +12,8 @@ class DetailTaskVC: UIViewController {
     
     public var task:TaskModel?
     
-    private var vm = DetailTaskViewModel()
+    private var detailVm = DetailTaskViewModel()
+    private var levelVm = LevelViewModel()
     
     private var pomodoroCycle : PomodoroDetail!
     private var workDuration : PomodoroDetail!
@@ -191,9 +192,10 @@ class DetailTaskVC: UIViewController {
     
     @objc func onClickDoneTask() {
         let alert = UIAlertController(title: "Apakah anda yakin untuk menandai task sebagai selesai?", message: "", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Tandai sebagai selesai", style: .default, handler: { (_) in
-            self.vm.markAsDone(id: self.task!.id)
-            self.navigationController?.popViewController(animated: true)
+        alert.addAction(UIAlertAction(title: "Tandai sebagai selesai", style: .default, handler: { [self] (_) in
+            detailVm.markAsDone(id: task!.id)
+            levelVm.addUserXp(xp: levelVm.calculateTaskXp(task: task!, isPomdoroUsed: false))
+            navigationController?.popViewController(animated: true)
         }))
         
         alert.addAction(UIAlertAction(title: "Batal", style: .cancel, handler: nil))
@@ -205,7 +207,7 @@ class DetailTaskVC: UIViewController {
         let alert = UIAlertController(title: "Apakah anda yakin untuk menghapus task?", message: "", preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: { (_) in
-            self.vm.deleteTask(id: self.task!.id)
+            self.detailVm.deleteTask(id: self.task!.id)
             self.navigationController?.popViewController(animated: true)
         }))
 
@@ -239,7 +241,7 @@ class DetailTaskVC: UIViewController {
     }
     
     @objc func redoTask(){
-        vm.markAsUndone(id: task!.id)
+        detailVm.markAsUndone(id: task!.id)
         
         btnStartTask.layer.borderColor = UIColor.turq.cgColor
         btnStartTask.setTitleColor(.turq, for: .normal)
@@ -254,6 +256,6 @@ class DetailTaskVC: UIViewController {
 extension DetailTaskVC: OptionsCollectionViewDelegate {
     func didTapButton(tappedButton button: OptionButton) {
         let isOn : Bool = button.titleLabel?.text?.lowercased() == "on" ? true : false
-        vm.toggleWhiteNoise(id: task!.id, isOn: isOn)
+        detailVm.toggleWhiteNoise(id: task!.id, isOn: isOn)
     }
 }
