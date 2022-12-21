@@ -19,6 +19,8 @@ class PomodoroVC: UIViewController {
     
     var currentCycle = 1
     
+    var timeSpent = 0
+    
     enum PomodoroPhase {
         case workPhase, breakPhase
     }
@@ -202,6 +204,11 @@ class PomodoroVC: UIViewController {
             
             currPhase = .breakPhase
             
+            // Add work time to total
+            let currWorkTime = Int(truncating: task!.work)*60 - secondsRemaining
+            timeSpent += currWorkTime
+            
+            
             // If last cycle, stop after work
             if (currentCycle == task?.pomodoros as! Int) {
                 finishTask()
@@ -280,7 +287,6 @@ class PomodoroVC: UIViewController {
     func finishTask(){
         
         // Task xp
-        
         let xp = levelVm.calculateTaskXp(task: task!, isPomdoroUsed: true)
         
         // Show finish modal
@@ -290,7 +296,7 @@ class PomodoroVC: UIViewController {
         
         // Update task as done and add user xp
         levelVm.addUserXp(xp: xp)
-        pomodoroVm.markAsDone(id: (task?.id)!)
+        pomodoroVm.markAsDone(id: (task?.id)!, timeSpent: timeSpent)
         
         // Show modal
         modal.modalPresentationStyle = .overCurrentContext

@@ -20,7 +20,7 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
         
         let tabBarItemAppearance = UITabBarItemAppearance()
         let normalTA = [NSAttributedString.Key.foregroundColor : UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1), NSAttributedString.Key.font: UIFont(name: "AtkinsonHyperlegible-Regular", size: 13)!]
-        let selectedTA = [NSAttributedString.Key.foregroundColor : UIColor(red: 0, green: 172/255, blue: 141/255, alpha: 1), NSAttributedString.Key.font: UIFont(name: "AtkinsonHyperlegible-Bold", size: 13)!]
+        let selectedTA = [NSAttributedString.Key.foregroundColor : UIColor(red: 0, green: 172/255, blue: 141/255, alpha: 1), NSAttributedString.Key.font: UIFont(name: "AtkinsonHyperlegible-Regular", size: 13)!]
         
         tabBarItemAppearance.normal.titleTextAttributes = normalTA
         tabBarItemAppearance.selected.titleTextAttributes = selectedTA
@@ -69,10 +69,4 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
         
         self.viewControllers = [tabOne, tabTwo]
     }
-    
-    // UITabBarControllerDelegate method
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController:UIViewController) {
-        print("Selected tab")
-    }
-
 }

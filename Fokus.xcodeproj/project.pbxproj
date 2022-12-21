@@ -22,6 +22,7 @@
 		952BF7EE292CF2BF00D924A8 /* OptionsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BF7ED292CF2BE00D924A8 /* OptionsCollectionView.swift */; };
 		952BF7F0292D00A500D924A8 /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BF7EF292D00A500D924A8 /* OptionButton.swift */; };
 		952BF7F2292D060A00D924A8 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BF7F1292D060A00D924A8 /* CounterView.swift */; };
+		953370432952DAD9009C3E89 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953370422952DAD9009C3E89 /* StatsViewModel.swift */; };
 		954033A42951FB0F00E6FEFE /* FinishTaskModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954033A32951FB0F00E6FEFE /* FinishTaskModalVC.swift */; };
 		955A2FB12912A7F300513D8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB02912A7F300513D8E /* AppDelegate.swift */; };
 		955A2FB32912A7F300513D8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB22912A7F300513D8E /* SceneDelegate.swift */; };
@@ -72,6 +73,7 @@
 		952BF7ED292CF2BE00D924A8 /* OptionsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsCollectionView.swift; sourceTree = "<group>"; };
 		952BF7EF292D00A500D924A8 /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
 		952BF7F1292D060A00D924A8 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		953370422952DAD9009C3E89 /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		954033A32951FB0F00E6FEFE /* FinishTaskModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishTaskModalVC.swift; sourceTree = "<group>"; };
 		955A2FAD2912A7F300513D8E /* Fokus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fokus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955A2FB02912A7F300513D8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			children = (
 				95ECFECB2931F09200F5F334 /* TitleTextField.swift */,
 				95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */,
+				F9BE0C4229365A05007529FB /* PomodoroDetail.swift */,
 				958B0F52293D69F1006A19E4 /* Navbar.swift */,
 			);
 			path = Components;
@@ -373,6 +376,7 @@
 		95AA5729295194AD001D6A50 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				953370422952DAD9009C3E89 /* StatsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -457,7 +461,6 @@
 			isa = PBXGroup;
 			children = (
 				F97EBF7B2945D52200FD4E3B /* DetailTaskViewModel */,
-				F9BE0C4129364FDA007529FB /* Components */,
 				F9BE0C4029364FC9007529FB /* Controllers */,
 			);
 			path = "Detail Task";
@@ -469,14 +472,6 @@
 				F9BE0C452936DE83007529FB /* DetailTaskVC.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		F9BE0C4129364FDA007529FB /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				F9BE0C4229365A05007529FB /* PomodoroDetail.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -625,6 +620,7 @@
 				958B0F73293E291F006A19E4 /* UIView+Shake.swift in Sources */,
 				952BF7EE292CF2BF00D924A8 /* OptionsCollectionView.swift in Sources */,
 				9513AFBC29295ECE00415C8B /* HomeVC.swift in Sources */,
+				953370432952DAD9009C3E89 /* StatsViewModel.swift in Sources */,
 				95AA5735295194D0001D6A50 /* Calendar+Dates.swift in Sources */,
 				955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */,
 				95ECFEC92931F02900F5F334 /* CreateTaskVC.swift in Sources */,

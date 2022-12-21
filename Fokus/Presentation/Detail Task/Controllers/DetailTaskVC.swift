@@ -193,7 +193,7 @@ class DetailTaskVC: UIViewController {
     @objc func onClickDoneTask() {
         let alert = UIAlertController(title: "Apakah anda yakin untuk menandai task sebagai selesai?", message: "", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Tandai sebagai selesai", style: .default, handler: { [self] (_) in
-            detailVm.markAsDone(id: task!.id)
+            detailVm.markAsDone(id: task!.id, timeSpent: 0)
             levelVm.addUserXp(xp: levelVm.calculateTaskXp(task: task!, isPomdoroUsed: false))
             navigationController?.popViewController(animated: true)
         }))
@@ -241,7 +241,9 @@ class DetailTaskVC: UIViewController {
     }
     
     @objc func redoTask(){
-        detailVm.markAsUndone(id: task!.id)
+        
+        // Duplicate task, no need to refresh display as it is the same
+        task = detailVm.duplicateTask(task: task!)
         
         btnStartTask.layer.borderColor = UIColor.turq.cgColor
         btnStartTask.setTitleColor(.turq, for: .normal)

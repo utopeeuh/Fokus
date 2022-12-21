@@ -45,6 +45,7 @@ class DateIterator: UIView {
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
         backgroundColor = .darkGrey
+        
         // Display initial date
         changeDate(date: Date())
         

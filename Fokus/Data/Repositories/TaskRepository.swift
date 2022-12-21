@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol TaskRepositoryDelegate{
-    func createTask(title: String, pomodoros: NSNumber, work: NSNumber, shortBreak: NSNumber, longBreak: NSNumber, reminder: Date?, isWhiteNoiseOn: NSNumber)
+enum TaskState {
+    case created, finished
 }
 
-class TaskRepository: TaskRepositoryDelegate{
+class TaskRepository {
     
     static let shared = TaskRepository()
     
@@ -37,6 +37,8 @@ class TaskRepository: TaskRepositoryDelegate{
         newTask.shortBreak = shortBreak
         newTask.longBreak = longBreak
         newTask.isWhiteNoiseOn = isWhiteNoiseOn
+        newTask.timeSpent = 0
+        newTask.isHidden = false
         
         do{
             try context.save()
@@ -47,7 +49,6 @@ class TaskRepository: TaskRepositoryDelegate{
         }
     }
     
-    
     func fetchTasks() -> [TaskModel]{
     
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -55,6 +56,10 @@ class TaskRepository: TaskRepositoryDelegate{
     
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
 
+        // Query for non-hidden tasks
+        let hiddenPredicate = NSPredicate(format: "isHidden == false")
+        request.predicate = hiddenPredicate
+        
         //Sort hasil
         let idSort = NSSortDescriptor(key:"dateCreated", ascending:false)
         request.sortDescriptors = [idSort]
@@ -72,27 +77,50 @@ class TaskRepository: TaskRepositoryDelegate{
         return []
     }
     
-    func markAsDone(id: String) {
+    func fetchTasks(month: Date, type: TaskState) -> [TaskModel]{
+    
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+    
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
+
+        // Query for non-hidden tasks
+        let hiddenPredicate = NSPredicate(format: "isHidden == false")
+        
+        // Query for state and date range
+        let stateString = type == .created ? "dateCreated" : "dateFinished"
+        let startMonthPredicate = NSPredicate(format: "\(stateString) >= %@", month as CVarArg)
+        let endMonthPredicate = NSPredicate(format: "\(stateString) <= %@", Calendar.current.endOfMonth(month) as CVarArg)
+        
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [hiddenPredicate, startMonthPredicate, endMonthPredicate])
+        
+        request.predicate = compoundPredicate
+        
+        //Sort hasil
+        let idSort = NSSortDescriptor(key:"dateCreated", ascending:false)
+        request.sortDescriptors = [idSort]
+
+        do{
+            //Ambil hasil query
+            if let results = try context.fetch(request) as? [TaskModel] {
+                return results
+            }
+        }
+        catch{
+            print("fetch failed")
+        }
+
+        return []
+    }
+    
+    func markAsDone(id: String, timeSpent: Int) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         
         let resultFetch = fetchTask(id: id)
         do{
             resultFetch?.dateFinished = Date()
-            try context.save()
-        }
-        catch{
-            print("update task failed")
-        }
-    }
-    
-    func markAsUndone(id: String) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-        
-        let resultFetch = fetchTask(id: id)
-        do{
-            resultFetch?.dateFinished = nil
+            resultFetch?.timeSpent = timeSpent as NSNumber
             try context.save()
         }
         catch{
@@ -142,7 +170,8 @@ class TaskRepository: TaskRepositoryDelegate{
         
         do{
             let resultFetch = fetchTask(id: id)
-            try context.delete(resultFetch as! NSManagedObject)
+            resultFetch?.isHidden = true
+            try context.save()
         }
         catch{
             print("delete failed")
