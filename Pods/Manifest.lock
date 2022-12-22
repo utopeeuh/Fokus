@@ -1,10 +1,16 @@
 PODS:
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
+    - SwiftAlgorithms (~> 1.0)
   - DateTimePicker (2.5.3)
   - MagicTimer (1.0.4)
   - SnapKit (5.6.0)
+  - SwiftAlgorithms (1.0.0)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
+  - Charts
   - DateTimePicker
   - MagicTimer
   - SnapKit (~> 5.6)
@@ -12,17 +18,21 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Charts
     - DateTimePicker
     - MagicTimer
     - SnapKit
+    - SwiftAlgorithms
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Charts: 354f86803d11d9c35de280587fef50d1af063978
   DateTimePicker: 52701ddf656a50856d3510955933f767cd2c947c
   MagicTimer: e39ab4d63c759eed0cee34f521002f099bdcc472
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 5e8453c2cb7c80473689b4c8013f250f4e8c3626
+PODFILE CHECKSUM: c1d9bbc2e5b6a9899bb2232d69326ae5ea25db8d
 
 COCOAPODS: 1.11.3

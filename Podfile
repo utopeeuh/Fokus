@@ -8,5 +8,6 @@ target 'Fokus' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'DateTimePicker'
   pod 'MagicTimer'
+  pod 'Charts'
 #  pod 'CoreDataHelper'
 end

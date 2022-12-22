@@ -1,5 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-Fokus/Pods-Fokus-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
 ${BUILT_PRODUCTS_DIR}/DateTimePicker/DateTimePicker.framework
 ${BUILT_PRODUCTS_DIR}/MagicTimer/MagicTimer.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/SwiftAlgorithms/Algorithms.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
