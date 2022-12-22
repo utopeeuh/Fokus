@@ -124,8 +124,8 @@ class StatsViewModel: NSObject {
             }
             
             if task == finishedTasks.last {
-                createdTaskEntries.append(ChartDataEntry(x: Double(prevDay)!, y: currDayTasks))
-                createdCycleEntries.append(ChartDataEntry(x: Double(prevDay)!, y: currDayCycles))
+                completedTaskEntries.append(ChartDataEntry(x: Double(prevDay)!, y: currDayTasks))
+                completedCycleEntries.append(ChartDataEntry(x: Double(prevDay)!, y: currDayCycles))
             }
             
             // Stat numbers
@@ -158,7 +158,6 @@ class StatsViewModel: NSObject {
         let createdTaskDataset = LineChartDataSet(entries: createdTaskEntries, label: "Task dibuat")
         createdTaskDataset.setCircleColor(.lightGrey)
         createdTaskDataset.colors = [.lightGrey]
-        
         
         taskLineData = LineChartData(dataSets: [createdTaskDataset, completedTaskDataset])
     }
