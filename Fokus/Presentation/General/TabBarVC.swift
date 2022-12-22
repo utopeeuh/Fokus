@@ -17,11 +17,10 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
 
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()
-    
         
         let tabBarItemAppearance = UITabBarItemAppearance()
         let normalTA = [NSAttributedString.Key.foregroundColor : UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1), NSAttributedString.Key.font: UIFont(name: "AtkinsonHyperlegible-Regular", size: 13)!]
-        let selectedTA = [NSAttributedString.Key.foregroundColor : UIColor(red: 0, green: 172/255, blue: 141/255, alpha: 1), NSAttributedString.Key.font: UIFont(name: "AtkinsonHyperlegible-Bold", size: 13)!]
+        let selectedTA = [NSAttributedString.Key.foregroundColor : UIColor(red: 0, green: 172/255, blue: 141/255, alpha: 1), NSAttributedString.Key.font: UIFont(name: "AtkinsonHyperlegible-Regular", size: 13)!]
         
         tabBarItemAppearance.normal.titleTextAttributes = normalTA
         tabBarItemAppearance.selected.titleTextAttributes = selectedTA
@@ -56,8 +55,8 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
         
         
         // Stats tab
-        let tabTwo = UINavigationController(rootViewController: HomeVC())
-        let tabTwoBarItem = UITabBarItem(title: "Statistics", image: UIImage(named:"Stats"), selectedImage: UIImage(named: "StatsFilled"))
+        let tabTwo = StatsVC()
+        let tabTwoBarItem = UITabBarItem(title: "Statistik", image: UIImage(named:"Stats"), selectedImage: UIImage(named: "StatsFilled"))
         
         tabTwo.tabBarItem = tabTwoBarItem
         
@@ -70,10 +69,4 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
         
         self.viewControllers = [tabOne, tabTwo]
     }
-    
-    // UITabBarControllerDelegate method
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController:UIViewController) {
-        print("Selected tab")
-    }
-
 }

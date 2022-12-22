@@ -12,16 +12,10 @@ class DetailTaskViewModel : NSObject {
         super.init()
     }
     
-    func markAsUndone(id: String) {
+    func markAsDone(id: String, timeSpent: Int) {
                 
         // Update to DB
-        TaskRepository.shared.markAsUndone(id: id)
-    }
-    
-    func markAsDone(id: String) {
-                
-        // Update to DB
-        TaskRepository.shared.markAsDone(id: id)
+        TaskRepository.shared.markAsDone(id: id, timeSpent: timeSpent)
     }
     
     func deleteTask(id: String) {
@@ -30,18 +24,22 @@ class DetailTaskViewModel : NSObject {
         TaskRepository.shared.deleteTask(id: id)
     }
     
+    func duplicateTask(task: TaskModel) -> TaskModel?{
+        
+        // Delete current task
+        TaskRepository.shared.deleteTask(id: task.id)
+        
+        // Create duplicate
+        TaskRepository.shared.createTask(title: task.title, pomodoros: task.pomodoros, work: task.work, shortBreak: task.shortBreak, longBreak: task.longBreak, reminder: task.reminder, isWhiteNoiseOn: task.isWhiteNoiseOn)
+        
+        // Fetch duplicate
+        let duplicate = TaskRepository.shared.fetchTasks().last
+        
+        // Return duplicate
+        return duplicate
+    }
+    
     func toggleWhiteNoise(id: String, isOn: Bool){
         TaskRepository.shared.toggleWhiteNoise(id: id, isOn: isOn)
-    }
-
-    
-    private func cleanDurationString(str: String) -> NSNumber {
-        if let index = (str.range(of: ":")?.lowerBound)
-        {
-            let beforeColon = String(str.prefix(upTo: index))
-            return NSNumber(value: Int(beforeColon)!)
-        }
-        
-        return 0
     }
 }

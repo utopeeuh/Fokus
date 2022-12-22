@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class PomodoroDetail: UIView {
     
@@ -47,8 +48,6 @@ class PomodoroDetail: UIView {
         addSubview(cyclePomodoroLabel)
         addSubview(cyclePomodoroTick)
         addSubview(cyclePomodoroVal)
-        
-//        pomodoroSectionView.backgroundColor = .systemRed
 
         setupConstraint()
     }
@@ -57,6 +56,9 @@ class PomodoroDetail: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setDetailValue(value: String){
+        cyclePomodoroVal.text = value
+    }
     
     private func setupConstraint() {
         self.snp.makeConstraints { make in
@@ -66,30 +68,17 @@ class PomodoroDetail: UIView {
         
         cyclePomodoroLabel.snp.makeConstraints { make in
             make.left.centerY.equalToSuperview()
-//            make.centerY.equalToSuperview()
-//            make.width.equalTo(100)
-//            make.height.equalTo(100)
-            
         }
-        
                 
         cyclePomodoroTick.snp.makeConstraints { make in
             make.left.equalTo(cyclePomodoroLabel.snp.right).offset(20)
             make.right.equalTo(cyclePomodoroVal.snp.left).offset(-20)
-
-//            make.top.equalToSuperview()
             make.centerY.equalToSuperview()
             make.height.equalTo(1)
         }
         
         cyclePomodoroVal.snp.makeConstraints { make in
-//            make.right.equalTo(pomodoroSectionView.snp.right)
-//            make.left.equalToSuperview().offset(15)
-            make.right.equalToSuperview()
-            make.centerY.equalToSuperview()
-//            make.centerY.equalToSuperview()
-//            make.width.equalTo(100)
-//            make.height.equalTo(100)
+            make.right.centerY.equalToSuperview()
         }
 
 

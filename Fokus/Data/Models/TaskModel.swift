@@ -22,4 +22,6 @@ class TaskModel: NSManagedObject {
     @NSManaged var shortBreak: NSNumber!
     @NSManaged var longBreak: NSNumber!
     @NSManaged var isWhiteNoiseOn: NSNumber!
+    @NSManaged var timeSpent: NSNumber!
+    @NSManaged var isHidden : NSNumber!
 }

@@ -12,9 +12,9 @@ class PomodoroViewModel : NSObject {
         super.init()
     }
     
-    func markAsDone(id: String) {
+    func markAsDone(id: String, timeSpent: Int) {
                 
         // Update to DB
-        TaskRepository.shared.markAsDone(id: id)
+        TaskRepository.shared.markAsDone(id: id, timeSpent: timeSpent)
     }
 }
