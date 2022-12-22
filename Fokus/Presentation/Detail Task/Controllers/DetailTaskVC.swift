@@ -82,6 +82,10 @@ class DetailTaskVC: UIViewController {
         
         taskTitle.text = task?.title
         
+        navbar.isRightBarItemEnabled = true
+        navbar.barItemTitle = "Ubah"
+        navbar.delegate = self
+        
         if task?.reminder != nil {
             let formatter = DateFormatter()
             formatter.dateFormat = "hh:mm a, dd MMM YYYY"
@@ -260,4 +264,15 @@ extension DetailTaskVC: OptionsCollectionViewDelegate {
         let isOn : Bool = button.titleLabel?.text?.lowercased() == "on" ? true : false
         detailVm.toggleWhiteNoise(id: task!.id, isOn: isOn)
     }
+}
+
+extension DetailTaskVC: NavbarDelegate {
+    func rightBarItemOnClick() {
+        let controller = CreateTaskVC()
+        
+        controller.isEditTask = true
+        controller.task = task
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
 }

@@ -27,6 +27,26 @@ class CreateTaskViewModel : NSObject {
         TaskRepository.shared.createTask(title: title, pomodoros: pomodoros as NSNumber, work: workDuration, shortBreak: shortBreakDuration, longBreak: longBreakDuration, reminder: reminder, isWhiteNoiseOn: isWhiteNoiseOn)
     }
     
+    func editTask(id: String, title: String, reminder: Date?, pomodoros: Int, work: String, shortBreak: String, longBreak: String, whiteNoise: String) -> TaskModel? {
+        
+        // Convert durations to int
+        let workDuration = cleanDurationString(str: work)
+        let longBreakDuration = cleanDurationString(str: longBreak)
+        let shortBreakDuration = cleanDurationString(str: shortBreak)
+        
+        // Convert whiteNoise to nsnumber
+        let isWhiteNoiseOn = (whiteNoise == "OFF" ? false : true) as NSNumber
+        
+        // Insert to DB
+        let doEdit = TaskRepository.shared.editTask(id: id, title: title, pomodoros: pomodoros as NSNumber, work: workDuration, shortBreak: shortBreakDuration, longBreak: longBreakDuration, reminder: reminder, isWhiteNoiseOn: isWhiteNoiseOn)
+        
+        print(doEdit)
+        let controller = DetailTaskVC()
+        controller.task = doEdit!
+        
+        return doEdit
+    }
+    
     private func cleanDurationString(str: String) -> NSNumber {
         if let index = (str.range(of: ":")?.lowerBound)
         {

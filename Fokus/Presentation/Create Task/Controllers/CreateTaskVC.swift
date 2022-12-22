@@ -13,8 +13,10 @@ import DateTimePicker
 class CreateTaskVC: UIViewController {
     
     private var vm = CreateTaskViewModel()
+    public var isEditTask: Bool = false
+    public var task:TaskModel?
     
-    private let navbar: Navbar = {
+    private var navbar: Navbar = {
         let navbar = Navbar(title: "Create task")
         return navbar
     }()
@@ -138,12 +140,43 @@ class CreateTaskVC: UIViewController {
             noReminder.addTarget(self, action: #selector(turnOffReminder), for: .touchUpInside)
         }
         
+        if (isEditTask) {
+            let workDuration = [20, 25, 30, 35]
+            let shortDuration = [5, 10, 15, 20]
+            
+            let workIndex = workDuration.firstIndex(of: Int(truncating: (task?.work)!))
+            let longIndex = workDuration.firstIndex(of: Int(truncating: task!.longBreak))
+            let shortIndex = shortDuration.firstIndex(of: Int(truncating: task!.shortBreak))
+            
+            navbar = Navbar(title: "Edit task")
+            titleLabel.text = "Edit Task"
+            titleTextField.text = task?.title
+            createTaskButton.setTitle("Edit Task 📝", for: .normal)
+            workDurationView.selectedIndex = workIndex
+            longDurationView.selectedIndex = longIndex
+            shortDurationView.selectedIndex = shortIndex
+            pomodoroCounter.counter = Int(task!.pomodoros)
+            whiteNoiseView.selectedIndex = Int(task!.isWhiteNoiseOn) == 1 ? 0 : 1
+            
+            if (task?.reminder != nil) {
+                reminderView.selectedIndex = 0
+                dateTimePicker.selectedDate = task!.reminder!
+                print(dateTimePicker.selectedDateString)
+                
+                let yesButton  = self.reminderView.buttonStack.arrangedSubviews.first as? UIButton
+                yesButton?.setTitle("CHANGE DATE", for: .normal)
+                
+                reminderDateLabel.alpha = 1
+                reminderDateLabel.text = "Reminder set for \(dateTimePicker.selectedDateString)"
+            }
+        }
+        
         // Set DateTimePicker delegate
         dateTimePicker.delegate = self
         
         // Create task onclick
         createTaskButton.addTarget(self, action: #selector(createTaskOnClick), for: .touchUpInside)
-    
+        
         let components = [navbar, titleLabel, titleTextField, pomodoroLabel, pomodoroCounter, workDurationView, shortDurationView, longDurationView, whiteNoiseView, reminderView, reminderDateLabel, createTaskButton]
         
         view.addSubview(scrollView)
@@ -179,7 +212,7 @@ class CreateTaskVC: UIViewController {
                     
                     // Align to bottom of previous view
                     let index = scrollView.subviews.firstIndex{$0 === subview}
-            
+                    
                     make.top.equalTo(scrollView.subviews[index!-1].snp.bottom).offset(20)
                 }
                 
@@ -204,9 +237,17 @@ class CreateTaskVC: UIViewController {
             return
         }
         
+        print(dateTimePicker.selectedDateString)
+        
         let reminderDate = reminderView.selectedOption == "OFF" ? nil : dateTimePicker.selectedDate
         
-        vm.createTask(title: titleTextField.text!, reminder: reminderDate, pomodoros: pomodoroCounter.counter, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption)
+        if (isEditTask) {
+            vm.editTask(id: task!.id, title: titleTextField.text!, reminder: reminderDate, pomodoros: pomodoroCounter.counter, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption)
+            
+        } else {
+            vm.createTask(title: titleTextField.text!, reminder: reminderDate, pomodoros: pomodoroCounter.counter, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption)
+        }
+        
         
         navigationController?.popViewController(animated: true)
     }
@@ -239,4 +280,4 @@ extension CreateTaskVC: DateTimePickerDelegate{
     func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date) {
         reminderDateLabel.text = "Reminder set for \(dateTimePicker.selectedDateString)"
     }
-}
+} 

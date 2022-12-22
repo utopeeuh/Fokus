@@ -49,6 +49,32 @@ class TaskRepository {
         }
     }
     
+    func editTask(id:String, title: String, pomodoros: NSNumber, work: NSNumber, shortBreak: NSNumber, longBreak: NSNumber, reminder: Date?, isWhiteNoiseOn: NSNumber) -> TaskModel? {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+
+        do{
+            let task = fetchTask(id: id)
+            task!.title = title
+            task!.reminder = reminder
+            task!.pomodoros = pomodoros
+            task!.work = work
+            task!.shortBreak = shortBreak
+            task!.longBreak = longBreak
+            task!.isWhiteNoiseOn = isWhiteNoiseOn
+            task!.timeSpent = 0
+            task!.isHidden = false
+            try context.save()
+            print("Edit task success")
+            return task
+        }
+        catch{
+            print("Edit task failed")
+            return nil
+        }
+    }
+    
     func fetchTasks() -> [TaskModel]{
     
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
