@@ -16,6 +16,8 @@ class CreateTaskVC: UIViewController {
     public var isEditTask: Bool = false
     public var task:TaskModel?
     
+    public var editCompletion : ((_ editedTask: TaskModel) -> Void)?
+    
     private var navbar: Navbar = {
         let navbar = Navbar(title: "Create task")
         return navbar
@@ -155,8 +157,8 @@ class CreateTaskVC: UIViewController {
             workDurationView.selectedIndex = workIndex
             longDurationView.selectedIndex = longIndex
             shortDurationView.selectedIndex = shortIndex
-            pomodoroCounter.counter = Int(task!.pomodoros)
-            whiteNoiseView.selectedIndex = Int(task!.isWhiteNoiseOn) == 1 ? 0 : 1
+            pomodoroCounter.counter = Int(truncating: task!.pomodoros)
+            whiteNoiseView.selectedIndex = Int(truncating: task!.isWhiteNoiseOn) == 1 ? 0 : 1
             
             if (task?.reminder != nil) {
                 reminderView.selectedIndex = 0
@@ -242,7 +244,15 @@ class CreateTaskVC: UIViewController {
         let reminderDate = reminderView.selectedOption == "OFF" ? nil : dateTimePicker.selectedDate
         
         if (isEditTask) {
-            vm.editTask(id: task!.id, title: titleTextField.text!, reminder: reminderDate, pomodoros: pomodoroCounter.counter, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption)
+            
+            guard let newTask = vm.editTask(id: task!.id, title: titleTextField.text!, reminder: reminderDate, pomodoros: pomodoroCounter.counter, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption)
+            
+            else {
+                navigationController?.popToRootViewController(animated: true)
+                return
+            }
+            
+            editCompletion?(newTask)
             
         } else {
             vm.createTask(title: titleTextField.text!, reminder: reminderDate, pomodoros: pomodoroCounter.counter, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption)

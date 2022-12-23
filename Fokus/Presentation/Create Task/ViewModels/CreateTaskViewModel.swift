@@ -40,9 +40,6 @@ class CreateTaskViewModel : NSObject {
         // Insert to DB
         let doEdit = TaskRepository.shared.editTask(id: id, title: title, pomodoros: pomodoros as NSNumber, work: workDuration, shortBreak: shortBreakDuration, longBreak: longBreakDuration, reminder: reminder, isWhiteNoiseOn: isWhiteNoiseOn)
         
-        print(doEdit)
-        let controller = DetailTaskVC()
-        controller.task = doEdit!
         
         return doEdit
     }

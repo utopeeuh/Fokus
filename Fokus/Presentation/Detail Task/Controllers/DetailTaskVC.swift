@@ -15,10 +15,10 @@ class DetailTaskVC: UIViewController {
     private var detailVm = DetailTaskViewModel()
     private var levelVm = LevelViewModel()
     
-    private var pomodoroCycle : PomodoroDetail!
-    private var workDuration : PomodoroDetail!
-    private var shortBreakDuration : PomodoroDetail!
-    private var longBreakDuration : PomodoroDetail!
+    private var pomodoroCycle = PomodoroDetail(title: "Pomodoro", value: "")
+    private var workDuration = PomodoroDetail(title: "Kerja", value: "")
+    private var shortBreakDuration = PomodoroDetail(title: "Istirahat Pendek", value: "")
+    private var longBreakDuration = PomodoroDetail(title: "Istirahat Panjang", value: "")
 
     private let navbar: Navbar = {
         let navbar = Navbar(title: "Detil task")
@@ -80,28 +80,11 @@ class DetailTaskVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .blackFokus
         
-        taskTitle.text = task?.title
+        loadTask()
         
         navbar.isRightBarItemEnabled = true
         navbar.barItemTitle = "Ubah"
         navbar.delegate = self
-        
-        if task?.reminder != nil {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "hh:mm a, dd MMM YYYY"
-            taskScheduleLabel.text = formatter.string(from: (task?.reminder)!)
-        }
-        
-        else {
-            taskScheduleLabel.text = "Tidak ada reminder untuk task ini"
-            taskScheduleLabel.textColor = .lightGrey
-        }
-        
-        pomodoroCycle = PomodoroDetail(title: "Pomodoro", value: "\(task!.pomodoros!) Cycles")
-        workDuration = PomodoroDetail(title: "Kerja", value: "\(task!.work!):00")
-        shortBreakDuration = PomodoroDetail(title: "Istirahat Pendek", value: "\(task!.shortBreak!):00")
-        longBreakDuration = PomodoroDetail(title: "Istirahat Panjang", value: "\(task!.longBreak!):00")
-        whiteNoiseView.selectedIndex = (task!.isWhiteNoiseOn == true) ? 0 : 1
         
         whiteNoiseView.delegate = self
 
@@ -191,7 +174,28 @@ class DetailTaskVC: UIViewController {
             make.centerX.equalToSuperview()
             make.height.equalTo(22)
         }
-
+    }
+    
+    func loadTask(){
+        taskTitle.text = task?.title
+        
+        if task?.reminder != nil {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "hh:mm a, dd MMM YYYY"
+            taskScheduleLabel.text = formatter.string(from: (task?.reminder)!)
+        }
+        
+        else {
+            taskScheduleLabel.text = "Tidak ada reminder untuk task ini"
+            taskScheduleLabel.textColor = .lightGrey
+        }
+        
+        pomodoroCycle.setDetailValue(value: "\(task!.pomodoros!) Cycles")
+        workDuration.setDetailValue(value: "\(task!.work!):00")
+        shortBreakDuration.setDetailValue(value: "\(task!.shortBreak!):00")
+        longBreakDuration.setDetailValue(value: "\(task!.longBreak!):00")
+        
+        whiteNoiseView.selectedIndex = (task!.isWhiteNoiseOn == true) ? 0 : 1
     }
     
     @objc func onClickDoneTask() {
@@ -272,6 +276,12 @@ extension DetailTaskVC: NavbarDelegate {
         
         controller.isEditTask = true
         controller.task = task
+        
+        controller.editCompletion = {[self] newTask in
+            task = newTask
+            loadTask()
+        }
+        
         navigationController?.pushViewController(controller, animated: true)
     }
     
