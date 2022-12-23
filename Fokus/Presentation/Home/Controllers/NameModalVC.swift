@@ -151,6 +151,7 @@ class NameModalVC: UIViewController {
     private func setupModal(){
         if user == nil {
             dimmedView.gestureRecognizers?.forEach(dimmedView.removeGestureRecognizer)
+            nameTextField.placeholder = "Nama anda..."
         }
         else {
             headerLabel.text = "Ubah nama"
