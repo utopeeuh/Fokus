@@ -16,6 +16,7 @@
 		951841FD29516EB000C52AF7 /* WhiteNoise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 951841FC29516EB000C52AF7 /* WhiteNoise.mp3 */; };
 		951842002951918800C52AF7 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951841FF2951918800C52AF7 /* UserDefaults.swift */; };
 		95184202295191AF00C52AF7 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95184201295191AF00C52AF7 /* UserRepository.swift */; };
+		952179752956D24B008FE044 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952179742956D24B008FE044 /* NotificationManager.swift */; };
 		952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13B292521EE00767FDD /* ViewPreview.swift */; };
 		952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13C292521EE00767FDD /* ViewControllerPreview.swift */; };
 		952BA1462925227800767FDD /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952BA1452925227800767FDD /* TabBarVC.swift */; };
@@ -68,6 +69,7 @@
 		951841FC29516EB000C52AF7 /* WhiteNoise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WhiteNoise.mp3; sourceTree = "<group>"; };
 		951841FF2951918800C52AF7 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		95184201295191AF00C52AF7 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		952179742956D24B008FE044 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		952BA13B292521EE00767FDD /* ViewPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPreview.swift; sourceTree = "<group>"; };
 		952BA13C292521EE00767FDD /* ViewControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
 		952BA1452925227800767FDD /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		952BA1352925216700767FDD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				952179742956D24B008FE044 /* NotificationManager.swift */,
 				951841FE29518C5400C52AF7 /* Assets */,
 				952BA139292521AA00767FDD /* Constants */,
 				952BA13A292521EE00767FDD /* Preview SwiftUI */,
@@ -621,6 +624,7 @@
 				95E1BF3A2942E6D500F58A96 /* HomeViewModel.swift in Sources */,
 				952BF7F0292D00A500D924A8 /* OptionButton.swift in Sources */,
 				952BA13D292521EE00767FDD /* ViewPreview.swift in Sources */,
+				952179752956D24B008FE044 /* NotificationManager.swift in Sources */,
 				958B0F73293E291F006A19E4 /* UIView+Shake.swift in Sources */,
 				952BF7EE292CF2BF00D924A8 /* OptionsCollectionView.swift in Sources */,
 				9513AFBC29295ECE00415C8B /* HomeVC.swift in Sources */,
