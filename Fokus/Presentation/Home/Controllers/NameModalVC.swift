@@ -14,9 +14,12 @@ protocol NameModalDelegate {
 
 class NameModalVC: UIViewController {
     
+    
     public var delegate: NameModalDelegate?
     
     private let dimmedMaxAlpha = 0.6
+    
+    private let vm = NameModalViewModel()
     
     private let dimmedView : UIView = {
         let view = UIView()
@@ -166,11 +169,10 @@ class NameModalVC: UIViewController {
         }
         
         if user == nil {
-            UserRepository.shared.createUser(name: nameTextField.text!)
-            UserDefaults.standard.set(false, forKey: UserDefaultsKey.firstTime)
+            vm.createNewUser(name: nameTextField.text!)
         }
         else {
-            UserRepository.shared.updateName(name: nameTextField.text!)
+            vm.updateUsername(name: nameTextField.text!)
         }
         
         handleCloseAction()

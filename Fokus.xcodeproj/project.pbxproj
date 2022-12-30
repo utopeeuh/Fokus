@@ -48,6 +48,7 @@
 		95ECFECC2931F09200F5F334 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECB2931F09200F5F334 /* TitleTextField.swift */; };
 		95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */; };
 		95ECFED02931F20700F5F334 /* Font Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECF2931F20700F5F334 /* Font Size.swift */; };
+		95F0FE66295C29900088F644 /* NameModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0FE65295C29900088F644 /* NameModalViewModel.swift */; };
 		B67019782945E32300872F77 /* PomodoroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67019772945E32300872F77 /* PomodoroViewModel.swift */; };
 		B6D725F22937245B00165A53 /* PomodoroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D725F02937245B00165A53 /* PomodoroVC.swift */; };
 		F97EBF7D2945D59D00FD4E3B /* DetailTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97EBF7C2945D59D00FD4E3B /* DetailTaskViewModel.swift */; };
@@ -103,6 +104,7 @@
 		95ECFECB2931F09200F5F334 /* TitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextField.swift; sourceTree = "<group>"; };
 		95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeadLabel.swift; sourceTree = "<group>"; };
 		95ECFECF2931F20700F5F334 /* Font Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font Size.swift"; sourceTree = "<group>"; };
+		95F0FE65295C29900088F644 /* NameModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameModalViewModel.swift; sourceTree = "<group>"; };
 		ACF241316042AB47065B50CF /* Pods_Fokus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fokus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67019772945E32300872F77 /* PomodoroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroViewModel.swift; sourceTree = "<group>"; };
 		B6D725F02937245B00165A53 /* PomodoroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroVC.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				95E1BF392942E6D500F58A96 /* HomeViewModel.swift */,
+				95F0FE65295C29900088F644 /* NameModalViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				95059FA02928D689002D97D1 /* Colors.swift in Sources */,
 				95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */,
 				954033A42951FB0F00E6FEFE /* FinishTaskModalVC.swift in Sources */,
+				95F0FE66295C29900088F644 /* NameModalViewModel.swift in Sources */,
 				F97EBF7D2945D59D00FD4E3B /* DetailTaskViewModel.swift in Sources */,
 				95184202295191AF00C52AF7 /* UserRepository.swift in Sources */,
 				955A2FB12912A7F300513D8E /* AppDelegate.swift in Sources */,
