@@ -32,6 +32,9 @@
 		955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 955A2FB92912A7F300513D8E /* Fokus.xcdatamodeld */; };
 		955A2FBD2912A7F400513D8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955A2FBC2912A7F400513D8E /* Assets.xcassets */; };
 		955A2FC02912A7F400513D8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A2FBE2912A7F400513D8E /* LaunchScreen.storyboard */; };
+		956F748D295ED5DE0002BDCB /* PomodoroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F748C295ED5DE0002BDCB /* PomodoroModel.swift */; };
+		956F748F295ED5E90002BDCB /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F748E295ED5E90002BDCB /* StatisticModel.swift */; };
+		956F7491295ED6010002BDCB /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F7490295ED6010002BDCB /* LevelModel.swift */; };
 		95845DE42951D8B000EF2996 /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95845DE32951D8B000EF2996 /* LevelViewModel.swift */; };
 		958B0F53293D69F1006A19E4 /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F52293D69F1006A19E4 /* Navbar.swift */; };
 		958B0F6E293D81EA006A19E4 /* CreateTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */; };
@@ -88,6 +91,9 @@
 		955A2FBC2912A7F400513D8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		955A2FBF2912A7F400513D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955A2FC12912A7F400513D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		956F748C295ED5DE0002BDCB /* PomodoroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroModel.swift; sourceTree = "<group>"; };
+		956F748E295ED5E90002BDCB /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
+		956F7490295ED6010002BDCB /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
 		95845DE32951D8B000EF2996 /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
 		958B0F52293D69F1006A19E4 /* Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
 		958B0F6D293D81EA006A19E4 /* CreateTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewModel.swift; sourceTree = "<group>"; };
@@ -210,6 +216,9 @@
 			children = (
 				F9D86DE52950C0DF00A6636F /* TaskModel.swift */,
 				95E1BF3B2942FBFC00F58A96 /* UserModel.swift */,
+				956F748C295ED5DE0002BDCB /* PomodoroModel.swift */,
+				956F748E295ED5E90002BDCB /* StatisticModel.swift */,
+				956F7490295ED6010002BDCB /* LevelModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -610,6 +619,7 @@
 				95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */,
 				954033A42951FB0F00E6FEFE /* FinishTaskModalVC.swift in Sources */,
 				95F0FE66295C29900088F644 /* NameModalViewModel.swift in Sources */,
+				956F748F295ED5E90002BDCB /* StatisticModel.swift in Sources */,
 				F97EBF7D2945D59D00FD4E3B /* DetailTaskViewModel.swift in Sources */,
 				95184202295191AF00C52AF7 /* UserRepository.swift in Sources */,
 				955A2FB12912A7F300513D8E /* AppDelegate.swift in Sources */,
@@ -636,7 +646,9 @@
 				95AA5735295194D0001D6A50 /* Calendar+Dates.swift in Sources */,
 				955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */,
 				95ECFEC92931F02900F5F334 /* CreateTaskVC.swift in Sources */,
+				956F7491295ED6010002BDCB /* LevelModel.swift in Sources */,
 				F9BE0C4329365A05007529FB /* PomodoroDetail.swift in Sources */,
+				956F748D295ED5DE0002BDCB /* PomodoroModel.swift in Sources */,
 				955A2FB32912A7F300513D8E /* SceneDelegate.swift in Sources */,
 				952BF7F2292D060A00D924A8 /* CounterView.swift in Sources */,
 				F9D86DE32950C0CF00A6636F /* UIWindow+TopViewController.swift in Sources */,
