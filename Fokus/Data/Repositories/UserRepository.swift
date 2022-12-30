@@ -13,8 +13,6 @@ class UserRepository {
     
     static let shared = UserRepository()
     
-    private let levelViewModel = LevelViewModel()
-    
     func createUser(name: String){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext

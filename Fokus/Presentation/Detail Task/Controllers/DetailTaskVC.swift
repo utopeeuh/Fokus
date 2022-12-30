@@ -15,6 +15,7 @@ class DetailTaskVC: UIViewController {
     
     private var taskVm = TaskViewModel()
     private var levelVm = LevelViewModel()
+    private var statsVm = StatsViewModel()
     
     private var pomodoroCycle = PomodoroDetail(title: "Pomodoro", value: "")
     private var workDuration = PomodoroDetail(title: "Kerja", value: "")
@@ -193,10 +194,10 @@ class DetailTaskVC: UIViewController {
             taskScheduleLabel.textColor = .lightGrey
         }
         
-        pomodoroCycle.setDetailValue(value: "\(String(describing: pomodoro.cycles)) Cycles")
-        workDuration.setDetailValue(value: "\(String(describing: pomodoro.workDuration)):00")
-        shortBreakDuration.setDetailValue(value: "\(String(describing: pomodoro.shortBreakDuration)):00")
-        longBreakDuration.setDetailValue(value: "\(String(describing: pomodoro.longBreakDuration)):00")
+        pomodoroCycle.setDetailValue(value: "\(pomodoro.cycles!) Cycles")
+        workDuration.setDetailValue(value: "\( pomodoro.workDuration!):00")
+        shortBreakDuration.setDetailValue(value: "\( pomodoro.shortBreakDuration!):00")
+        longBreakDuration.setDetailValue(value: "\( pomodoro.longBreakDuration!):00")
         
         whiteNoiseView.selectedIndex = (pomodoro.isWhiteNoiseOn == true) ? 0 : 1
     }
@@ -204,8 +205,11 @@ class DetailTaskVC: UIViewController {
     @objc func onClickDoneTask() {
         let alert = UIAlertController(title: "Apakah anda yakin untuk menandai task sebagai selesai?", message: "", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Tandai sebagai selesai", style: .default, handler: { [self] (_) in
+            
             taskVm.markAsDone(id: task!.id, timeSpent: 0)
             levelVm.addUserXp(xp: levelVm.calculateTaskXp(pomodoro: pomodoro, isPomdoroUsed: false))
+            statsVm.addFinishedTaskToStats(task: task!, pomodoro: pomodoro)
+            
             navigationController?.popViewController(animated: true)
         }))
         

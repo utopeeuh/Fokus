@@ -134,16 +134,16 @@ class TaskRepository {
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
     
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
-
-        // Query for non-hidden tasks
-        let hiddenPredicate = NSPredicate(format: "isHidden == false")
         
         // Query for state and date range
         let stateString = type == .created ? "dateCreated" : "dateFinished"
-        let startMonthPredicate = NSPredicate(format: "\(stateString) >= %@", month as CVarArg)
-        let endMonthPredicate = NSPredicate(format: "\(stateString) <= %@", Calendar.current.endOfMonth(month) as CVarArg)
         
-        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [hiddenPredicate, startMonthPredicate, endMonthPredicate])
+        let startMonthPredicate = NSPredicate(format: "\(stateString) >= %@", month as CVarArg)
+        
+        let endDate = Calendar.current.endOfMonth(month) + (31*3600)
+        let endMonthPredicate = NSPredicate(format: "\(stateString) < %@", endDate as CVarArg)
+        
+        let compoundPredicate = NSCompoundPredicate(type: .and, subpredicates: [startMonthPredicate, endMonthPredicate])
         
         request.predicate = compoundPredicate
         

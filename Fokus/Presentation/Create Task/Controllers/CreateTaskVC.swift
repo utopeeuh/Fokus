@@ -12,7 +12,9 @@ import DateTimePicker
 
 class CreateTaskVC: UIViewController {
     
-    private var vm = TaskViewModel()
+    private var taskVm = TaskViewModel()
+    private var statsVm = StatsViewModel()
+    
     public var isEditTask: Bool = false
     public var task:TaskModel?
     
@@ -144,7 +146,7 @@ class CreateTaskVC: UIViewController {
         
         if (isEditTask) {
             
-            let pomodoro = vm.getPomodoro(task: task!)
+            let pomodoro = taskVm.getPomodoro(task: task!)
             
             let workDuration = [20, 25, 30, 35]
             let shortDuration = [5, 10, 15, 20]
@@ -245,7 +247,7 @@ class CreateTaskVC: UIViewController {
         
         if (isEditTask) {
             
-            guard let newTask = vm.editTask(id: task!.id, title: titleTextField.text!, reminder: reminderDate, cycles: pomodoroCounter.counter as NSNumber, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption)
+            guard let newTask = taskVm.editTask(id: task!.id, title: titleTextField.text!, reminder: reminderDate, cycles: pomodoroCounter.counter as NSNumber, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption)
             
             else {
                 navigationController?.popToRootViewController(animated: true)
@@ -255,11 +257,15 @@ class CreateTaskVC: UIViewController {
             editCompletion?(newTask)
             
         } else {
-            vm.createTask(title: titleTextField.text!, reminder: reminderDate, cycles: pomodoroCounter.counter as NSNumber, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption)
+            guard let newTask = taskVm.createTask(title: titleTextField.text!, reminder: reminderDate, cycles: pomodoroCounter.counter as NSNumber, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption) else { return }
+            
+            guard let newPomodoro = taskVm.getPomodoro(task: newTask) else { return }
             
             if reminderDate != nil {
                 NotificationManager.shared.createTaskNotif(taskTitle: titleTextField.text!, reminderDate: reminderDate!)
             }
+            
+            statsVm.addCreatedTaskToStats(task: newTask, pomodoro: newPomodoro)
         }
         
         navigationController?.popViewController(animated: true)

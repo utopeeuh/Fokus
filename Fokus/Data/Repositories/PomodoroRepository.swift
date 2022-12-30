@@ -52,7 +52,6 @@ class PomodoroRepository {
         do{
             //Ambil hasil query
             if let results = try context.fetch(request) as? [PomodoroModel] {
-                print(results.count)
                 return results.first
             }
         }

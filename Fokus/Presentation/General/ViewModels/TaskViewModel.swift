@@ -17,7 +17,7 @@ class TaskViewModel : NSObject {
         return PomodoroRepository.shared.fetchPomodoro(id: task.pomodoroId)
     }
     
-    func createTask(title: String, reminder: Date?, cycles: NSNumber, work: String, shortBreak: String, longBreak: String, whiteNoise: String) {
+    func createTask(title: String, reminder: Date?, cycles: NSNumber, work: String, shortBreak: String, longBreak: String, whiteNoise: String) -> TaskModel? {
         
         // Convert durations to int
         let workDuration = cleanDurationString(str: work)
@@ -32,6 +32,8 @@ class TaskViewModel : NSObject {
         
         // Create pomodoro
         _ = PomodoroRepository.shared.createPomodoro(id: newTask!.pomodoroId, cycles: cycles, workDuration: workDuration, shortBreakDuration: shortBreakDuration, longBreakDuration: longBreakDuration, isWhiteNoiseOn: isWhiteNoiseOn)
+        
+        return newTask
     }
     
     func editTask(id: String, title: String, reminder: Date?, cycles: NSNumber, work: String, shortBreak: String, longBreak: String, whiteNoise: String) -> TaskModel? {

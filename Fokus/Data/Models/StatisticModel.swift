@@ -12,12 +12,12 @@ import CoreData
 @objc(StatisticModel)
 
 class StatisticModel: NSManagedObject {
-    var avgWorkDuration: Float = 0
-    var cyclesCreated: Float = 0
-    var cyclesFinished: Float = 0
-    var month: Date!
-    var tasksCreated: Float = 0
-    var tasksFinished: Float = 0
-    var tasksNoPomodoro: Float = 0
-    var totalWorkDuration: Float = 0
+    @NSManaged var month: Date!
+    @NSManaged var avgWorkDuration: NSNumber
+    @NSManaged var cyclesCreated: NSNumber
+    @NSManaged var cyclesFinished: NSNumber
+    @NSManaged var tasksCreated: NSNumber
+    @NSManaged var tasksFinished: NSNumber
+    @NSManaged var tasksNoPomodoro: NSNumber
+    @NSManaged var totalWorkDuration: NSNumber
 }

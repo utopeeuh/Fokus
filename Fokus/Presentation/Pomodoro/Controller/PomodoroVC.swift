@@ -17,6 +17,7 @@ class PomodoroVC: UIViewController {
     
     private var levelVm = LevelViewModel()
     private var pomodoroVm = PomodoroViewModel()
+    private var statsVm = StatsViewModel()
     
     var currentCycle = 1
     
@@ -298,6 +299,9 @@ class PomodoroVC: UIViewController {
         // Update task as done and add user xp
         levelVm.addUserXp(xp: xp)
         pomodoroVm.markAsDone(id: (task?.id)!, timeSpent: timeSpent)
+        
+        // Add to stats
+        statsVm.addFinishedTaskToStats(task: task!, pomodoro: pomodoro!)
         
         // Show modal
         modal.modalPresentationStyle = .overCurrentContext
