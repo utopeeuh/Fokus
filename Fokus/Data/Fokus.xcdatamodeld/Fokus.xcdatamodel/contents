@@ -5,6 +5,7 @@
         <attribute name="levelNumber" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Pomodoro" representedClassName="PomodoroModel" syncable="YES">
+        <attribute name="cycles" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="isWhiteNoiseOn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="longBreakDuration" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
@@ -26,16 +27,10 @@
         <attribute name="dateFinished" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="isHidden" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="isWhiteNoiseOn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="longBreak" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="pomodoros" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pomodoroId" optional="YES" attributeType="String"/>
         <attribute name="reminder" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="shortBreak" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="timeSpent" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="work" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="pomodoroId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pomodoro"/>
-        <relationship name="userId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
     </entity>
     <entity name="User" representedClassName="UserModel" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>

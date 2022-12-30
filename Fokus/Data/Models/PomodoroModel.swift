@@ -12,9 +12,10 @@ import CoreData
 @objc(PomodoroModel)
 
 class PomodoroModel: NSManagedObject {
-    var id: String!
-    var isWhiteNoiseOn: Bool = false
-    var longBreakDuration: Float!
-    var shortBreakDuration: Float!
-    var workDuration: Float!
+    @NSManaged var id: String!
+    @NSManaged var cycles: NSNumber!
+    @NSManaged var isWhiteNoiseOn: NSNumber!
+    @NSManaged var longBreakDuration: NSNumber!
+    @NSManaged var shortBreakDuration: NSNumber!
+    @NSManaged var workDuration: NSNumber!
 }

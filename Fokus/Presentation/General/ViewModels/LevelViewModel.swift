@@ -57,9 +57,9 @@ class LevelViewModel : NSObject {
         return UIImage(named: imageName)!
     }
     
-    func calculateTaskXp(task: TaskModel, isPomdoroUsed: Bool) -> Int {
-        let multiplier = isPomdoroUsed ? 2 : 1
-        let xp = Int(truncating: task.pomodoros) * Int(truncating: task.work) * multiplier
+    func calculateTaskXp(pomodoro: PomodoroModel, isPomdoroUsed: Bool) -> Int {
+        let multiplier : Int = isPomdoroUsed ? 2 : 1
+        let xp = Int(truncating: pomodoro.cycles) * Int(truncating: pomodoro.workDuration) * multiplier
         return xp
     }
     

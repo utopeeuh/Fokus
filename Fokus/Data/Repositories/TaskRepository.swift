@@ -17,7 +17,7 @@ class TaskRepository {
     
     static let shared = TaskRepository()
     
-    func createTask(title: String, pomodoros: NSNumber, work: NSNumber, shortBreak: NSNumber, longBreak: NSNumber, reminder: Date?, isWhiteNoiseOn: NSNumber) {
+    func createTask(title: String, reminder: Date?) -> TaskModel? {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -27,16 +27,12 @@ class TaskRepository {
 
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMddhhmmss"
-        newTask.id = "T\(formatter.string(from: Date()))"
         
+        newTask.id = "T\(formatter.string(from: Date()))"
         newTask.title = title
         newTask.reminder = reminder
-        newTask.pomodoros = pomodoros
-        newTask.work = work
+        newTask.pomodoroId = "P\(formatter.string(from: Date()))"
         newTask.dateCreated = Date()
-        newTask.shortBreak = shortBreak
-        newTask.longBreak = longBreak
-        newTask.isWhiteNoiseOn = isWhiteNoiseOn
         newTask.timeSpent = 0
         newTask.isHidden = false
         
@@ -46,10 +42,44 @@ class TaskRepository {
         }
         catch{
             print("Create task failed")
+            return nil
         }
+        
+        return newTask
     }
     
-    func editTask(id:String, title: String, pomodoros: NSNumber, work: NSNumber, shortBreak: NSNumber, longBreak: NSNumber, reminder: Date?, isWhiteNoiseOn: NSNumber) -> TaskModel? {
+    func createTask(title: String, reminder: Date?, pomodoroId: String) -> TaskModel? {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName: "Task", in: context)!
+        
+        let newTask = TaskModel(entity: entity, insertInto: context)
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMddhhmmss"
+        
+        newTask.id = "T\(formatter.string(from: Date()))"
+        newTask.title = title
+        newTask.reminder = reminder
+        newTask.pomodoroId = pomodoroId
+        newTask.dateCreated = Date()
+        newTask.timeSpent = 0
+        newTask.isHidden = false
+        
+        do{
+            try context.save()
+            print("Create task success")
+        }
+        catch{
+            print("Create task failed")
+            return nil
+        }
+        
+        return newTask
+    }
+    
+    func editTask(id:String, title: String, reminder: Date?) -> TaskModel? {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -58,11 +88,6 @@ class TaskRepository {
             let task = fetchTask(id: id)
             task!.title = title
             task!.reminder = reminder
-            task!.pomodoros = pomodoros
-            task!.work = work
-            task!.shortBreak = shortBreak
-            task!.longBreak = longBreak
-            task!.isWhiteNoiseOn = isWhiteNoiseOn
             task!.timeSpent = 0
             task!.isHidden = false
             try context.save()
@@ -174,20 +199,6 @@ class TaskRepository {
         }
 
         return nil
-    }
-    
-    func toggleWhiteNoise(id: String, isOn: Bool) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-        
-        let resultFetch = fetchTask(id: id)
-        do{
-            resultFetch?.isWhiteNoiseOn = isOn as NSNumber
-            try context.save()
-        }
-        catch{
-            print("update task failed")
-        }
     }
     
     func deleteTask(id: String){

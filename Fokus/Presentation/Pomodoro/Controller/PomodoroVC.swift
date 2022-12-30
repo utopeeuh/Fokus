@@ -12,7 +12,8 @@ import AVFoundation
 
 class PomodoroVC: UIViewController {
     
-    public var task:TaskModel?
+    public var task: TaskModel?
+    public var pomodoro: PomodoroModel?
     
     private var levelVm = LevelViewModel()
     private var pomodoroVm = PomodoroViewModel()
@@ -109,15 +110,15 @@ class PomodoroVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .blackFokus
         
-        pomodoroPhase.text = "\(currentCycle) / \(task!.pomodoros!)"
+        pomodoroPhase.text = "\(currentCycle) / \(pomodoro?.cycles ?? 0)"
         pomodoroLabel.text = "Fase Kerja"
         
         timerLib.delegate = self
      
-        secondsRemaining = (task?.work as! Int)*60
+        secondsRemaining = Int(truncating: pomodoro?.workDuration ?? 0)*60
         timerState = TimerEnum.running
         
-        if (task?.isWhiteNoiseOn as! Bool){
+        if (pomodoro?.isWhiteNoiseOn as! Bool) == true{
             soundOnClick()
         }
         
@@ -205,12 +206,12 @@ class PomodoroVC: UIViewController {
             currPhase = .breakPhase
             
             // Add work time to total
-            let currWorkTime = Int(truncating: task!.work)*60 - secondsRemaining
+            let currWorkTime = Int(truncating: pomodoro?.workDuration ?? 0)*60 - secondsRemaining
             timeSpent += currWorkTime
             
             
             // If last cycle, stop after work
-            if (currentCycle == task?.pomodoros as! Int) {
+            if currentCycle == Int(truncating: pomodoro?.cycles ?? 0) {
                 finishTask()
                 return
             }
@@ -218,12 +219,12 @@ class PomodoroVC: UIViewController {
             // Long break every 4 cycles
             else if currentCycle % 4 == 0 {
                 pomodoroLabel.text = "Istirahat Panjang"
-                secondsRemaining = task?.longBreak as! Int
+                secondsRemaining = Int(truncating: pomodoro?.longBreakDuration ?? 0)
             }
             
             else {
                 pomodoroLabel.text = "Istirahat Pendek"
-                secondsRemaining = task?.shortBreak as! Int
+                secondsRemaining = Int(truncating: pomodoro?.shortBreakDuration ?? 0)
             }
             
             pomodoroLabel.textColor = .lightGrey
@@ -235,7 +236,7 @@ class PomodoroVC: UIViewController {
             pomodoroLabel.text = "Fase Kerja"
             pomodoroLabel.textColor = .turq
             
-            secondsRemaining = task?.work as! Int
+            secondsRemaining = Int(truncating: pomodoro?.workDuration ?? 0)
             
             // Move to next cycle
             currentCycle += 1
@@ -245,7 +246,7 @@ class PomodoroVC: UIViewController {
         timerLib.mode = .countDown(fromSeconds: TimeInterval(secondsRemaining*60))
         timerLib.isActiveInBackground = true
         timerLib.startCounting()
-        pomodoroPhase.text = "\(currentCycle) / \(task!.pomodoros!)"
+        pomodoroPhase.text = "\(currentCycle) / \(Int(truncating: pomodoro?.cycles ?? 0))"
     }
     
     
@@ -287,7 +288,7 @@ class PomodoroVC: UIViewController {
     func finishTask(){
         
         // Task xp
-        let xp = levelVm.calculateTaskXp(task: task!, isPomdoroUsed: true)
+        let xp = levelVm.calculateTaskXp(pomodoro: pomodoro!, isPomdoroUsed: true)
         
         // Show finish modal
         let modal = FinishTaskModalVC()
