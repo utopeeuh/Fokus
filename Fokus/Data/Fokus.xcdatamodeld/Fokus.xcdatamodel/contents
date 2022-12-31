@@ -1,20 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Level" representedClassName="LevelModel" syncable="YES">
+        <attribute name="badgeName" optional="YES" attributeType="String"/>
+        <attribute name="levelNumber" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Pomodoro" representedClassName="PomodoroModel" syncable="YES">
+        <attribute name="cycles" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="isWhiteNoiseOn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="longBreakDuration" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="shortBreakDuration" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="workDuration" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Statistic" representedClassName="StatisticModel" syncable="YES">
+        <attribute name="avgWorkDuration" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="cyclesCreated" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cyclesFinished" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="month" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="tasksCreated" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tasksFinished" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tasksNoPomodoro" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalWorkDuration" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
     <entity name="Task" representedClassName="TaskModel" syncable="YES">
         <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateFinished" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="isHidden" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="isWhiteNoiseOn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="longBreak" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="pomodoros" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pomodoroId" optional="YES" attributeType="String"/>
         <attribute name="reminder" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="shortBreak" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="timeSpent" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="work" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="User" representedClassName="UserModel" syncable="YES">
+        <attribute name="levelNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="xp" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>

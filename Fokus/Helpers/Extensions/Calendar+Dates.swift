@@ -28,7 +28,8 @@ extension Calendar {
     }
 
     func startOfMonth(_ date: Date) -> Date {
-        return self.date(from: self.dateComponents([.year, .month], from: date))!
+        let start = self.date(from: self.dateComponents([.year, .month], from: date))!
+        return self.date(byAdding: DateComponents(hour: 7), to: start)!
     }
 
     func endOfMonth(_ date: Date) -> Date {
@@ -50,6 +51,16 @@ extension Calendar {
 
     func endOfYear(_ date: Date) -> Date {
         return self.date(from: DateComponents(year: self.component(.year, from: date), month: 12, day: 31))!
+    }
+    
+    func daysInMonth(_ date: Date) -> Int? {
+        // Calculate start and end of the current year (or month with `.month`):
+        let interval = Calendar.current.dateInterval(of: .month, for: date)!
+        
+        // Compute difference in days:
+        let days = Calendar.current.dateComponents([.day], from: interval.start, to: interval.end).day!
+       
+        return days
     }
 }
 

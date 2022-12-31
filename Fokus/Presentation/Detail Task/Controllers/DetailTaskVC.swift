@@ -10,10 +10,12 @@ import SnapKit
 
 class DetailTaskVC: UIViewController {
     
-    public var task:TaskModel?
+    public var task: TaskModel!
+    public var pomodoro: PomodoroModel!
     
-    private var detailVm = DetailTaskViewModel()
+    private var taskVm = TaskViewModel()
     private var levelVm = LevelViewModel()
+    private var statsVm = StatsViewModel()
     
     private var pomodoroCycle = PomodoroDetail(title: "Pomodoro", value: "")
     private var workDuration = PomodoroDetail(title: "Kerja", value: "")
@@ -79,6 +81,8 @@ class DetailTaskVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blackFokus
+        
+        pomodoro = taskVm.getPomodoro(task: task)
         
         loadTask()
         
@@ -190,19 +194,22 @@ class DetailTaskVC: UIViewController {
             taskScheduleLabel.textColor = .lightGrey
         }
         
-        pomodoroCycle.setDetailValue(value: "\(task!.pomodoros!) Cycles")
-        workDuration.setDetailValue(value: "\(task!.work!):00")
-        shortBreakDuration.setDetailValue(value: "\(task!.shortBreak!):00")
-        longBreakDuration.setDetailValue(value: "\(task!.longBreak!):00")
+        pomodoroCycle.setDetailValue(value: "\(pomodoro.cycles!) Cycles")
+        workDuration.setDetailValue(value: "\( pomodoro.workDuration!):00")
+        shortBreakDuration.setDetailValue(value: "\( pomodoro.shortBreakDuration!):00")
+        longBreakDuration.setDetailValue(value: "\( pomodoro.longBreakDuration!):00")
         
-        whiteNoiseView.selectedIndex = (task!.isWhiteNoiseOn == true) ? 0 : 1
+        whiteNoiseView.selectedIndex = (pomodoro.isWhiteNoiseOn == true) ? 0 : 1
     }
     
     @objc func onClickDoneTask() {
         let alert = UIAlertController(title: "Apakah anda yakin untuk menandai task sebagai selesai?", message: "", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Tandai sebagai selesai", style: .default, handler: { [self] (_) in
-            detailVm.markAsDone(id: task!.id, timeSpent: 0)
-            levelVm.addUserXp(xp: levelVm.calculateTaskXp(task: task!, isPomdoroUsed: false))
+            
+            taskVm.markAsDone(id: task!.id, timeSpent: 0)
+            levelVm.addXpToUser(pomodoro: pomodoro, isPomdoroUsed: false)
+            statsVm.addFinishedTaskToStats(task: task!, pomodoro: pomodoro)
+            
             navigationController?.popViewController(animated: true)
         }))
         
@@ -215,7 +222,7 @@ class DetailTaskVC: UIViewController {
         let alert = UIAlertController(title: "Apakah anda yakin untuk menghapus task?", message: "", preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: { (_) in
-            self.detailVm.deleteTask(id: self.task!.id)
+            self.taskVm.deleteTask(id: self.task!.id)
             self.navigationController?.popViewController(animated: true)
         }))
 
@@ -231,6 +238,7 @@ class DetailTaskVC: UIViewController {
     @objc func onClickStart() {
         let controller = PomodoroVC()
         controller.task = task
+        controller.pomodoro = pomodoro
         navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -251,7 +259,8 @@ class DetailTaskVC: UIViewController {
     @objc func redoTask(){
         
         // Duplicate task, no need to refresh display as it is the same
-        task = detailVm.duplicateTask(task: task!)
+        task = taskVm.duplicateTask(task: task!)
+        statsVm.addCreatedTaskToStats(task: task, pomodoro: pomodoro)
         
         btnStartTask.layer.borderColor = UIColor.turq.cgColor
         btnStartTask.setTitleColor(.turq, for: .normal)
@@ -266,7 +275,7 @@ class DetailTaskVC: UIViewController {
 extension DetailTaskVC: OptionsCollectionViewDelegate {
     func didTapButton(tappedButton button: OptionButton) {
         let isOn : Bool = button.titleLabel?.text?.lowercased() == "on" ? true : false
-        detailVm.toggleWhiteNoise(id: task!.id, isOn: isOn)
+        taskVm.toggleWhiteNoise(id: pomodoro!.id, isOn: isOn)
     }
 }
 

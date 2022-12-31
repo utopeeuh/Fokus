@@ -187,10 +187,10 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(taskList[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
         let controller = DetailTaskVC()
         controller.task = taskList[indexPath.row]
+        
         navigationController?.pushViewController(controller, animated: true)
     }
     

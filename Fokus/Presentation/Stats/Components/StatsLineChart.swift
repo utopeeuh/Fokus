@@ -30,7 +30,7 @@ class StatsLineChart : UIView {
         lineChart.xAxis.labelTextColor = .whiteFokus
         lineChart.xAxis.setLabelCount(6, force: true)
         lineChart.xAxis.labelPosition = .bottom
-        lineChart.xAxis.axisMaximum = 30
+        lineChart.xAxis.axisMaximum = 31
         lineChart.xAxis.axisMinimum = 1
         lineChart.xAxis.axisLineColor = .turq
         
@@ -70,12 +70,14 @@ class StatsLineChart : UIView {
         }
     }
     
-    func setData(data: LineChartData){
+    func setData(data: LineChartData, numberOfDays: Double){
         
         if data.entryCount == 0 {
             lineChart.isHidden = true
             return
         }
+        
+        lineChart.xAxis.axisMaximum = numberOfDays
         
         lineChart.isHidden = false
         lineChart.data = data

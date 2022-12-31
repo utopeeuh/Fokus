@@ -12,7 +12,9 @@ import DateTimePicker
 
 class CreateTaskVC: UIViewController {
     
-    private var vm = CreateTaskViewModel()
+    private var taskVm = TaskViewModel()
+    private var statsVm = StatsViewModel()
+    
     public var isEditTask: Bool = false
     public var task:TaskModel?
     
@@ -143,12 +145,15 @@ class CreateTaskVC: UIViewController {
         }
         
         if (isEditTask) {
+            
+            let pomodoro = taskVm.getPomodoro(task: task!)
+            
             let workDuration = [20, 25, 30, 35]
             let shortDuration = [5, 10, 15, 20]
             
-            let workIndex = workDuration.firstIndex(of: Int(truncating: (task?.work)!))
-            let longIndex = workDuration.firstIndex(of: Int(truncating: task!.longBreak))
-            let shortIndex = shortDuration.firstIndex(of: Int(truncating: task!.shortBreak))
+            let workIndex = workDuration.firstIndex(of: Int(truncating: pomodoro?.workDuration ?? 20))
+            let longIndex = workDuration.firstIndex(of: Int(truncating: pomodoro?.workDuration ?? 20))
+            let shortIndex = shortDuration.firstIndex(of: Int(truncating: pomodoro?.shortBreakDuration ?? 20))
             
             navbar = Navbar(title: "Edit task")
             titleLabel.text = "Edit Task"
@@ -157,13 +162,12 @@ class CreateTaskVC: UIViewController {
             workDurationView.selectedIndex = workIndex
             longDurationView.selectedIndex = longIndex
             shortDurationView.selectedIndex = shortIndex
-            pomodoroCounter.counter = Int(truncating: task!.pomodoros)
-            whiteNoiseView.selectedIndex = Int(truncating: task!.isWhiteNoiseOn) == 1 ? 0 : 1
+            pomodoroCounter.counter = Int(truncating: pomodoro?.cycles ?? 0)
+            whiteNoiseView.selectedIndex = pomodoro?.isWhiteNoiseOn == true ? 0 : 1
             
             if (task?.reminder != nil) {
                 reminderView.selectedIndex = 0
                 dateTimePicker.selectedDate = task!.reminder!
-                print(dateTimePicker.selectedDateString)
                 
                 let yesButton  = self.reminderView.buttonStack.arrangedSubviews.first as? UIButton
                 yesButton?.setTitle("CHANGE DATE", for: .normal)
@@ -239,13 +243,11 @@ class CreateTaskVC: UIViewController {
             return
         }
         
-        print(dateTimePicker.selectedDateString)
-        
         let reminderDate = reminderView.selectedOption == "OFF" ? nil : dateTimePicker.selectedDate
         
         if (isEditTask) {
             
-            guard let newTask = vm.editTask(id: task!.id, title: titleTextField.text!, reminder: reminderDate, pomodoros: pomodoroCounter.counter, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption)
+            guard let newTask = taskVm.editTask(id: task!.id, title: titleTextField.text!, reminder: reminderDate, cycles: pomodoroCounter.counter as NSNumber, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption)
             
             else {
                 navigationController?.popToRootViewController(animated: true)
@@ -255,11 +257,24 @@ class CreateTaskVC: UIViewController {
             editCompletion?(newTask)
             
         } else {
-            vm.createTask(title: titleTextField.text!, reminder: reminderDate, pomodoros: pomodoroCounter.counter, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption)
+            guard let newTask = taskVm.createTask(title: titleTextField.text!, reminder: reminderDate, cycles: pomodoroCounter.counter as NSNumber, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption) else { return }
+            
+            guard let newPomodoro = taskVm.getPomodoro(task: newTask) else { return }
+            
+            if reminderDate != nil {
+                NotificationManager.shared.createTaskNotif(taskTitle: titleTextField.text!, reminderDate: reminderDate!)
+            }
+            
+            statsVm.addCreatedTaskToStats(task: newTask, pomodoro: newPomodoro)
         }
         
-        
         navigationController?.popViewController(animated: true)
+    }
+    
+    func formattedDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMM y HH:mm"
+        return formatter.string(from: date)
     }
     
     @objc func turnOnReminder(){

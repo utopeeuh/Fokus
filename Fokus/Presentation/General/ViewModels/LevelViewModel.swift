@@ -17,62 +17,51 @@ class LevelViewModel : NSObject {
         super.init()
     }
     
-    func getLevel() -> Int{
+    func getBadgeIcon() -> UIImage?{
         
-        let user = UserRepository.shared.fetchUser()
-        let level = Int(((user?.xp as! Float)/Float(maxXp)).rounded(.down)) + 1
+        guard let user = UserRepository.shared.fetchUser() else { return nil}
         
-        return level > maxLevel ? maxLevel : level
+        guard let level = LevelRepository.shared.fetchLevel(levelNumber: Int(truncating: user.levelNumber)) else { return nil }
+        
+        print(level.badgeName)
+    
+        return UIImage(named: level.badgeName)
     }
     
-    func getExcessXp() -> Int{
+    func calculateTaskXp(pomodoro: PomodoroModel, isPomdoroUsed: Bool) -> Int{
+        let multiplier : Int = isPomdoroUsed ? 2 : 1
+        let xp = Int(truncating: pomodoro.cycles) * Int(truncating: pomodoro.workDuration) * multiplier
         
-        let user = UserRepository.shared.fetchUser()
-        let level = getLevel()-1
-        let excess = Int(truncating: user!.xp) - level*maxXp
-        return excess
-        
-    }
-    
-    func getBadgeIcon() -> UIImage{
-        let level = getLevel()
-        var imageName = ""
-        
-        if level <= 3 {
-            imageName = "badge1"
-        }
-        
-        else if level <= 6 {
-            imageName = "badge2"
-        }
-        
-        else if level <= 9 {
-            imageName = "badge3"
-        }
-        
-        else {
-            imageName = "badge4"
-        }
-        
-        return UIImage(named: imageName)!
-    }
-    
-    func calculateTaskXp(task: TaskModel, isPomdoroUsed: Bool) -> Int {
-        let multiplier = isPomdoroUsed ? 2 : 1
-        let xp = Int(truncating: task.pomodoros) * Int(truncating: task.work) * multiplier
         return xp
     }
     
-    func addUserXp(xp: Int) {
+    func addXpToUser(pomodoro: PomodoroModel, isPomdoroUsed: Bool) {
         
-        let user = UserRepository.shared.fetchUser()
+        // Calculate xp
+        let xp = calculateTaskXp(pomodoro: pomodoro, isPomdoroUsed: isPomdoroUsed)
         
-        if getLevel() == maxLevel && (getExcessXp() + xp) > maxXp {
-            let xpDiffTillMax = (maxLevel+1)*maxLevel - (user!.xp as! Int)
-            UserRepository.shared.addXp(xp: xpDiffTillMax)
-            return
+        // Calculate levels gained & excess xp
+        guard let user = UserRepository.shared.fetchUser() else { return }
+        
+        let totalUserXp = Int(truncating: user.xp) + xp
+        
+        let levelsGained = totalUserXp/maxXp
+        var excessXp = totalUserXp - levelsGained*maxXp
+        
+        // Check if user's level is above max level
+        var totalUserLevel = levelsGained + Int(truncating: user.levelNumber)
+        
+        // If above max level
+        if totalUserLevel > maxLevel {
+            
+            // Set totalUserLevel as max level
+            totalUserLevel = maxLevel
+            
+            // Set excess xp as max xp
+            excessXp = maxXp
         }
         
-        UserRepository.shared.addXp(xp: xp)
+        // Update user xp and level
+        UserRepository.shared.setUserLevelandXp(level: totalUserLevel, xp: excessXp)
     }
 }

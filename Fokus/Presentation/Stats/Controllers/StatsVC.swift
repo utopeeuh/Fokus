@@ -156,9 +156,11 @@ class StatsVC: UIViewController {
         tasksCreated.setDetailValue(value: "\(statsVm.tasksCreated)")
         tasksFinished.setDetailValue(value: "\(statsVm.tasksFinished)")
         tasksFinishedWithoutPomodoro.setDetailValue(value: "\(statsVm.tasksFinishedWithoutPomodoro)")
+        
+        let numberOfDays = Double(Calendar.current.daysInMonth(currDate)!)
 
-        pomodoroLineChart.setData(data: statsVm.pomodoroLineData)
-        taskLineChart.setData(data: statsVm.taskLineData)
+        pomodoroLineChart.setData(data: statsVm.pomodoroLineData, numberOfDays: numberOfDays)
+        taskLineChart.setData(data: statsVm.taskLineData, numberOfDays: numberOfDays)
     }
     
     func configureConstraints(){

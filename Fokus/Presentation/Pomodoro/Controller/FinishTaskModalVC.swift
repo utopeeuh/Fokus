@@ -146,7 +146,7 @@ class FinishTaskModalVC: UIViewController {
     
     private func showModal(){
         UIView.animate(withDuration: 0.2) { [self] in
-            dimmedView.alpha = dimmedMaxAlpha
+            dimmedView.alpha = CGFloat(dimmedMaxAlpha)
             containerView.alpha = 1
         }
     }
