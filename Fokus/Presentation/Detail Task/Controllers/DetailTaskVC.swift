@@ -207,7 +207,7 @@ class DetailTaskVC: UIViewController {
         alert.addAction(UIAlertAction(title: "Tandai sebagai selesai", style: .default, handler: { [self] (_) in
             
             taskVm.markAsDone(id: task!.id, timeSpent: 0)
-            levelVm.addUserXp(xp: levelVm.calculateTaskXp(pomodoro: pomodoro, isPomdoroUsed: false))
+            levelVm.addXpToUser(pomodoro: pomodoro, isPomdoroUsed: false)
             statsVm.addFinishedTaskToStats(task: task!, pomodoro: pomodoro)
             
             navigationController?.popViewController(animated: true)
@@ -260,6 +260,7 @@ class DetailTaskVC: UIViewController {
         
         // Duplicate task, no need to refresh display as it is the same
         task = taskVm.duplicateTask(task: task!)
+        statsVm.addCreatedTaskToStats(task: task, pomodoro: pomodoro)
         
         btnStartTask.layer.borderColor = UIColor.turq.cgColor
         btnStartTask.setTitleColor(.turq, for: .normal)

@@ -5,22 +5,22 @@
         <attribute name="levelNumber" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Pomodoro" representedClassName="PomodoroModel" syncable="YES">
-        <attribute name="cycles" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="cycles" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="isWhiteNoiseOn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="longBreakDuration" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="shortBreakDuration" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="workDuration" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longBreakDuration" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="shortBreakDuration" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="workDuration" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Statistic" representedClassName="StatisticModel" syncable="YES">
-        <attribute name="avgWorkDuration" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="cyclesCreated" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="cyclesFinished" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="avgWorkDuration" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="cyclesCreated" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cyclesFinished" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="month" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="tasksCreated" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="tasksFinished" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="tasksNoPomodoro" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="totalWorkDuration" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="tasksCreated" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tasksFinished" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tasksNoPomodoro" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalWorkDuration" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Task" representedClassName="TaskModel" syncable="YES">
         <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -33,6 +33,7 @@
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <entity name="User" representedClassName="UserModel" syncable="YES">
+        <attribute name="levelNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="xp" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>

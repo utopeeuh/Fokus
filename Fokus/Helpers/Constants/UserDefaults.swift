@@ -9,5 +9,6 @@ import Foundation
 
 enum UserDefaultsKey {
     static let firstTime = "FIRST_TIME_KEY"
+    static let hasDoneSeeding = "HAS_DONE_SEEDING_KEY"
 }
 

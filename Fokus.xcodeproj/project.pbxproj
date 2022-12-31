@@ -46,6 +46,8 @@
 		95AA5732295194AD001D6A50 /* DateIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA572D295194AD001D6A50 /* DateIterator.swift */; };
 		95AA5733295194AD001D6A50 /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA572F295194AD001D6A50 /* StatsVC.swift */; };
 		95AA5735295194D0001D6A50 /* Calendar+Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA5734295194D0001D6A50 /* Calendar+Dates.swift */; };
+		95C11DCA295FFEBF00681823 /* LevelSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C11DC9295FFEBF00681823 /* LevelSeeder.swift */; };
+		95C11DCC296004EC00681823 /* LevelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C11DCB296004EC00681823 /* LevelRepository.swift */; };
 		95E1BF3A2942E6D500F58A96 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E1BF392942E6D500F58A96 /* HomeViewModel.swift */; };
 		95E1BF3C2942FBFC00F58A96 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E1BF3B2942FBFC00F58A96 /* UserModel.swift */; };
 		95E1BF3F2942FF2100F58A96 /* NameModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E1BF3E2942FF2100F58A96 /* NameModalVC.swift */; };
@@ -106,6 +108,8 @@
 		95AA572D295194AD001D6A50 /* DateIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIterator.swift; sourceTree = "<group>"; };
 		95AA572F295194AD001D6A50 /* StatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
 		95AA5734295194D0001D6A50 /* Calendar+Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Calendar+Dates.swift"; sourceTree = "<group>"; };
+		95C11DC9295FFEBF00681823 /* LevelSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSeeder.swift; sourceTree = "<group>"; };
+		95C11DCB296004EC00681823 /* LevelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelRepository.swift; sourceTree = "<group>"; };
 		95E1BF392942E6D500F58A96 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		95E1BF3B2942FBFC00F58A96 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		95E1BF3E2942FF2100F58A96 /* NameModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameModalVC.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 				955A2FB92912A7F300513D8E /* Fokus.xcdatamodeld */,
 				952BA1342925216000767FDD /* Models */,
 				952BA1332925214C00767FDD /* Repositories */,
+				95C11DC8295FFE8B00681823 /* Seeders */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				F9D86DDF2950BEBD00A6636F /* TaskRepository.swift */,
 				956F7492295EDA520002BDCB /* PomodoroRepository.swift */,
 				956F7494295EFF350002BDCB /* StatisticRepository.swift */,
+				95C11DCB296004EC00681823 /* LevelRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -295,8 +301,8 @@
 		952BA1402925221500767FDD /* General */ = {
 			isa = PBXGroup;
 			children = (
-				95845DE22951D8A300EF2996 /* ViewModels */,
 				952BA1452925227800767FDD /* TabBarVC.swift */,
+				95845DE22951D8A300EF2996 /* ViewModels */,
 				952BA1412925222300767FDD /* Components */,
 			);
 			path = General;
@@ -402,6 +408,14 @@
 				95AA572F295194AD001D6A50 /* StatsVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		95C11DC8295FFE8B00681823 /* Seeders */ = {
+			isa = PBXGroup;
+			children = (
+				95C11DC9295FFEBF00681823 /* LevelSeeder.swift */,
+			);
+			path = Seeders;
 			sourceTree = "<group>";
 		};
 		95E1BF382942E6C800F58A96 /* ViewModels */ = {
@@ -599,6 +613,7 @@
 				954033A42951FB0F00E6FEFE /* FinishTaskModalVC.swift in Sources */,
 				95F0FE66295C29900088F644 /* NameModalViewModel.swift in Sources */,
 				956F748F295ED5E90002BDCB /* StatisticModel.swift in Sources */,
+				95C11DCA295FFEBF00681823 /* LevelSeeder.swift in Sources */,
 				95184202295191AF00C52AF7 /* UserRepository.swift in Sources */,
 				955A2FB12912A7F300513D8E /* AppDelegate.swift in Sources */,
 				958B0F6E293D81EA006A19E4 /* TaskViewModel.swift in Sources */,
@@ -621,6 +636,7 @@
 				956F7493295EDA520002BDCB /* PomodoroRepository.swift in Sources */,
 				958B0F73293E291F006A19E4 /* UIView+Shake.swift in Sources */,
 				952BF7EE292CF2BF00D924A8 /* OptionsCollectionView.swift in Sources */,
+				95C11DCC296004EC00681823 /* LevelRepository.swift in Sources */,
 				9513AFBC29295ECE00415C8B /* HomeVC.swift in Sources */,
 				953370432952DAD9009C3E89 /* StatsViewModel.swift in Sources */,
 				95AA5735295194D0001D6A50 /* Calendar+Dates.swift in Sources */,

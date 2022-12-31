@@ -12,6 +12,6 @@ import CoreData
 @objc(LevelModel)
 
 class LevelModel: NSManagedObject {
-    var levelNumber: Int!
-    var badgeName: String!
+    @NSManaged var levelNumber: NSNumber!
+    @NSManaged var badgeName: String!
 }

@@ -288,16 +288,13 @@ class PomodoroVC: UIViewController {
     
     func finishTask(){
         
-        // Task xp
-        let xp = levelVm.calculateTaskXp(pomodoro: pomodoro!, isPomdoroUsed: true)
-        
         // Show finish modal
         let modal = FinishTaskModalVC()
         modal.delegate = self
-        modal.xp = xp
+        modal.xp = levelVm.calculateTaskXp(pomodoro: pomodoro!, isPomdoroUsed: true)
         
         // Update task as done and add user xp
-        levelVm.addUserXp(xp: xp)
+        levelVm.addXpToUser(pomodoro: pomodoro!, isPomdoroUsed: true)
         pomodoroVm.markAsDone(id: (task?.id)!, timeSpent: timeSpent)
         
         // Add to stats

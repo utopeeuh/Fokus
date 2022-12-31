@@ -13,5 +13,6 @@ import CoreData
 
 class UserModel: NSManagedObject {
     @NSManaged var name: String!
+    @NSManaged var levelNumber: NSNumber!
     @NSManaged var xp: NSNumber!
 }

@@ -157,23 +157,20 @@ class ProfileView: UIView {
     }
     
     func refreshUserData(){
-        let user = UserRepository.shared.fetchUser()
-        if user == nil {
-            return
-        }
-        userName.text = "Hi, \(user!.name!) 😊"
+        guard let user = UserRepository.shared.fetchUser() else { return }
+        userName.text = "Hi, \(user.name!) 😊"
         
         // Level
-        levelLabel.text = "Level \(levelVm.getLevel())"
+        levelLabel.text = "Level \(user.levelNumber!)"
         
         // Xp
         let text = NSMutableAttributedString()
-        text.append(NSAttributedString(string: "\(levelVm.getExcessXp())", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]));
+        text.append(NSAttributedString(string: "\(user.xp!)", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]));
         text.append(NSAttributedString(string: "/\(levelVm.maxXp) xp", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkTurq]))
         
         xpLabel.attributedText = text
         
-        progressBar.progress = Float(levelVm.getExcessXp())/Float(levelVm.maxXp)
+        progressBar.progress = Float(truncating: user.xp!)/Float(levelVm.maxXp)
         
         // Badge
         badgeImage.image = levelVm.getBadgeIcon()

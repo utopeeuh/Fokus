@@ -15,6 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         print("Documents directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
         
+        // Seed inital levels
+        let hasDoneSeeding = UserDefaults.standard.object(forKey: UserDefaultsKey.hasDoneSeeding) as? Bool ?? false
+        
+        if !hasDoneSeeding {
+            print("Has not done seeding")
+            
+            if LevelSeeder().seed() {
+                UserDefaults.standard.set(true, forKey: UserDefaultsKey.hasDoneSeeding)
+                print("Seeding success")
+            }
+            
+        }
+        
         return true
     }
 
