@@ -58,7 +58,11 @@ class HomeVC: UIViewController {
         navigationController?.isNavigationBarHidden = true
         tabBarController?.tabBar.isHidden = false
         taskList = homeVM.getTaskList()
-        profileView.refreshUserData()
+        
+        guard let user = homeVM.getUser() else { return }
+        guard let badgeImage = homeVM.getBadgeIcon() else { return }
+        
+        profileView.refreshUserData(user: user, badgeImage: badgeImage)
     }
 
     override func viewDidLoad() {
@@ -164,7 +168,10 @@ class HomeVC: UIViewController {
 
 extension HomeVC: NameModalDelegate {
     func refresh() {
-        profileView.refreshUserData()
+        guard let user = homeVM.getUser() else { return }
+        guard let badgeImage = homeVM.getBadgeIcon() else { return }
+        
+        profileView.refreshUserData(user: user, badgeImage: badgeImage)
     }
 }
 

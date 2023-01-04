@@ -56,7 +56,6 @@
 		95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */; };
 		95ECFED02931F20700F5F334 /* Font Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECF2931F20700F5F334 /* Font Size.swift */; };
 		95F0FE66295C29900088F644 /* NameModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0FE65295C29900088F644 /* NameModalViewModel.swift */; };
-		B67019782945E32300872F77 /* PomodoroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67019772945E32300872F77 /* PomodoroViewModel.swift */; };
 		B6D725F22937245B00165A53 /* PomodoroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D725F02937245B00165A53 /* PomodoroVC.swift */; };
 		F9BE0C4329365A05007529FB /* PomodoroDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BE0C4229365A05007529FB /* PomodoroDetail.swift */; };
 		F9BE0C462936DE84007529FB /* DetailTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BE0C452936DE83007529FB /* DetailTaskVC.swift */; };
@@ -119,7 +118,6 @@
 		95ECFECF2931F20700F5F334 /* Font Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font Size.swift"; sourceTree = "<group>"; };
 		95F0FE65295C29900088F644 /* NameModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameModalViewModel.swift; sourceTree = "<group>"; };
 		ACF241316042AB47065B50CF /* Pods_Fokus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fokus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B67019772945E32300872F77 /* PomodoroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroViewModel.swift; sourceTree = "<group>"; };
 		B6D725F02937245B00165A53 /* PomodoroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroVC.swift; sourceTree = "<group>"; };
 		CCF6B459E7323D60CB578BF2 /* Pods-Fokus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fokus.release.xcconfig"; path = "Target Support Files/Pods-Fokus/Pods-Fokus.release.xcconfig"; sourceTree = "<group>"; };
 		F9BE0C4229365A05007529FB /* PomodoroDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroDetail.swift; sourceTree = "<group>"; };
@@ -435,18 +433,9 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		B67019762945E31200872F77 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				B67019772945E32300872F77 /* PomodoroViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		B6D725EE2937245B00165A53 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
-				B67019762945E31200872F77 /* ViewModels */,
 				B6D725EF2937245B00165A53 /* Controller */,
 			);
 			path = Pomodoro;
@@ -622,7 +611,6 @@
 				95339E742954014C00912667 /* StatsLineChart.swift in Sources */,
 				952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */,
 				F9CB5DA82928EB52003C6371 /* TaskListCell.swift in Sources */,
-				B67019782945E32300872F77 /* PomodoroViewModel.swift in Sources */,
 				95AA5733295194AD001D6A50 /* StatsVC.swift in Sources */,
 				F9D86DE62950C0DF00A6636F /* TaskModel.swift in Sources */,
 				951842002951918800C52AF7 /* UserDefaults.swift in Sources */,

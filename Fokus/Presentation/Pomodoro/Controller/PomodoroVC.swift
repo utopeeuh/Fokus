@@ -16,7 +16,7 @@ class PomodoroVC: UIViewController {
     public var pomodoro: PomodoroModel?
     
     private var levelVm = LevelViewModel()
-    private var pomodoroVm = PomodoroViewModel()
+    private var taskVm = TaskViewModel()
     private var statsVm = StatsViewModel()
     
     var currentCycle = 1
@@ -295,7 +295,7 @@ class PomodoroVC: UIViewController {
         
         // Update task as done and add user xp
         levelVm.addXpToUser(pomodoro: pomodoro!, isPomdoroUsed: true)
-        pomodoroVm.markAsDone(id: (task?.id)!, timeSpent: timeSpent)
+        taskVm.markAsDone(id: (task?.id)!, timeSpent: timeSpent)
         
         // Add to stats
         statsVm.addFinishedTaskToStats(task: task!, pomodoro: pomodoro!)

@@ -156,8 +156,7 @@ class ProfileView: UIView {
         delegate?.editNameOnClick()
     }
     
-    func refreshUserData(){
-        guard let user = UserRepository.shared.fetchUser() else { return }
+    func refreshUserData(user: UserModel, badgeImage: UIImage){
         userName.text = "Hi, \(user.name!) 😊"
         
         // Level
@@ -166,14 +165,14 @@ class ProfileView: UIView {
         // Xp
         let text = NSMutableAttributedString()
         text.append(NSAttributedString(string: "\(user.xp!)", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]));
-        text.append(NSAttributedString(string: "/\(levelVm.maxXp) xp", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkTurq]))
+        text.append(NSAttributedString(string: "/1000 xp", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkTurq]))
         
         xpLabel.attributedText = text
         
         progressBar.progress = Float(truncating: user.xp!)/Float(levelVm.maxXp)
         
         // Badge
-        badgeImage.image = levelVm.getBadgeIcon()
+        self.badgeImage.image = badgeImage
     }
     
     required init?(coder: NSCoder) {
