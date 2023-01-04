@@ -284,12 +284,16 @@ class DetailTaskVC: UIViewController {
         btnMarkDoneTask.removeTarget(self, action: #selector(redoTask), for: .touchUpInside)
         btnMarkDoneTask.addTarget(self, action: #selector(onClickDoneTask), for: .touchUpInside)
     }
+    
+    func toggleWhiteNoise(_ isOn: Bool){
+        taskVm.toggleWhiteNoise(id: pomodoro!.id, isOn: isOn)
+    }
 }
 
 extension DetailTaskVC: OptionsCollectionViewDelegate {
     func didTapButton(tappedButton button: OptionButton) {
         let isOn : Bool = button.titleLabel?.text?.lowercased() == "on" ? true : false
-        taskVm.toggleWhiteNoise(id: pomodoro!.id, isOn: isOn)
+        toggleWhiteNoise(isOn)
     }
 }
 
