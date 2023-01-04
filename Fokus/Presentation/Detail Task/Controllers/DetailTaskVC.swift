@@ -256,6 +256,20 @@ class DetailTaskVC: UIViewController {
         btnMarkDoneTask.addTarget(self, action: #selector(redoTask), for: .touchUpInside)
     }
     
+    func editTask(){
+        let controller = CreateTaskVC()
+        
+        controller.isEditTask = true
+        controller.task = task
+        
+        controller.editCompletion = {[self] newTask in
+            task = newTask
+            loadTask()
+        }
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     @objc func redoTask(){
         
         // Duplicate task, no need to refresh display as it is the same
@@ -281,17 +295,7 @@ extension DetailTaskVC: OptionsCollectionViewDelegate {
 
 extension DetailTaskVC: NavbarDelegate {
     func rightBarItemOnClick() {
-        let controller = CreateTaskVC()
-        
-        controller.isEditTask = true
-        controller.task = task
-        
-        controller.editCompletion = {[self] newTask in
-            task = newTask
-            loadTask()
-        }
-        
-        navigationController?.pushViewController(controller, animated: true)
+        editTask()
     }
     
 }
