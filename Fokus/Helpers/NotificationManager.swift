@@ -13,8 +13,10 @@ class NotificationManager {
     static let shared = NotificationManager()
     let notificationCenter = UNUserNotificationCenter.current()
     
-    func createTaskNotif(taskTitle: String, reminderDate: Date){
+    func createTaskNotif(task: TaskModel, reminderDate: Date?){
+        if reminderDate == nil { return }
         
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [task.id])
         notificationCenter.getNotificationSettings { (settings) in
             DispatchQueue.main.async {
 
@@ -27,8 +29,8 @@ class NotificationManager {
                 
                 // Task attributes
                 
-                let title = taskTitle
-                let message = "anjing"
+                let title = task.title!
+                let message = "Mulailah sesi Pomodoro-mu. Saatnya untuk Fokus:)"
                 let date = reminderDate
                 
                 // Create notification
@@ -37,10 +39,11 @@ class NotificationManager {
                 content.title = title
                 content.body = message
                 
-                let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
+                let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date!)
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
-                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                let request = UNNotificationRequest(identifier: task.id!, content: content, trigger: trigger)
                 
+//                self.notificationCenter.
                 self.notificationCenter.add(request) { (error) in
                     if (error != nil) {
                         print("Error " + error.debugDescription)
@@ -73,5 +76,9 @@ class NotificationManager {
         
         let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         keyWindow?.topViewController()?.navigationController?.present(ac, animated: true)
+    }
+    
+    func deleteNotification(taskId: String) {
+        return self.notificationCenter.removePendingNotificationRequests(withIdentifiers: [taskId])
     }
 }

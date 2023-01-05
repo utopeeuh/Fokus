@@ -253,17 +253,13 @@ class CreateTaskVC: UIViewController {
                 navigationController?.popToRootViewController(animated: true)
                 return
             }
-            
+                        
             editCompletion?(newTask)
             
         } else {
             guard let newTask = taskVm.createTask(title: titleTextField.text!, reminder: reminderDate, cycles: pomodoroCounter.counter as NSNumber, work: workDurationView.selectedOption, shortBreak: shortDurationView.selectedOption, longBreak: longDurationView.selectedOption, whiteNoise: whiteNoiseView.selectedOption) else { return }
             
             guard let newPomodoro = taskVm.getPomodoro(task: newTask) else { return }
-            
-            if reminderDate != nil {
-                NotificationManager.shared.createTaskNotif(taskTitle: titleTextField.text!, reminderDate: reminderDate!)
-            }
             
             statsVm.addCreatedTaskToStats(task: newTask, pomodoro: newPomodoro)
         }
