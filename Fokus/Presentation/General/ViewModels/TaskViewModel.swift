@@ -8,7 +8,7 @@
 import Foundation
 
 class TaskViewModel : NSObject {
-    
+    let notificationCenter = NotificationManager();
     override init() {
         super.init()
     }
@@ -28,10 +28,14 @@ class TaskViewModel : NSObject {
         let isWhiteNoiseOn: NSNumber = (whiteNoise == "OFF" ? 0 : 1)
         
         // Create task
-        let newTask = TaskRepository.shared.createTask(title: title, reminder: reminder)
+        guard let newTask = TaskRepository.shared.createTask(title: title, reminder: reminder) else { return nil }
         
         // Create pomodoro
-        _ = PomodoroRepository.shared.createPomodoro(id: newTask!.pomodoroId, cycles: cycles, workDuration: workDuration, shortBreakDuration: shortBreakDuration, longBreakDuration: longBreakDuration, isWhiteNoiseOn: isWhiteNoiseOn)
+        _ = PomodoroRepository.shared.createPomodoro(id: newTask.pomodoroId, cycles: cycles, workDuration: workDuration, shortBreakDuration: shortBreakDuration, longBreakDuration: longBreakDuration, isWhiteNoiseOn: isWhiteNoiseOn)
+        
+        if reminder != nil {
+            NotificationManager.shared.createTaskNotif(task: newTask, reminderDate: reminder!)
+        }
         
         return newTask
     }
@@ -52,6 +56,9 @@ class TaskViewModel : NSObject {
         // Edit pomodoro
         _ = PomodoroRepository.shared.editPomodoro(id: task!.pomodoroId, cycles: cycles, workDuration: workDuration, shortBreakDuration: shortBreakDuration, longBreakDuration: longBreakDuration, isWhiteNoiseOn: isWhiteNoiseOn)
         
+        if reminder != nil {
+            NotificationManager.shared.createTaskNotif(task: task!, reminderDate: reminder!)
+        }
         return task
     }
     
@@ -69,12 +76,17 @@ class TaskViewModel : NSObject {
                 
         // Update to DB
         TaskRepository.shared.markAsDone(id: id, timeSpent: timeSpent)
+        // Delete notification
+        NotificationManager.shared.deleteNotification(taskId: id)
     }
     
     func deleteTask(id: String) {
                 
         // Update to DB
         TaskRepository.shared.deleteTask(id: id)
+        // Delete notification
+        NotificationManager.shared.deleteNotification(taskId: id)
+//        self.notificationCenter.removePendingNotificationRequests(withIdentifiers: [self.task!.id])
     }
     
     func duplicateTask(task: TaskModel) -> TaskModel?{
