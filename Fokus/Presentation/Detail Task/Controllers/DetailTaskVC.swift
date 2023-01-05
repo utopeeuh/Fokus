@@ -21,6 +21,7 @@ class DetailTaskVC: UIViewController {
     private var workDuration = PomodoroDetail(title: "Kerja", value: "")
     private var shortBreakDuration = PomodoroDetail(title: "Istirahat Pendek", value: "")
     private var longBreakDuration = PomodoroDetail(title: "Istirahat Panjang", value: "")
+    let notificationCenter = UNUserNotificationCenter.current()
 
     private let navbar: Navbar = {
         let navbar = Navbar(title: "Detil task")
@@ -223,6 +224,7 @@ class DetailTaskVC: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Hapus", style: .destructive, handler: { (_) in
             self.taskVm.deleteTask(id: self.task!.id)
+            self.notificationCenter.removePendingNotificationRequests(withIdentifiers: [self.task!.id])
             self.navigationController?.popViewController(animated: true)
         }))
 

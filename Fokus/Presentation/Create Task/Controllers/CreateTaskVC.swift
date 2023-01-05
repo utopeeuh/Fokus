@@ -254,6 +254,10 @@ class CreateTaskVC: UIViewController {
                 return
             }
             
+            if reminderDate != nil {
+                NotificationManager.shared.createTaskNotif(task: newTask, reminderDate: reminderDate!)
+            }
+            
             editCompletion?(newTask)
             
         } else {
@@ -262,7 +266,9 @@ class CreateTaskVC: UIViewController {
             guard let newPomodoro = taskVm.getPomodoro(task: newTask) else { return }
             
             if reminderDate != nil {
-                NotificationManager.shared.createTaskNotif(taskTitle: titleTextField.text!, reminderDate: reminderDate!)
+//                NotificationManager.shared.createTaskNotif(taskTitle: titleTextField.text!, reminderDate: reminderDate!)
+                NotificationManager.shared.createTaskNotif(task: newTask, reminderDate: reminderDate!)
+
             }
             
             statsVm.addCreatedTaskToStats(task: newTask, pomodoro: newPomodoro)

@@ -13,7 +13,7 @@ class NotificationManager {
     static let shared = NotificationManager()
     let notificationCenter = UNUserNotificationCenter.current()
     
-    func createTaskNotif(taskTitle: String, reminderDate: Date){
+    func createTaskNotif(task: TaskModel, reminderDate: Date){
         
         notificationCenter.getNotificationSettings { (settings) in
             DispatchQueue.main.async {
@@ -27,20 +27,21 @@ class NotificationManager {
                 
                 // Task attributes
                 
-                let title = taskTitle
-                let message = "anjing"
+                let title = task.title
+                let message = "Mulailah sesi Pomodoro-mu. Saatnya untuk Fokus:)"
                 let date = reminderDate
                 
                 // Create notification
             
                 let content = UNMutableNotificationContent()
-                content.title = title
+                content.title = title!
                 content.body = message
                 
                 let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
-                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                let request = UNNotificationRequest(identifier: task.id!, content: content, trigger: trigger)
                 
+//                self.notificationCenter.
                 self.notificationCenter.add(request) { (error) in
                     if (error != nil) {
                         print("Error " + error.debugDescription)
