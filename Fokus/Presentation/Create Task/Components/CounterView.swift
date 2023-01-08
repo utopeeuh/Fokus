@@ -41,7 +41,7 @@ class CounterView: UIView {
         let label = UILabel()
         label.font = .atkinsonRegular(size: 20)
         label.textColor = .whiteFokus
-        label.text = "Pomodoros"
+        label.text = "Siklus"
         label.isUserInteractionEnabled = false
         label.sizeToFit()
         return label

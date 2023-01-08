@@ -21,7 +21,7 @@ class CreateTaskVC: UIViewController {
     public var editCompletion : ((_ editedTask: TaskModel) -> Void)?
     
     private var navbar: Navbar = {
-        let navbar = Navbar(title: "Create task")
+        let navbar = Navbar(title: "Buat task")
         return navbar
     }()
     
@@ -35,7 +35,7 @@ class CreateTaskVC: UIViewController {
     
     private let titleLabel : SubHeadLabel = {
         let label = SubHeadLabel(size: .large)
-        label.text = "Title"
+        label.text = "Judul"
         return label
     }()
     
@@ -43,26 +43,26 @@ class CreateTaskVC: UIViewController {
     
     private let pomodoroLabel : SubHeadLabel = {
         let label = SubHeadLabel(size: .large)
-        label.text = "Estimated Pomodoros"
+        label.text = "Jumlah Siklus Pomodoro"
         return label
     }()
     
     private let pomodoroCounter = CounterView()
     
     private let workDurationView : OptionsCollectionView = {
-        let collectionView = OptionsCollectionView(title: "Work Duration", options: ["20:00", "25:00", "30:00", "35:00"])
+        let collectionView = OptionsCollectionView(title: "Durasi Kerja", options: ["20:00", "25:00", "30:00", "35:00"])
         collectionView.selectedIndex = 1
         return collectionView
     }()
     
     private let shortDurationView : OptionsCollectionView = {
-        let collectionView = OptionsCollectionView(title: "Short Break Duration", options: ["5:00", "10:00", "15:00", "20:00"])
+        let collectionView = OptionsCollectionView(title: "Durasi Istirahat Pendek", options: ["5:00", "10:00", "15:00", "20:00"])
         collectionView.selectedIndex = 1
         return collectionView
     }()
     
     private let longDurationView : OptionsCollectionView = {
-        let collectionView = OptionsCollectionView(title: "Long Break Duration", options: ["20:00", "25:00", "30:00", "35:00"])
+        let collectionView = OptionsCollectionView(title: "Durasi Istirahat Panjang", options: ["20:00", "25:00", "30:00", "35:00"])
         collectionView.selectedIndex = 1
         return collectionView
     }()
@@ -75,7 +75,7 @@ class CreateTaskVC: UIViewController {
     
     
     private let reminderView : OptionsCollectionView = {
-        let collectionView = OptionsCollectionView(title: "Date & Time Reminder", options: ["ON", "OFF"])
+        let collectionView = OptionsCollectionView(title: "Reminder", options: ["ON", "OFF"])
         collectionView.selectedIndex = 1
         return collectionView
     }()
@@ -111,7 +111,7 @@ class CreateTaskVC: UIViewController {
     
     private let createTaskButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Create task 📝", for: .normal)
+        btn.setTitle("Buat task 📝", for: .normal)
         btn.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 60)
         btn.layer.borderWidth = 1
         btn.layer.borderColor = UIColor.turq.cgColor
@@ -128,7 +128,7 @@ class CreateTaskVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Create Task"
+        title = "Buat Task"
         view.backgroundColor = .blackFokus
         
         // Add onclick to reminder's options
@@ -155,10 +155,10 @@ class CreateTaskVC: UIViewController {
             let longIndex = workDuration.firstIndex(of: Int(truncating: pomodoro?.workDuration ?? 20))
             let shortIndex = shortDuration.firstIndex(of: Int(truncating: pomodoro?.shortBreakDuration ?? 20))
             
-            navbar = Navbar(title: "Edit task")
-            titleLabel.text = "Edit Task"
+            navbar = Navbar(title: "Ubah task")
+            titleLabel.text = "Judul"
             titleTextField.text = task?.title
-            createTaskButton.setTitle("Edit Task 📝", for: .normal)
+            createTaskButton.setTitle("Ubah Task 📝", for: .normal)
             workDurationView.selectedIndex = workIndex
             longDurationView.selectedIndex = longIndex
             shortDurationView.selectedIndex = shortIndex
@@ -170,7 +170,7 @@ class CreateTaskVC: UIViewController {
                 dateTimePicker.selectedDate = task!.reminder!
                 
                 let yesButton  = self.reminderView.buttonStack.arrangedSubviews.first as? UIButton
-                yesButton?.setTitle("CHANGE DATE", for: .normal)
+                yesButton?.setTitle("UBAH REMINDER", for: .normal)
                 
                 reminderDateLabel.alpha = 1
                 reminderDateLabel.text = "Reminder set for \(dateTimePicker.selectedDateString)"
@@ -192,8 +192,8 @@ class CreateTaskVC: UIViewController {
         }
         
         // Add alert on back
-        let cancelAction = UIAlertAction(title: "Batal", style: .default)
-        let backAction = UIAlertAction(title: "Kembali ke home", style: .cancel) { (_) in
+        let cancelAction = UIAlertAction(title: "Batal", style: .cancel)
+        let backAction = UIAlertAction(title: "Kembali", style: .default) { (_) in
             self.navigationController?.popViewController(animated: true)
         }
         navbar.addAlertOnBack(title: "Apakah anda yakin ingin kembali? Hal yang belum disimpan tidak dapat dikembalikan", actions: [cancelAction, backAction])
@@ -280,7 +280,7 @@ class CreateTaskVC: UIViewController {
             
             let yesButton  = self.reminderView.buttonStack.arrangedSubviews.first as? UIButton
             
-            yesButton?.setTitle("CHANGE DATE", for: .normal)
+            yesButton?.setTitle("UBAH REMINDER", for: .normal)
         }
         
         reminderDateLabel.text = "Reminder set for \(dateTimePicker.selectedDateString)"
