@@ -194,7 +194,7 @@ class DetailTaskVC: UIViewController {
             taskScheduleLabel.textColor = .lightGrey
         }
         
-        pomodoroCycle.setDetailValue(value: "\(pomodoro.cycles!) Cycles")
+        pomodoroCycle.setDetailValue(value: "\(pomodoro.cycles!) Siklus")
         workDuration.setDetailValue(value: "\( pomodoro.workDuration!):00")
         shortBreakDuration.setDetailValue(value: "\( pomodoro.shortBreakDuration!):00")
         longBreakDuration.setDetailValue(value: "\( pomodoro.longBreakDuration!):00")
