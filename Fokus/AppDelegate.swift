@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
+        // Request notif
+        NotificationManager.shared.requestNotification()
+        
         return true
     }
 

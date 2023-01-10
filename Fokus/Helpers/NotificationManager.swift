@@ -13,6 +13,15 @@ class NotificationManager {
     static let shared = NotificationManager()
     let notificationCenter = UNUserNotificationCenter.current()
     
+    func requestNotification(){
+        notificationCenter.requestAuthorization(options: [.alert, .sound]) {
+                   (permissionGranted, error) in
+                   if (!permissionGranted) {
+                       print("Permission Denied")
+                   }
+               }
+    }
+    
     func createTaskNotif(task: TaskModel, reminderDate: Date?){
         if reminderDate == nil { return }
         
