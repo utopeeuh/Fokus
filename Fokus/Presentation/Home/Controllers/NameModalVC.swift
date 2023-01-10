@@ -73,6 +73,7 @@ class NameModalVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         saveButton.addTarget(self, action: #selector(saveOnClick), for: .touchUpInside)
         

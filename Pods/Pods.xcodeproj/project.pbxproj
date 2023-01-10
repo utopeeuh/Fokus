@@ -11,7 +11,7 @@
 		00351B69906B07C1950B97C40F65FABE /* RadarChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07854C9DFAB8C8A56A1BFF2141221A9F /* RadarChartData.swift */; };
 		00A2749F46C967ED4725A32357E3FB1B /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98D75DE4CB8161A6C27B842AB2B82C2 /* ConstraintLayoutSupport.swift */; };
 		00E171A24B8B214FDC447BED6BB62C31 /* BarLineScatterCandleBubbleChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D58A4BA91CF884D9BBE45DAD7DEE6C /* BarLineScatterCandleBubbleChartDataSet.swift */; };
-		01D2EB30256F2E339C213A6DB6C4924D /* DateTimePicker-DateTimePicker in Resources */ = {isa = PBXBuildFile; fileRef = B04C1EBC2EC90A2DFFEDDD0CF4473840 /* DateTimePicker-DateTimePicker */; };
+		01D2EB30256F2E339C213A6DB6C4924D /* DateTimePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B04C1EBC2EC90A2DFFEDDD0CF4473840 /* DateTimePicker.bundle */; };
 		0382A6D93C8BB1218EB1DBA3CF1B3BA7 /* BubbleChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5835D708B95DFE13F7E7313EC600ACE5 /* BubbleChartData.swift */; };
 		04360A4DF646DD99E7AF0AC83FAA56AB /* CandleChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630219395E6C557ED012FCE379D656A7 /* CandleChartDataSet.swift */; };
 		04637C70546B34F93C3A1D79C3F78B37 /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02648E719AE580C7EA946CECCDB629A /* ConstraintDirectionalInsetTarget.swift */; };
@@ -492,7 +492,7 @@
 		99B7EEA36B73178CCBDBFD02B4FABD9C /* RadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/RadarChartDataSet.swift; sourceTree = "<group>"; };
 		9A95BF76903254436C7E24CAAA35FC7D /* Platform+Accessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Platform+Accessibility.swift"; path = "Source/Charts/Utils/Platform+Accessibility.swift"; sourceTree = "<group>"; };
 		9C6346AFA1BEEB48A0F395FBC00DA93A /* DefaultFillFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultFillFormatter.swift; path = Source/Charts/Formatters/DefaultFillFormatter.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E70375A2652EE3017953051DC7232D5 /* LineChartDataSetProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineChartDataSetProtocol.swift; path = Source/Charts/Data/Interfaces/LineChartDataSetProtocol.swift; sourceTree = "<group>"; };
 		A0F4CD00C3C5A891E27C98C7960BCA3D /* Pods-Fokus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Fokus-dummy.m"; sourceTree = "<group>"; };
 		A14FB3EB982FD8773CC1C5A7A65C81AD /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Sources/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
@@ -516,7 +516,7 @@
 		ADC65478084E783B50F9802894CBD93A /* AxisRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisRenderer.swift; path = Source/Charts/Renderers/AxisRenderer.swift; sourceTree = "<group>"; };
 		AF305F5A9AA38FDFF3883EC3B7E3C1A4 /* ChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/ChartDataEntry.swift; sourceTree = "<group>"; };
 		AF3E65CFD353332F0C9D96B059EFA591 /* CandleStickChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleStickChartRenderer.swift; path = Source/Charts/Renderers/CandleStickChartRenderer.swift; sourceTree = "<group>"; };
-		B04C1EBC2EC90A2DFFEDDD0CF4473840 /* DateTimePicker-DateTimePicker */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "DateTimePicker-DateTimePicker"; path = DateTimePicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B04C1EBC2EC90A2DFFEDDD0CF4473840 /* DateTimePicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DateTimePicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26CB6AD16677CB8E5B8A5059EA05677 /* DateTimePicker */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DateTimePicker; path = DateTimePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C2870EBF1D26881C005555297C27CC /* PieChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieChartView.swift; path = Source/Charts/Charts/PieChartView.swift; sourceTree = "<group>"; };
 		B6D58A4BA91CF884D9BBE45DAD7DEE6C /* BarLineScatterCandleBubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/BarLineScatterCandleBubbleChartDataSet.swift; sourceTree = "<group>"; };
@@ -706,7 +706,6 @@
 				76161B5CCF27EDFC40F955FEE7535099 /* Windows.swift */,
 				D06545E5F755262FB9002D5BB92FB642 /* Support Files */,
 			);
-			name = SwiftAlgorithms;
 			path = SwiftAlgorithms;
 			sourceTree = "<group>";
 		};
@@ -745,7 +744,6 @@
 				F0E4A30A4122D981736DA26F8CF561DF /* Resources */,
 				C96456D1AEBEA9441EEE39EE72D04DC6 /* Support Files */,
 			);
-			name = DateTimePicker;
 			path = DateTimePicker;
 			sourceTree = "<group>";
 		};
@@ -817,7 +815,6 @@
 				72E51792B379CBE191BF9E7EE3BE5899 /* UILayoutSupport+Extensions.swift */,
 				3D1D7AE6651ABC8858D5E22749DADE05 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -840,7 +837,6 @@
 				589E1714BC278862C81A32461C98B529 /* UIFont+Extension.swift */,
 				A08F3E4B2AA2E845DB71E80687CB85E5 /* Support Files */,
 			);
-			name = MagicTimer;
 			path = MagicTimer;
 			sourceTree = "<group>";
 		};
@@ -901,7 +897,6 @@
 				7FAB0C7880123D6E2ADD6AC6F6E5CC81 /* SwiftyJSON.swift */,
 				9478788E39040ADA1F15CB66A2A04A7B /* Support Files */,
 			);
-			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -910,7 +905,7 @@
 			children = (
 				A1C1B977ED8804E8AEEC884E7359EE58 /* Charts */,
 				B26CB6AD16677CB8E5B8A5059EA05677 /* DateTimePicker */,
-				B04C1EBC2EC90A2DFFEDDD0CF4473840 /* DateTimePicker-DateTimePicker */,
+				B04C1EBC2EC90A2DFFEDDD0CF4473840 /* DateTimePicker.bundle */,
 				0FB114E27F8414106022220B5B533895 /* MagicTimer */,
 				7D3017A7174F6C223400068E519BC763 /* Pods-Fokus */,
 				979486118B3E90C08386079D57962701 /* SnapKit */,
@@ -953,7 +948,6 @@
 				F731CE4CB115C43A2A0B67563230979D /* Core */,
 				E3F3CC3F5FEA4DCDB8F17E5DF671F701 /* Support Files */,
 			);
-			name = Charts;
 			path = Charts;
 			sourceTree = "<group>";
 		};
@@ -1354,7 +1348,7 @@
 			);
 			name = "DateTimePicker-DateTimePicker";
 			productName = DateTimePicker;
-			productReference = B04C1EBC2EC90A2DFFEDDD0CF4473840 /* DateTimePicker-DateTimePicker */;
+			productReference = B04C1EBC2EC90A2DFFEDDD0CF4473840 /* DateTimePicker.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -1396,7 +1390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01D2EB30256F2E339C213A6DB6C4924D /* DateTimePicker-DateTimePicker in Resources */,
+				01D2EB30256F2E339C213A6DB6C4924D /* DateTimePicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2244,7 +2238,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D48EEE2E0173673F8804A4E2D44CE3CA /* DateTimePicker.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DateTimePicker";
+				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				IBSC_MODULE = DateTimePicker;
 				INFOPLIST_FILE = "Target Support Files/DateTimePicker/ResourceBundle-DateTimePicker-DateTimePicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2333,7 +2329,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1346EABBCC75695DCBD07175B62FAB41 /* DateTimePicker.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DateTimePicker";
+				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				IBSC_MODULE = DateTimePicker;
 				INFOPLIST_FILE = "Target Support Files/DateTimePicker/ResourceBundle-DateTimePicker-DateTimePicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

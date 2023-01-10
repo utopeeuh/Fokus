@@ -127,6 +127,7 @@ class CreateTaskVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         title = "Buat Task"
         view.backgroundColor = .blackFokus
@@ -301,4 +302,6 @@ extension CreateTaskVC: DateTimePickerDelegate{
     func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date) {
         reminderDateLabel.text = "Reminder set for \(dateTimePicker.selectedDateString)"
     }
+    
+    
 } 

@@ -55,6 +55,7 @@
 		95ECFECC2931F09200F5F334 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECB2931F09200F5F334 /* TitleTextField.swift */; };
 		95ECFECE2931F19B00F5F334 /* SubHeadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */; };
 		95ECFED02931F20700F5F334 /* Font Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECFECF2931F20700F5F334 /* Font Size.swift */; };
+		95EDA45C296D07E600E8C854 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDA45B296D07E600E8C854 /* UIViewController+DismissKeyboard.swift */; };
 		95F0FE66295C29900088F644 /* NameModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0FE65295C29900088F644 /* NameModalViewModel.swift */; };
 		B6D725F22937245B00165A53 /* PomodoroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D725F02937245B00165A53 /* PomodoroVC.swift */; };
 		F9BE0C4329365A05007529FB /* PomodoroDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BE0C4229365A05007529FB /* PomodoroDetail.swift */; };
@@ -116,6 +117,7 @@
 		95ECFECB2931F09200F5F334 /* TitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextField.swift; sourceTree = "<group>"; };
 		95ECFECD2931F19B00F5F334 /* SubHeadLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeadLabel.swift; sourceTree = "<group>"; };
 		95ECFECF2931F20700F5F334 /* Font Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font Size.swift"; sourceTree = "<group>"; };
+		95EDA45B296D07E600E8C854 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
 		95F0FE65295C29900088F644 /* NameModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameModalViewModel.swift; sourceTree = "<group>"; };
 		ACF241316042AB47065B50CF /* Pods_Fokus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fokus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D725F02937245B00165A53 /* PomodoroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroVC.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				95AA5734295194D0001D6A50 /* Calendar+Dates.swift */,
 				F9D86DE22950C0CF00A6636F /* UIWindow+TopViewController.swift */,
 				958B0F72293E291F006A19E4 /* UIView+Shake.swift */,
+				95EDA45B296D07E600E8C854 /* UIViewController+DismissKeyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				958B0F6E293D81EA006A19E4 /* TaskViewModel.swift in Sources */,
 				95ECFED02931F20700F5F334 /* Font Size.swift in Sources */,
 				95ECFECC2931F09200F5F334 /* TitleTextField.swift in Sources */,
+				95EDA45C296D07E600E8C854 /* UIViewController+DismissKeyboard.swift in Sources */,
 				95339E742954014C00912667 /* StatsLineChart.swift in Sources */,
 				952BA13E292521EE00767FDD /* ViewControllerPreview.swift in Sources */,
 				F9CB5DA82928EB52003C6371 /* TaskListCell.swift in Sources */,
@@ -788,7 +792,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fokus/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Fokus;
@@ -796,7 +801,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -805,7 +810,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.skripsi.Fokus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dff.Fokus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -823,7 +828,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fokus/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Fokus;
@@ -831,7 +837,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -840,7 +846,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.skripsi.Fokus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dff.Fokus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
