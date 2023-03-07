@@ -13,11 +13,13 @@ class StatsVC: UIViewController {
     
     private let statsVm = StatsViewModel()
     
+    private let achievementsVm = AchievementsViewModel()
+    
     private var currDate : Date!
     
     private let scrollView : UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 833)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 1779)
         scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
@@ -88,6 +90,37 @@ class StatsVC: UIViewController {
     private var tasksFinished = PomodoroDetail(title: "Diselesaikan", value: "")
     private var tasksFinishedWithoutPomodoro = PomodoroDetail(title: "Diselesaikan tanpa pomodoro", value: "")
     
+    // MARK: - Achievements
+    
+    private var achievements : [Achievement] = []
+    
+    private let achievementsTitle : UILabel = {
+        let label = UILabel()
+        label.text = "Achievements (Bulan ini)"
+        label.font = .atkinsonBold(size: 24)
+        label.textColor = .whiteFokus
+        return label
+    }()
+    
+    private var progressText : UILabel = {
+        let label = UILabel()
+        label.text = "Progress: 0/10"
+        label.font = .atkinsonRegular(size: 18)
+        label.textColor = .whiteFokus
+        return label
+    }()
+    
+    private var achievementsTable : UITableView = {
+        let table = UITableView()
+        table.isUserInteractionEnabled = false
+        table.backgroundColor = .clear
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.register(AchievementCell.self, forCellReuseIdentifier: "AchievementCell")
+        table.showsVerticalScrollIndicator = false
+        table.separatorStyle = UITableViewCell.SeparatorStyle.none
+        return table
+    }()
+    
     // MARK: - Load view
     
     override func viewDidAppear(_ animated: Bool) {
@@ -131,7 +164,7 @@ class StatsVC: UIViewController {
         view.addSubview(topFiller)
         view.addSubview(dateIterator)
         
-        let components = [dateLabel, pomodoroButton, taskButton, taskLineChart, pomodoroLineChart,pomodoroSection, taskSection]
+        let components = [dateLabel, pomodoroButton, taskButton, taskLineChart, pomodoroLineChart,pomodoroSection, taskSection, achievementsTitle, progressText, achievementsTable]
         
         components.forEach { subview in
             scrollView.addSubview(subview)
@@ -161,6 +194,13 @@ class StatsVC: UIViewController {
 
         pomodoroLineChart.setData(data: statsVm.pomodoroLineData, numberOfDays: numberOfDays)
         taskLineChart.setData(data: statsVm.taskLineData, numberOfDays: numberOfDays)
+        
+        // Achievements
+        achievements = achievementsVm.getAchievements(month: currDate)
+        progressText.text = "Progres: \(achievementsVm.progress)/10"
+        achievementsTable.dataSource = self
+        achievementsTable.delegate = self
+        achievementsTable.reloadData()
     }
     
     func configureConstraints(){
@@ -180,7 +220,6 @@ class StatsVC: UIViewController {
             make.top.equalTo(dateIterator.snp.bottom)
             make.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
         }
-        
         
         dateLabel.snp.makeConstraints { make in
             make.top.left.equalToSuperview().offset(20)
@@ -219,6 +258,41 @@ class StatsVC: UIViewController {
             make.width.equalToSuperview().offset(-40)
             make.centerX.equalToSuperview()
         }
+        
+        achievementsTitle.snp.makeConstraints { make in
+            make.top.equalTo(taskSection.snp.bottom).offset(20)
+            make.width.equalToSuperview().offset(-40)
+            make.centerX.equalToSuperview()
+        }
+        
+        progressText.snp.makeConstraints { make in
+            make.top.equalTo(achievementsTitle.snp.bottom).offset(20)
+            make.width.equalToSuperview().offset(-40)
+            make.centerX.equalToSuperview()
+        }
+        
+        achievementsTable.snp.makeConstraints { make in
+            make.top.equalTo(progressText.snp.bottom).offset(20)
+            make.width.equalToSuperview().offset(-40)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(860)
+        }
+    }
+}
+
+extension StatsVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AchievementCell", for: indexPath) as! AchievementCell
+        cell.setAchievement(achievement: achievements[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 88
     }
 }
 

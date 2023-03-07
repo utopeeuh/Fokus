@@ -38,6 +38,8 @@
 		956F7493295EDA520002BDCB /* PomodoroRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F7492295EDA520002BDCB /* PomodoroRepository.swift */; };
 		956F7495295EFF350002BDCB /* StatisticRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F7494295EFF350002BDCB /* StatisticRepository.swift */; };
 		95845DE42951D8B000EF2996 /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95845DE32951D8B000EF2996 /* LevelViewModel.swift */; };
+		95855D3A29B7791E00A1A66F /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95855D3929B7791E00A1A66F /* AchievementCell.swift */; };
+		95855D3D29B7806400A1A66F /* AchievementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95855D3C29B7806400A1A66F /* AchievementsViewModel.swift */; };
 		958B0F53293D69F1006A19E4 /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F52293D69F1006A19E4 /* Navbar.swift */; };
 		958B0F6E293D81EA006A19E4 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F6D293D81EA006A19E4 /* TaskViewModel.swift */; };
 		958B0F73293E291F006A19E4 /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B0F72293E291F006A19E4 /* UIView+Shake.swift */; };
@@ -100,6 +102,8 @@
 		956F7492295EDA520002BDCB /* PomodoroRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroRepository.swift; sourceTree = "<group>"; };
 		956F7494295EFF350002BDCB /* StatisticRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticRepository.swift; sourceTree = "<group>"; };
 		95845DE32951D8B000EF2996 /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
+		95855D3929B7791E00A1A66F /* AchievementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
+		95855D3C29B7806400A1A66F /* AchievementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewModel.swift; sourceTree = "<group>"; };
 		958B0F52293D69F1006A19E4 /* Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
 		958B0F6D293D81EA006A19E4 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		958B0F72293E291F006A19E4 /* UIView+Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
@@ -383,9 +387,18 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		95855D3B29B7805500A1A66F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				95855D3C29B7806400A1A66F /* AchievementsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		95AA5728295194AD001D6A50 /* Stats */ = {
 			isa = PBXGroup;
 			children = (
+				95855D3B29B7805500A1A66F /* ViewModels */,
 				95AA572A295194AD001D6A50 /* Components */,
 				95AA572E295194AD001D6A50 /* Controllers */,
 			);
@@ -399,6 +412,7 @@
 				95AA572C295194AD001D6A50 /* LabelButton.swift */,
 				95AA572D295194AD001D6A50 /* DateIterator.swift */,
 				95339E732954014C00912667 /* StatsLineChart.swift */,
+				95855D3929B7791E00A1A66F /* AchievementCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -630,8 +644,10 @@
 				952BF7EE292CF2BF00D924A8 /* OptionsCollectionView.swift in Sources */,
 				95C11DCC296004EC00681823 /* LevelRepository.swift in Sources */,
 				9513AFBC29295ECE00415C8B /* HomeVC.swift in Sources */,
+				95855D3D29B7806400A1A66F /* AchievementsViewModel.swift in Sources */,
 				953370432952DAD9009C3E89 /* StatsViewModel.swift in Sources */,
 				95AA5735295194D0001D6A50 /* Calendar+Dates.swift in Sources */,
+				95855D3A29B7791E00A1A66F /* AchievementCell.swift in Sources */,
 				955A2FBB2912A7F300513D8E /* Fokus.xcdatamodeld in Sources */,
 				95ECFEC92931F02900F5F334 /* CreateTaskVC.swift in Sources */,
 				956F7491295ED6010002BDCB /* LevelModel.swift in Sources */,

@@ -63,13 +63,14 @@ class StatisticRepository {
             
             stat.tasksFinished = Int(truncating: stat.tasksFinished) + 1 as NSNumber
             
-            stat.cyclesFinished = Int(truncating: stat.cyclesFinished) + Int(truncating: pomodoro.cycles) as NSNumber
-            
             if task.timeSpent == 0 {
                 stat.tasksNoPomodoro = Int(truncating: stat.tasksNoPomodoro) + 1 as NSNumber
             }
             
             else {
+                
+                stat.cyclesFinished = Int(truncating: stat.cyclesFinished) + Int(truncating: pomodoro.cycles) as NSNumber
+                
                 stat.totalWorkDuration = (Float(truncating: stat.tasksCreated) + Float(truncating: task.timeSpent))/60000 as NSNumber
                 
                 stat.avgWorkDuration = Float(truncating: stat.totalWorkDuration )/Float(truncating: stat.cyclesFinished) as NSNumber
